@@ -1,6 +1,8 @@
 package com.homecareplus.app.homecareplus.model;
 
-public class Client
+import java.io.Serializable;
+
+public class Client implements Serializable
 {
     private String clientId;
     private String firstName;

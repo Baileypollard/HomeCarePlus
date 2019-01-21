@@ -1,8 +1,7 @@
 package com.homecareplus.app.homecareplus.contract;
 
-        import android.view.View;
-
-        import com.homecareplus.app.homecareplus.model.Appointment;
+import android.view.View;
+import com.homecareplus.app.homecareplus.model.Appointment;
 
 public interface AppointmentRowOnClickListener
 {

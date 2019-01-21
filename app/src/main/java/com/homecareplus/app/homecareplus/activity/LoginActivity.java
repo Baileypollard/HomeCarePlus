@@ -27,10 +27,10 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        buttonSignIn = (Button) findViewById(R.id.button_signin);
-        employeeIdEditText = (EditText) findViewById(R.id.employeeId_edit);
-        employeePasswordEditText = (EditText) findViewById(R.id.employeePassword_edit);
-        loginErrorTextView = (TextView) findViewById(R.id.login_error_text);
+        buttonSignIn = findViewById(R.id.button_signin);
+        employeeIdEditText = findViewById(R.id.employeeId_edit);
+        employeePasswordEditText = findViewById(R.id.employeePassword_edit);
+        loginErrorTextView = findViewById(R.id.login_error_text);
 
     }
 

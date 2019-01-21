@@ -1131,7 +1131,9 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appointmentMap
 id appointmentStatusTextView
+id appointmentTabLayout
 id appointmentTimeTextView
 id async
 id auto
@@ -1224,6 +1226,7 @@ id list_item
 id login_error_text
 id logo_imageview
 id logout_imageView
+id mainViewPager
 id masked
 id media_actions
 id message

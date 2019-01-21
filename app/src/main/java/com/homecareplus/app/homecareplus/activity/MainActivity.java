@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
 
         this.presenter = new MainAppointmentPresenter(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.custom_toolbar);
+        Toolbar toolbar = findViewById(R.id.custom_toolbar);
         setSupportActionBar(toolbar);
 
         this.adapter = new CustomSectionedAdapter(new AppointmentRowOnClickListener()
@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
             public void onItemClick(View v, Appointment appointment)
             {
                 //Start the client appointment activity here
+                Intent intent = new Intent(MainActivity.this, AppointmentActivity.class);
+                intent.putExtra(SharedPreference.KEY_APPOINTMENT, appointment);
+                startActivity(intent);
             }
         });
 

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:17:1-32:12
 MERGED from [io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.2.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\sectionedrecyclerviewadapter-1.2.0.aar\85bf56d9db94864475b495593934223c\AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\0d65ec2712b95831840b73f4d97f3dba\AndroidManifest.xml:17:1-24:12
@@ -43,27 +43,35 @@ MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Bai\.gradle\cach
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\9f90eec9b583154518f3144dc9a45c64\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\c3d200ffc9e21ab6ff3afa331b6c1758\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d4a3d76a011989d04041d6b847888ab0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
 	package
 		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:4:5-48
 		INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
 		INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:1-42:12
 		INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:24:5-67
+MERGED from [com.couchbase.lite:couchbase-lite-android:2.1.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\couchbase-lite-android-2.1.0.aar\b07522f30269e796e53d508a61f5e798\AndroidManifest.xml:28:5-67
+MERGED from [com.couchbase.lite:couchbase-lite-android:2.1.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\couchbase-lite-android-2.1.0.aar\b07522f30269e796e53d508a61f5e798\AndroidManifest.xml:28:5-67
+	android:name
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:6:5-37:19
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:7:5-40:19
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:30:5-20
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:30:5-20
 MERGED from [io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.2.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\sectionedrecyclerviewadapter-1.2.0.aar\85bf56d9db94864475b495593934223c\AndroidManifest.xml:12:5-13:19
@@ -87,57 +95,61 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Bai\.gradl
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\7fbcfe884716e9821b93e238a3b059ea\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:11:9-35
 	android:label
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:9:9-41
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:10:9-41
 	tools:ignore
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:13:9-48
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:14:9-48
 	android:icon
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:8:9-45
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:9:9-45
 	android:allowBackup
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:12:9-40
 	android:usesCleartextTraffic
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:12:9-44
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:13:9-44
 activity#com.homecareplus.app.homecareplus.activity.MainActivity
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:15:9-68
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:16:9-68
 	android:name
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:15:19-56
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:16:19-56
+activity#com.homecareplus.app.homecareplus.activity.AppointmentActivity
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:18:9-75
+	android:name
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:18:19-63
 activity#com.homecareplus.app.homecareplus.activity.LoginActivity
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:17:9-22:20
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:20:9-25:20
 	android:name
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:17:19-57
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:20:19-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:18:13-21:29
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:21:13-24:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:19:17-69
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:19:25-66
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:23:27-74
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:25:9-27:69
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:28:9-30:69
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\3dc2632343599e2a5f8be46d22496a3b\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\3dc2632343599e2a5f8be46d22496a3b\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:27:13-66
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:30:13-66
 	android:name
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:26:13-58
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:29:13-58
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:29:9-31:71
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:32:9-34:71
 	android:value
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:31:13-68
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:34:13-68
 	android:name
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:30:13-58
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:33:13-58
 meta-data#preloaded_fonts
-ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:33:9-35:57
+ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:36:9-38:57
 	android:resource
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:35:13-54
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:38:13-54
 	android:name
-		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:34:13-43
+		ADDED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml:37:13-43
 uses-sdk
 INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\AndroidManifest.xml
@@ -236,12 +248,6 @@ MERGED from [com.couchbase.lite:couchbase-lite-android:2.1.0] C:\Users\Bai\.grad
 MERGED from [com.couchbase.lite:couchbase-lite-android:2.1.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\couchbase-lite-android-2.1.0.aar\b07522f30269e796e53d508a61f5e798\AndroidManifest.xml:29:5-79
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:23:22-76
-uses-permission#android.permission.INTERNET
-ADDED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:24:5-67
-MERGED from [com.couchbase.lite:couchbase-lite-android:2.1.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\couchbase-lite-android-2.1.0.aar\b07522f30269e796e53d508a61f5e798\AndroidManifest.xml:28:5-67
-MERGED from [com.couchbase.lite:couchbase-lite-android:2.1.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\couchbase-lite-android-2.1.0.aar\b07522f30269e796e53d508a61f5e798\AndroidManifest.xml:28:5-67
-	android:name
-		ADDED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:24:22-64
 uses-feature#0x00020000
 ADDED from [com.google.android.gms:play-services-maps:16.0.0] C:\Users\Bai\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.0.0.aar\8f85d461b3de0c746b05bd321ed04d03\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion

@@ -1,6 +1,8 @@
 package com.homecareplus.app.homecareplus.model;
 
-public class Appointment
+import java.io.Serializable;
+
+public class Appointment implements Serializable
 {
     private String id;
     private Employee employee;
@@ -58,7 +60,4 @@ public class Appointment
     {
         return getStartTime() + " - " + getEndTime();
     }
-
-
-
 }

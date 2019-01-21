@@ -11,6 +11,7 @@ public class SharedPreference
 
     private final String SHARED_PREF_KEY = "SHARED_PREFERENCES";
     private final String KEY_EMPLOYEE_ID = "KEY_EMPLOYEE_ID";
+    public static final String KEY_APPOINTMENT = "KEY_APPOINTMENT_KEY";
 
     public SharedPreference(Context context)
     {

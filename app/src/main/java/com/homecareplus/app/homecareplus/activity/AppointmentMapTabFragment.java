@@ -49,16 +49,15 @@ public class AppointmentMapTabFragment extends Fragment implements OnMapReadyCal
     public void onMapReady(GoogleMap googleMap)
     {
         this.googleMap = googleMap;
-        this.presenter.getAddressInformation(appointment);
+        this.presenter.getAddressInformation(appointment.getAddress(), getResources().getString(R.string.google_api_key));
     }
 
     @Override
-    public void displayMarkerOnMaps(double lat, double lng)
+    public void displayMarkerOnMaps(LatLng latLng)
     {
-        LatLng sydney = new LatLng(lat, lng);
-        googleMap.addMarker(new MarkerOptions().position(sydney).title("Appointment Marker"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        googleMap.moveCamera(CameraUpdateFactory.zoomIn());
+        googleMap.addMarker(new MarkerOptions().position(latLng).title("Appointment Marker"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f));
     }
 
     @Override

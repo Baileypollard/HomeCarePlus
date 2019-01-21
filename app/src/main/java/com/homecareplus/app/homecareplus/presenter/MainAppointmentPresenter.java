@@ -121,8 +121,6 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                     Dictionary appointmentDict = r.getDictionary("appointmentDS");
                     Dictionary employeeDict = r.getDictionary("employeeDS");
 
-                    Log.d("TAG", "Appointment: " + appointmentDict.toMap());
-
                     String date = appointmentDict.getString("date");
 
                     String employeeId = employeeDict.getString("employee_id");

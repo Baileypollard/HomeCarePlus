@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.callback.LoginAttemptedCallback;
+import com.homecareplus.app.homecareplus.couchbase.CBSession;
 import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
 import com.homecareplus.app.homecareplus.util.NetworkUtil;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
@@ -66,7 +67,7 @@ public class LoginActivity extends AppCompatActivity
         String id = employeeIdEditText.getText().toString().trim();
         String password =  employeePasswordEditText.getText().toString().trim();
 
-       new NetworkUtil.getSessionId(id, password, loginAttemptedCallback).execute();
+       new CBSession.getSessionId(id, password, loginAttemptedCallback).execute();
     }
 }
 

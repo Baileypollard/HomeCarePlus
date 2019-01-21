@@ -3714,7 +3714,7 @@
         </item>
     </string-array></file><file path="C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\res\values\ic_launcher_background.xml" qualifiers=""><color name="ic_launcher_background">#FDFFFF</color></file><file path="C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\res\values\preloaded_fonts.xml" qualifiers=""><array name="preloaded_fonts" translatable="false">
         <item>@font/amaranth</item>
-    </array></file><file path="C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">HomeCarePlus</string></file><file path="C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </array></file><file path="C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">HomeCarePlus</string><string name="google_api_key">AIzaSyD7mLhw0FvN3qGqZaysebXA73xcqN1KFp4</string></file><file path="C:\Users\Bai\AndroidStudioProjects\HomeCarePlus\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

@@ -1,7 +1,9 @@
 package com.homecareplus.app.homecareplus.presenter;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.homecareplus.app.homecareplus.callback.CoordinatesReceivedCallback;
 import com.homecareplus.app.homecareplus.contract.AppointmentMapContract;
-import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.util.Geocoding;
 
 public class AppointmentMapPresenter implements AppointmentMapContract.presenter
 {
@@ -15,8 +17,15 @@ public class AppointmentMapPresenter implements AppointmentMapContract.presenter
     }
 
     @Override
-    public void getAddressInformation(Appointment appointment)
+    public void getAddressInformation(String address, String apiKey)
     {
-        view.displayMarkerOnMaps(45.616953, -61.362123);
+        new Geocoding.getLatAndLngForAddress(address, apiKey, new CoordinatesReceivedCallback()
+        {
+            @Override
+            public void onCoordinatesReceived(LatLng latLng)
+            {
+                view.displayMarkerOnMaps(latLng);
+            }
+        }).execute();
     }
 }

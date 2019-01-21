@@ -9,6 +9,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Authenticator;
 import okhttp3.Credentials;
@@ -22,79 +26,23 @@ import okhttp3.Route;
 
 public class NetworkUtil {
 
-    public static class getSessionId extends AsyncTask<Void, Void, String>
+
+    public static Response doGetRequest(OkHttpClient httpClient, String anyURL)
     {
-        private String user;
-        private String password;
-        private LoginAttemptedCallback loginAttemptedCallback;
+        Request request = new Request.Builder().url(anyURL).get().build();
 
-        public getSessionId(String user, String password, LoginAttemptedCallback loginAttemptedCallback)
-        {
-            this.loginAttemptedCallback = loginAttemptedCallback;
-            this.user = user;
-            this.password = password;
-        }
-
-        @Override
-        protected String doInBackground(Void... params)
-        {
-            return getSessionId(user, password);
-        }
-
-        @Override
-        protected void onPostExecute(String result)
-        {
-            Log.d("TAG", "Session id: " + result);
-
-            try
-            {
-                JSONObject results = new JSONObject(result);
-                String sessionId = results.getString("session_id");
-                if (sessionId != null)
-                {
-                    loginAttemptedCallback.onLoginSuccess(user, sessionId);
-                }
-            }
-            catch (JSONException e)
-            {
-                loginAttemptedCallback.onLoginFailed();
-            }
-        }
-    }
-
-    private static String getSessionId(String id, String password)
-    {
-        OkHttpClient client = createAuthenticatedClient(id, password);
-        String url = "http://10.0.2.2:8080/rest/secured/login";
-
-        final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
-        JSONObject jo = new JSONObject();
         try
         {
-            jo.put("username", id);
-            jo.put("password", password);
-
-            RequestBody body = RequestBody.create(JSON, jo.toString());
-
-            try
-            {
-                return doPostRequest(client, url, body).body().string();
-            }
-            catch (IOException e)
-            {
-                Log.d("TAG", "Failed: " + e.getMessage());
-            }
+            return httpClient.newCall(request).execute();
         }
-        catch (JSONException e)
+        catch (IOException e)
         {
-
+            Log.e("TAG", "Get request failed... " + e.getMessage());
+            return null;
         }
-
-        return "N/A";
     }
 
-
-    private static Response doPostRequest(OkHttpClient httpClient, String anyURL, RequestBody body) throws IOException
+    public static Response doPostRequest(OkHttpClient httpClient, String anyURL, RequestBody body) throws IOException
     {
         Request request = new Request.Builder().url(anyURL).post(body).build();
 
@@ -107,7 +55,7 @@ public class NetworkUtil {
         return response;
     }
 
-    private static OkHttpClient createAuthenticatedClient(final String username, final String password)
+    public static OkHttpClient createAuthenticatedClient(final String username, final String password)
     {
         return new OkHttpClient.Builder().authenticator(new Authenticator()
         {
@@ -116,6 +64,26 @@ public class NetworkUtil {
                 String credential = Credentials.basic(username, password);
                 return response.request().newBuilder().header("Authorization", credential).build();
             }
-        }).build();
+        }).connectTimeout(5, TimeUnit.SECONDS)
+                .readTimeout(5, TimeUnit.SECONDS)
+                .writeTimeout(5, TimeUnit.SECONDS)
+                .build();
+    }
+
+    public static HttpUrl createHttpURL(String scheme, String host, String pathSegment, Map<String, String> parameterMap)
+    {
+            HttpUrl.Builder httpBuilder = new HttpUrl.Builder()
+                    .scheme(scheme)
+                    .host(host)
+                    .addPathSegments(pathSegment);
+
+            Iterator it = parameterMap.entrySet().iterator();
+            while (it.hasNext())
+            {
+                Map.Entry pair = (Map.Entry) it.next();
+                httpBuilder.addQueryParameter(pair.getKey().toString(), pair.getValue().toString());
+                it.remove(); // avoids a ConcurrentModificationException
+            }
+        return httpBuilder.build();
     }
 }

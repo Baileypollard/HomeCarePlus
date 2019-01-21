@@ -1,6 +1,6 @@
 package com.homecareplus.app.homecareplus.contract;
 
-import com.homecareplus.app.homecareplus.model.Appointment;
+import com.google.android.gms.maps.model.LatLng;
 
 public interface AppointmentMapContract
 {
@@ -8,13 +8,13 @@ public interface AppointmentMapContract
     {
         void setView(AppointmentMapContract.view view);
 
-        void getAddressInformation(Appointment appointment);
+        void getAddressInformation(String address, String apiKey);
     }
 
 
     interface view
     {
-        void displayMarkerOnMaps(double lat, double lng);
+        void displayMarkerOnMaps(LatLng latLng);
 
         void setPresenter(AppointmentMapContract.presenter presenter);
     }

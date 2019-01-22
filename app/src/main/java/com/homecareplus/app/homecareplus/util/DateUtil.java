@@ -1,11 +1,13 @@
 package com.homecareplus.app.homecareplus.util;
 
+import android.text.format.DateUtils;
 import android.util.Log;
 
 import com.couchbase.lite.LogDomain;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class DateUtil
@@ -14,10 +16,23 @@ public class DateUtil
     {
         long dateMs = getDateMilliseconds(date);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd YYYY");
-
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy");
         Date d = new Date(dateMs);
+
+        if (DateUtils.isToday(dateMs))
+        {
+            return "TODAY - " + sdf.format(d);
+        }
+
         return sdf.format(d);
+    }
+
+    public static String getTodayFormatted()
+    {
+        long dateMs = new Date().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        return sdf.format(dateMs);
     }
 
     public static long getDateMilliseconds(String date)

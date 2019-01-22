@@ -12,6 +12,7 @@ import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.callback.LoginAttemptedCallback;
 import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
 import com.homecareplus.app.homecareplus.util.NetworkUtil;
+import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -47,9 +48,7 @@ public class LoginActivity extends AppCompatActivity
         @Override
         public void onLoginSuccess(String id, String sessionId)
         {
-            //Start the main activity
-//            sharedPreference.setEmployeeId(id);
-
+            SharedPreference.getSharedInstance(getApplicationContext()).setEmployeeId(id);
             DatabaseManager.getSharedInstance(getApplicationContext(), id);
             DatabaseManager.beginDatabaseReplication(sessionId);
             startMainActivity();

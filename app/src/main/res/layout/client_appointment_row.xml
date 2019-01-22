@@ -39,36 +39,32 @@
 
     <TextView
         android:id="@+id/clientAddressTextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="2"
+        android:autoLink="map"
         android:ellipsize="end"
         android:padding="5dp"
         android:singleLine="true"
-        android:text="10 Nova Court, PortHawkes Bury NS"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appointmentTimeTextView"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintRight_toLeftOf="@+id/appointmentStatusTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clientNameTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/clientNameTextView"
+        tools:text="{address}" />
 
     <TextView
         android:id="@+id/appointmentStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="NEW"
         android:textColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toEndOf="@+id/clientAddressTextView"
         app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
         app:layout_constraintVertical_bias="1.0"
         tools:text="{status}" />

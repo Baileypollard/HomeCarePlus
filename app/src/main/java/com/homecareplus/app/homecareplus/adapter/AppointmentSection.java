@@ -3,6 +3,7 @@ package com.homecareplus.app.homecareplus.adapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.util.DateUtil;
 import com.homecareplus.app.homecareplus.viewholder.AppointmentHeaderViewHolder;
@@ -19,8 +20,10 @@ public class AppointmentSection extends StatelessSection
 {
     private List<Appointment> appointmentList;
     private String title;
+    private String tag;
+    private AppointmentRowOnClickListener onClickListener;
 
-    public AppointmentSection(String title) {
+    public AppointmentSection(String title, String tag, AppointmentRowOnClickListener appointmentRowOnClickListener) {
         super(SectionParameters.builder()
                 .itemResourceId(com.homecareplus.app.homecareplus.R.layout.client_appointment_row)
                 .headerResourceId(com.homecareplus.app.homecareplus.R.layout.section_header)
@@ -28,17 +31,29 @@ public class AppointmentSection extends StatelessSection
 
         this.appointmentList = new ArrayList<>();
         this.title = title;
+        this.tag = tag;
+        this.onClickListener = appointmentRowOnClickListener;
+    }
+
+    public String getTag()
+    {
+        return this.tag;
     }
 
     public void addAppointment(Appointment appointment)
     {
-        appointmentList.add(appointment);
+        this.appointmentList.add(appointment);
+    }
+
+    public int getAppointmentPosition(Appointment appointment)
+    {
+        return this.appointmentList.indexOf(appointment);
     }
 
     @Override
     public int getContentItemsTotal()
     {
-        return appointmentList.size();
+        return this.appointmentList.size();
     }
 
     @Override
@@ -58,8 +73,6 @@ public class AppointmentSection extends StatelessSection
     public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder)
     {
         AppointmentHeaderViewHolder headerHolder = (AppointmentHeaderViewHolder) holder;
-
-        // bind your header view here
         headerHolder.setHeaderTitle(DateUtil.getHeaderDateFormat(title));
     }
 
@@ -67,11 +80,20 @@ public class AppointmentSection extends StatelessSection
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position)
     {
         AppointmentRowViewHolder viewHolder = (AppointmentRowViewHolder) holder;
-        Appointment appointment = appointmentList.get(position);
+        final Appointment appointment = appointmentList.get(position);
 
         viewHolder.setClientName(appointment.getClientName());
         viewHolder.setClientAddress(appointment.getAddress());
         viewHolder.setAppointmentTime(appointment.getAppointmentTime());
+
+        viewHolder.itemView.getRootView().setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                onClickListener.onItemClick(v, appointment);
+            }
+        });
         //Set all the values and shit here
     }
 

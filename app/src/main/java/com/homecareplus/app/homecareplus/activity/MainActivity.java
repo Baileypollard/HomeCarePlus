@@ -1,5 +1,6 @@
 package com.homecareplus.app.homecareplus.activity;
 
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,20 +8,18 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
-import com.homecareplus.app.homecareplus.adapter.AppointmentSection;
 import com.homecareplus.app.homecareplus.adapter.CustomSectionedAdapter;
+import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Employee;
 import com.homecareplus.app.homecareplus.presenter.MainAppointmentPresenter;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
+import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 public class MainActivity extends AppCompatActivity implements MainAppointmentsContract.view
 {
@@ -36,14 +35,22 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
         setContentView(R.layout.activity_main);
         this.employeeNameTextView = findViewById(R.id.employeeNameTextView);
 
-        presenter = new MainAppointmentPresenter(this);
+        this.presenter = new MainAppointmentPresenter(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.custom_toolbar);
         setSupportActionBar(toolbar);
 
-        adapter = new CustomSectionedAdapter();
+        this.adapter = new CustomSectionedAdapter(new AppointmentRowOnClickListener()
+        {
+            @Override
+            public void onItemClick(View v, Appointment appointment)
+            {
+                //Start the client appointment activity here
+            }
+        });
 
-        presenter.fetchAppointments();
+        this.presenter.fetchAppointments();
+        this.presenter.fetchEmployeeName(SharedPreference.getSharedInstance(getApplicationContext()).getEmployeeId());
 
         this.recyclerView = findViewById(R.id.client_appointment_RecyclerView);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -61,8 +68,22 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     }
 
     @Override
-    public void displayEmployeeInfo(Employee employee)
+    public void displayEmployeeName(String name)
     {
+        employeeNameTextView.setText(name);
+    }
 
+
+    public void onClickLogout(View v)
+    {
+        presenter.logout();
+    }
+
+    @Override
+    public void startLoginActivity()
+    {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

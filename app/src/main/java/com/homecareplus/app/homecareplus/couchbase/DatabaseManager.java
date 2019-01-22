@@ -8,6 +8,7 @@ import com.couchbase.lite.BasicAuthenticator;
 import com.couchbase.lite.CouchbaseLiteException;
 import com.couchbase.lite.Database;
 import com.couchbase.lite.DatabaseConfiguration;
+import com.couchbase.lite.ListenerToken;
 import com.couchbase.lite.Replicator;
 import com.couchbase.lite.ReplicatorChange;
 import com.couchbase.lite.ReplicatorChangeListener;
@@ -23,6 +24,7 @@ public class DatabaseManager
     private static DatabaseManager instance;
     private static Database database;
     private static Replicator replicator;
+    private static ListenerToken token;
 
     private DatabaseManager(Context context, String employeeId)
     {
@@ -56,7 +58,7 @@ public class DatabaseManager
         config.setAuthenticator(new SessionAuthenticator(sessionId));
 
         replicator = new Replicator(config);
-        replicator.addChangeListener(new ReplicatorChangeListener()
+        token = replicator.addChangeListener(new ReplicatorChangeListener()
         {
             @Override
             public void changed(ReplicatorChange change)
@@ -66,10 +68,16 @@ public class DatabaseManager
                 {
                     Log.e("Replication Comp Log", "Scheduler Completed");
                 }
-                if (change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.STOPPED)
-                        || change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.OFFLINE)) {
-
-                    Log.e("Replication Comp Log", "Scheduler Stopped");
+                if (change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.STOPPED))
+                {
+                    try
+                    {
+                        database.close();
+                    }
+                    catch (CouchbaseLiteException e)
+                    {
+                        Log.d("TAG", "Exception: " + e);
+                    }
 
                 }
             }
@@ -79,8 +87,8 @@ public class DatabaseManager
 
     public static void closeDatabase() throws CouchbaseLiteException
     {
+        replicator.removeChangeListener(token);
         replicator.stop();
-        database.close();
         instance = null;
     }
 

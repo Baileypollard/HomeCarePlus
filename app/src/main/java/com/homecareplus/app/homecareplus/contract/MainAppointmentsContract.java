@@ -7,14 +7,20 @@ public interface MainAppointmentsContract
 {
     interface view
     {
+        void startLoginActivity();
+
         void displayAppointment(Appointment appointment);
 
-        void displayEmployeeInfo(Employee employee);
+        void displayEmployeeName(String name);
     }
 
 
     interface presenter
     {
+        void logout();
+
         void fetchAppointments();
+
+        void fetchEmployeeName(String employeeId);
     }
 }

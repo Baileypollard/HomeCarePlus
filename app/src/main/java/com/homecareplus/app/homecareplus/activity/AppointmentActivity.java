@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
@@ -26,13 +27,24 @@ public class AppointmentActivity extends AppCompatActivity
     private AppointmentMapContract.presenter appMapPresenter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_layout);
 
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         setSupportActionBar(toolbar);
+
+        toolbar.findViewById(R.id.emptyBackButtonHolder).setVisibility(View.GONE);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                onBackPressed();
+            }
+        });
+
 
         this.appInfoPresenter = new AppointmentInfoPresenter();
         this.appMapPresenter = new AppointmentMapPresenter();

@@ -1076,6 +1076,7 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient
+drawable ic_arrow_back_black_24dp
 drawable ic_launcher_background
 drawable ic_logo
 drawable ic_mtrl_chip_checked_black
@@ -1179,6 +1180,7 @@ id employeeId_edit
 id employeeInfoView
 id employeeNameTextView
 id employeePassword_edit
+id emptyBackButtonHolder
 id end
 id end_padder
 id enterAlways
@@ -1209,8 +1211,6 @@ id imageBottomGuide
 id imageLeftGuide
 id imageRightGuide
 id imageTopGuide
-id imageView
-id include
 id info
 id invisible
 id italic

@@ -59,14 +59,22 @@ public class NetworkUtil {
     {
         return new OkHttpClient.Builder().authenticator(new Authenticator()
         {
-            public Request authenticate(Route route, Response response) throws IOException
+            private int mCounter = 0;
+            public Request authenticate(Route route, Response response)
             {
-                String credential = Credentials.basic(username, password);
-                return response.request().newBuilder().header("Authorization", credential).build();
+                if (mCounter++ > 0)
+                {
+                    return null;
+                }
+                else
+                {
+                    String credential = Credentials.basic(username, password);
+                    return response.request().newBuilder().header("Authorization", credential).build();
+                }
             }
-        }).connectTimeout(5, TimeUnit.SECONDS)
-                .readTimeout(5, TimeUnit.SECONDS)
-                .writeTimeout(5, TimeUnit.SECONDS)
+        }).connectTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
                 .build();
     }
 

@@ -52,13 +52,14 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
             String firstName = resultList.get(0).getString("first_name");
             String lastName = resultList.get(0).getString("last_name");
             fullName = firstName + " " + lastName;
+            view.displayEmployeeName(fullName);
         }
         catch(CouchbaseLiteException e)
         {
             fullName = "ERROR FETCHING NAME";
             Log.e("TAG", "Could not execute query - " + e.getMessage());
+            view.displayEmployeeName(fullName);
         }
-        view.displayEmployeeName(fullName);
     }
 
     private MainAppointmentsContract.view view;

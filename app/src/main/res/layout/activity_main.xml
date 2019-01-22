@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingBottom="10dp"
-            android:text="Shelly Pollard"
+            android:text=""
             android:textColor="@color/colorBlack"
             android:textSize="18sp"
             android:textStyle="bold" />

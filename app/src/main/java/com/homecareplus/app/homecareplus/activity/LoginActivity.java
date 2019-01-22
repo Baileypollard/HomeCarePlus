@@ -20,7 +20,6 @@ public class LoginActivity extends AppCompatActivity
     private EditText employeeIdEditText;
     private EditText employeePasswordEditText;
     private TextView loginErrorTextView;
-//    private SharedPreference sharedPreference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,7 +32,6 @@ public class LoginActivity extends AppCompatActivity
         employeePasswordEditText = (EditText) findViewById(R.id.employeePassword_edit);
         loginErrorTextView = (TextView) findViewById(R.id.login_error_text);
 
-//        sharedPreference = new SharedPreference(getApplicationContext());
     }
 
     private LoginAttemptedCallback loginAttemptedCallback = new LoginAttemptedCallback()

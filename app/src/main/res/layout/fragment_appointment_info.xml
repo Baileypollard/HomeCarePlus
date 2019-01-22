@@ -1,6 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="Client Name"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/clientNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="Mike Kelly"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="Client Address"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/clientAddressTextView"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="10 Nova Court Port Hawkesbury NS"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="Scheduled Time"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/scheduledTimeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="1:00 - 1:15 PM"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="Appointment Description"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/appointmentDescriptonTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="PC - The Client will require a bath and then require to be put to bed  bed  bed bed bed bed bed bed bed bed bed bed bed bed bed bed bed bed bed"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

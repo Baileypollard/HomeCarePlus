@@ -1,12 +1,19 @@
 package com.homecareplus.app.homecareplus.activity;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.AppointmentTabAdapter;
@@ -21,7 +28,7 @@ import com.homecareplus.app.homecareplus.util.SharedPreference;
 public class AppointmentActivity extends AppCompatActivity
 {
     private ViewPager mainViewPager;
-    private TabLayout mainTabLayout;
+    private BottomNavigationView navigationView;
     private Appointment appointment;
     private AppointmentInformationContract.presenter appInfoPresenter;
     private AppointmentMapContract.presenter appMapPresenter;
@@ -51,11 +58,11 @@ public class AppointmentActivity extends AppCompatActivity
 
         this.appointment = (Appointment) getIntent().getSerializableExtra(SharedPreference.KEY_APPOINTMENT);
         this.mainViewPager = findViewById(R.id.mainViewPager);
-        this.mainTabLayout = findViewById(R.id.appointmentTabLayout);
+        this.navigationView = findViewById(R.id.bottom_navigation);
 
-
-        AppointmentMapTabFragment mapTabFragment = new AppointmentMapTabFragment();
         AppointmentInfoTabFragment appointmentInfoTabFragment = new AppointmentInfoTabFragment();
+        AppointmentInfoTabFragment appointmentInfoTabFragment2 = new AppointmentInfoTabFragment();
+        AppointmentMapTabFragment mapTabFragment = new AppointmentMapTabFragment();
 
         this.appInfoPresenter.setView(appointmentInfoTabFragment);
         this.appMapPresenter.setView(mapTabFragment);
@@ -63,26 +70,60 @@ public class AppointmentActivity extends AppCompatActivity
         AppointmentTabAdapter pagerAdapter = new AppointmentTabAdapter(getSupportFragmentManager());
 
         pagerAdapter.addFragement(appointmentInfoTabFragment);
+        pagerAdapter.addFragement(appointmentInfoTabFragment2);
         pagerAdapter.addFragement(mapTabFragment);
 
         this.mainViewPager.setAdapter(pagerAdapter);
-        this.mainViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mainTabLayout));
 
-        this.mainTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        navigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener()
+                {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item)
+                    {
+                        switch (item.getItemId())
+                        {
+                            case R.id.actionAppInfo:
+                                mainViewPager.setCurrentItem(0);
+                                break;
+                            case R.id.actionCompleteApp:
+                                mainViewPager.setCurrentItem(1);
+                                break;
+                            case R.id.actionAppMap:
+                                mainViewPager.setCurrentItem(2);
+                                break;
+                        }
+                        return false;
+                    }
+                });
+
+        mainViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
+        {
+            private MenuItem prevMenuItem;
             @Override
-            public void onTabSelected(TabLayout.Tab tab)
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
             {
-                mainViewPager.setCurrentItem(tab.getPosition());
+
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab)
+            public void onPageSelected(int position)
             {
+                if (prevMenuItem != null)
+                {
+                    prevMenuItem.setChecked(false);
+                }
+                else
+                {
+                    navigationView.getMenu().getItem(0).setChecked(false);
+                }
 
+                navigationView.getMenu().getItem(position).setChecked(true);
+                prevMenuItem = navigationView.getMenu().getItem(position);
             }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab)
+            public void onPageScrollStateChanged(int state)
             {
 
             }

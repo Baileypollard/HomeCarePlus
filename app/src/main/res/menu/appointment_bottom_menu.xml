@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:labelVisibilityMode ="labeled" >
+    <item
+        android:id="@+id/actionAppInfo"
+        android:enabled="true"
+        android:icon="@drawable/ic_person"
+        android:title="Appointment Info"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/actionCompleteApp"
+        android:enabled="true"
+        android:icon="@drawable/ic_clock"
+        android:title="Complete Hours"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/actionAppMap"
+        android:enabled="true"
+        android:icon="@drawable/ic_map"
+        android:title="Map"
+        app:showAsAction="ifRoom" />
+</menu>

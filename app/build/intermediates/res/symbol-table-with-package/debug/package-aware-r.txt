@@ -1077,11 +1077,14 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient
 drawable ic_arrow_back_black_24dp
+drawable ic_clock
 drawable ic_launcher_background
 drawable ic_logo
+drawable ic_map
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_person
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1107,6 +1110,9 @@ id META
 id SHIFT
 id SYM
 id action0
+id actionAppInfo
+id actionAppMap
+id actionCompleteApp
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1132,9 +1138,9 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appointmentDescriptonTextView
 id appointmentMap
 id appointmentStatusTextView
-id appointmentTabLayout
 id appointmentTimeTextView
 id async
 id auto
@@ -1142,6 +1148,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bottom_navigation
 id buttonPanel
 id button_signin
 id cancel_action
@@ -1260,6 +1267,7 @@ id satellite
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id scheduledTimeTextView
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1311,6 +1319,11 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
+id textView3
+id textView5
+id textView6
+id textView8
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1430,6 +1443,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu appointment_bottom_menu
 mipmap ic_launcher_foreground
 mipmap ic_lock
 mipmap ic_logo

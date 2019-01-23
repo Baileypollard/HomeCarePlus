@@ -1100,6 +1100,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable textbox_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 font amaranth
@@ -1139,6 +1140,7 @@ id alertTitle
 id all
 id always
 id appointmentDescriptonTextView
+id appointmentDescriptonTextView2
 id appointmentMap
 id appointmentStatusTextView
 id appointmentTimeTextView
@@ -1182,6 +1184,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id editText2
 id edit_query
 id employeeId_edit
 id employeeInfoView
@@ -1228,6 +1231,7 @@ id left
 id light
 id line1
 id line3
+id linearLayout2
 id listMode
 id list_item
 id login_error_text
@@ -1259,6 +1263,9 @@ id percent
 id pin
 id progress_circular
 id progress_horizontal
+id punchIn_button
+id punchOut_button
+id punchedInOnTextView
 id radio
 id right
 id right_icon
@@ -1324,6 +1331,7 @@ id textView3
 id textView5
 id textView6
 id textView8
+id textView9
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1419,6 +1427,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_appointment_hours
 layout fragment_appointment_info
 layout fragment_appointment_map
 layout mtrl_layout_snackbar

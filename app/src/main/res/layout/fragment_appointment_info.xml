@@ -109,6 +109,29 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp" />
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="Comments"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/appointmentDescriptonTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:paddingBottom="10dp"
+                android:text="{Comment}"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp" />
+
         </LinearLayout>
     </ScrollView>
 

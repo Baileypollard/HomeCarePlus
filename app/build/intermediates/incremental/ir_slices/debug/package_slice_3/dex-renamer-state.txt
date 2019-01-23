@@ -1,4 +1,0 @@
-#Tue Jan 22 01:07:16 AST 2019
-base.0=C\:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
-path.0=classes.dex
-renamed.0=classes.dex

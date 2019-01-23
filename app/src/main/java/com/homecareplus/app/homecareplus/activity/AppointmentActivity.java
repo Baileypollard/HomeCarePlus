@@ -2,18 +2,12 @@ package com.homecareplus.app.homecareplus.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
-import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.AppointmentTabAdapter;
@@ -61,7 +55,7 @@ public class AppointmentActivity extends AppCompatActivity
         this.navigationView = findViewById(R.id.bottom_navigation);
 
         AppointmentInfoTabFragment appointmentInfoTabFragment = new AppointmentInfoTabFragment();
-        AppointmentInfoTabFragment appointmentInfoTabFragment2 = new AppointmentInfoTabFragment();
+        AppointmentHoursTabFragment appointmentHoursTabFragment = new AppointmentHoursTabFragment();
         AppointmentMapTabFragment mapTabFragment = new AppointmentMapTabFragment();
 
         this.appInfoPresenter.setView(appointmentInfoTabFragment);
@@ -70,7 +64,7 @@ public class AppointmentActivity extends AppCompatActivity
         AppointmentTabAdapter pagerAdapter = new AppointmentTabAdapter(getSupportFragmentManager());
 
         pagerAdapter.addFragement(appointmentInfoTabFragment);
-        pagerAdapter.addFragement(appointmentInfoTabFragment2);
+        pagerAdapter.addFragement(appointmentHoursTabFragment);
         pagerAdapter.addFragement(mapTabFragment);
 
         this.mainViewPager.setAdapter(pagerAdapter);

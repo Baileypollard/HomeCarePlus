@@ -1,5 +1,7 @@
 package com.homecareplus.app.homecareplus.model;
 
+import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
+
 import java.io.Serializable;
 
 public class Appointment implements Serializable
@@ -11,10 +13,15 @@ public class Appointment implements Serializable
     private Client client;
     private String startTime;
     private String endTime;
-    private String status;
+    private AppointmentStatus status;
+    private String punchedInTime;
+    private String punchedOutTime;
+    private String comment;
+    private String kmsTravelled;
 
-    public Appointment(String id, Employee employee, Client client, String date, String status,
-                       String startTime, String endTime, String appointmentInfo)
+    public Appointment(String id, Employee employee, Client client, String date, AppointmentStatus status,
+                       String startTime, String endTime, String appointmentInfo, String punchedInTime,
+                       String punchedOutTime, String comment, String kmsTravelled)
     {
         this.id = id;
         this.employee = employee;
@@ -24,6 +31,65 @@ public class Appointment implements Serializable
         this.status = status;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.punchedInTime = punchedInTime;
+        this.punchedOutTime = punchedOutTime;
+        this.comment = comment;
+        this.kmsTravelled = kmsTravelled;
+    }
+
+    public void setKmsTravelled(String kms)
+    {
+        this.kmsTravelled = kms;
+    }
+
+    public String getKmsTravelled()
+    {
+        return this.kmsTravelled;
+    }
+
+    public void setComment(String comment)
+    {
+        this.comment = comment;
+    }
+
+    public String getComment()
+    {
+        return this.comment;
+    }
+
+    public void setStatus(AppointmentStatus status)
+    {
+        this.status = status;
+    }
+
+    public AppointmentStatus getStatus()
+    {
+        return this.status;
+    }
+
+    public void setPunchedInTime(String time)
+    {
+        this.punchedInTime = time;
+    }
+
+    public void setPunchedOutTime(String time)
+    {
+        this.punchedOutTime = time;
+    }
+
+    public String getPunchedOutTime()
+    {
+        return this.punchedOutTime;
+    }
+
+    public String getPunchedInTime()
+    {
+        return this.punchedInTime;
+    }
+
+    public String getEmployeeId()
+    {
+        return this.employee.getEmployeeId();
     }
 
     public String getId()
@@ -39,6 +105,11 @@ public class Appointment implements Serializable
     public String getClientName()
     {
         return this.client.getFirstName() + " " + client.getLastName();
+    }
+
+    public String getAppointmentInfo()
+    {
+        return this.appointmentInfo;
     }
 
     public String getAddress()

@@ -1,13 +1,7 @@
 package com.homecareplus.app.homecareplus.adapter;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.ViewGroup;
-
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.model.Appointment;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
@@ -29,7 +23,12 @@ public class CustomSectionedAdapter extends SectionedRecyclerViewAdapter
         }
 
         AppointmentSection section = (AppointmentSection) getSection(appointment.getDate());
-        if (!section.containsAppointment(appointment))
+        if (section.containsAppointment(appointment))
+        {
+            section.updateAppointment(section.getAppointmentPosition(appointment), appointment);
+            notifyItemChangedInSection(section, section.getAppointmentPosition(appointment));
+        }
+        else
         {
             section.addAppointment(appointment);
             notifyItemChangedInSection(section, section.getAppointmentPosition(appointment));

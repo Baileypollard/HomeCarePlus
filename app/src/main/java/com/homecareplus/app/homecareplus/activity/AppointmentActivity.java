@@ -6,14 +6,17 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.AppointmentTabAdapter;
+import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
 import com.homecareplus.app.homecareplus.contract.AppointmentInformationContract;
 import com.homecareplus.app.homecareplus.contract.AppointmentMapContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.presenter.AppointmentHoursPresenter;
 import com.homecareplus.app.homecareplus.presenter.AppointmentInfoPresenter;
 import com.homecareplus.app.homecareplus.presenter.AppointmentMapPresenter;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
@@ -26,6 +29,8 @@ public class AppointmentActivity extends AppCompatActivity
     private Appointment appointment;
     private AppointmentInformationContract.presenter appInfoPresenter;
     private AppointmentMapContract.presenter appMapPresenter;
+    private AppointmentHoursContract.presenter appHoursPresenter;
+    private AppointmentTabAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +51,9 @@ public class AppointmentActivity extends AppCompatActivity
             }
         });
 
-
         this.appInfoPresenter = new AppointmentInfoPresenter();
         this.appMapPresenter = new AppointmentMapPresenter();
+        this.appHoursPresenter = new AppointmentHoursPresenter();
 
         this.appointment = (Appointment) getIntent().getSerializableExtra(SharedPreference.KEY_APPOINTMENT);
         this.mainViewPager = findViewById(R.id.mainViewPager);
@@ -60,12 +65,13 @@ public class AppointmentActivity extends AppCompatActivity
 
         this.appInfoPresenter.setView(appointmentInfoTabFragment);
         this.appMapPresenter.setView(mapTabFragment);
+        this.appHoursPresenter.setView(appointmentHoursTabFragment);
 
-        AppointmentTabAdapter pagerAdapter = new AppointmentTabAdapter(getSupportFragmentManager());
+        this.pagerAdapter = new AppointmentTabAdapter(getSupportFragmentManager());
 
-        pagerAdapter.addFragement(appointmentInfoTabFragment);
-        pagerAdapter.addFragement(appointmentHoursTabFragment);
-        pagerAdapter.addFragement(mapTabFragment);
+        this.pagerAdapter.addFragement(appointmentInfoTabFragment);
+        this.pagerAdapter.addFragement(appointmentHoursTabFragment);
+        this.pagerAdapter.addFragement(mapTabFragment);
 
         this.mainViewPager.setAdapter(pagerAdapter);
 

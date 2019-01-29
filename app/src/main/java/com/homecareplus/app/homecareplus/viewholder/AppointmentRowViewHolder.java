@@ -8,11 +8,15 @@ import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.TextView;
 
+import com.homecareplus.app.homecareplus.R;
+import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
+
 public class AppointmentRowViewHolder extends RecyclerView.ViewHolder
 {
     private TextView clientNameTv;
     private TextView clientAddressTv;
     private TextView appointmentTimeTv;
+    private TextView appointmentStatusTv;
 
     public AppointmentRowViewHolder(View view)
     {
@@ -29,9 +33,14 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder
                 v.getContext().startActivity(geoIntent);
             }
         });
-        appointmentTimeTv = view.findViewById(com.homecareplus.app.homecareplus.R.id.appointmentTimeTextView);
+        appointmentTimeTv = view.findViewById(R.id.appointmentTimeTextView);
+        appointmentStatusTv = view.findViewById(R.id.appointmentStatusTextView);
     }
 
+    public void setAppointmentStatus(AppointmentStatus status)
+    {
+        appointmentStatusTv.setText(status.getValue());
+    }
 
     public void setClientName(String name)
     {

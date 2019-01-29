@@ -27,6 +27,12 @@ public class DateUtil
         return sdf.format(d);
     }
 
+    public static String getStartedAppointmentFormat(Date date)
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss");
+        return sdf.format(date);
+    }
+
     public static String getTodayFormatted()
     {
         long dateMs = new Date().getTime();

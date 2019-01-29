@@ -35,13 +35,13 @@
             <TextView
                 android:id="@+id/clientNameTextView"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Mike Kelly"
+                android:padding="15dp"
                 android:textColor="@color/colorBlack"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                tools:text="{name}" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -57,13 +57,13 @@
             <TextView
                 android:id="@+id/clientAddressTextView"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="10 Nova Court Port Hawkesbury NS"
+                android:padding="15dp"
                 android:textColor="@color/colorBlack"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                tools:text="{address}" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -79,13 +79,13 @@
             <TextView
                 android:id="@+id/scheduledTimeTextView"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="1:00 - 1:15 PM"
+                android:padding="15dp"
                 android:textColor="@color/colorBlack"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                tools:text="{time}" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -104,8 +104,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="PC - The Client will require a bath and then require to be put to bed  bed  bed bed bed bed bed bed bed bed bed bed bed bed bed bed bed bed bed"
+                android:padding="15dp"
+                android:text="{description}"
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp" />
 
@@ -121,13 +121,12 @@
                 android:textSize="17sp" />
 
             <TextView
-                android:id="@+id/appointmentDescriptonTextView2"
+                android:id="@+id/appointmentCommentTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:paddingBottom="10dp"
+                android:padding="15dp"
                 android:text="{Comment}"
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp" />

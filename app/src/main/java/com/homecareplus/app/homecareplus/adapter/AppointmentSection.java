@@ -45,9 +45,21 @@ public class AppointmentSection extends StatelessSection
         this.appointmentList.add(appointment);
     }
 
+    public void updateAppointment(int position, Appointment appointment)
+    {
+        this.appointmentList.set(position, appointment);
+    }
+
     public int getAppointmentPosition(Appointment appointment)
     {
-        return this.appointmentList.indexOf(appointment);
+        for (Appointment a : appointmentList)
+        {
+            if (a.getId().equals(appointment.getId()))
+            {
+                return appointmentList.indexOf(a);
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -85,6 +97,7 @@ public class AppointmentSection extends StatelessSection
         viewHolder.setClientName(appointment.getClientName());
         viewHolder.setClientAddress(appointment.getAddress());
         viewHolder.setAppointmentTime(appointment.getAppointmentTime());
+        viewHolder.setAppointmentStatus(appointment.getStatus());
 
         viewHolder.itemView.getRootView().setOnClickListener(new View.OnClickListener()
         {

@@ -1139,8 +1139,8 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appointmentCommentTextView
 id appointmentDescriptonTextView
-id appointmentDescriptonTextView2
 id appointmentMap
 id appointmentStatusTextView
 id appointmentTimeTextView
@@ -1166,6 +1166,8 @@ id client_appointment_RecyclerView
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id commentEditText
+id completeAppButton
 id container
 id content
 id contentPanel
@@ -1184,7 +1186,6 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
-id editText2
 id edit_query
 id employeeId_edit
 id employeeInfoView
@@ -1192,6 +1193,7 @@ id employeeNameTextView
 id employeePassword_edit
 id emptyBackButtonHolder
 id end
+id endDateTextView
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
@@ -1225,13 +1227,14 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id kmEditText
 id labeled
 id largeLabel
 id left
 id light
 id line1
 id line3
-id linearLayout2
+id linearLayout
 id listMode
 id list_item
 id login_error_text
@@ -1263,9 +1266,6 @@ id percent
 id pin
 id progress_circular
 id progress_horizontal
-id punchIn_button
-id punchOut_button
-id punchedInOnTextView
 id radio
 id right
 id right_icon
@@ -1280,6 +1280,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollView2
 id scrollable
 id search_badge
 id search_bar
@@ -1311,6 +1312,8 @@ id src_in
 id src_over
 id standard
 id start
+id startAppButton
+id startDateTextView
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -1326,10 +1329,15 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView10
+id textView11
+id textView12
 id textView2
 id textView3
+id textView4
 id textView5
 id textView6
+id textView7
 id textView8
 id textView9
 id text_input_password_toggle
@@ -1344,6 +1352,7 @@ id toolbar_title
 id toolbar_title2
 id top
 id topPanel
+id totalTimeTextView
 id touch_outside
 id transition_current_scene
 id transition_layout_save

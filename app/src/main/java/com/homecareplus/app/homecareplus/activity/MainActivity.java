@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     }
 
     @Override
+    public void onResume()
+    {
+        super.onResume();
+    }
+
+    @Override
     public void displayAppointment(Appointment appointment)
     {
         adapter.addAppointment(appointment);

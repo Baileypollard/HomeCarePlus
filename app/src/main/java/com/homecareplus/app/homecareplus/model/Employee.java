@@ -21,4 +21,9 @@ public class Employee implements Serializable
         this.address = address;
         this.gender = gender;
     }
+
+    public String getEmployeeId()
+    {
+        return this.employeeId;
+    }
 }

@@ -10,6 +10,5 @@ public interface AppointmentInformationContract
     interface view
     {
         void setPresenter(AppointmentInformationContract.presenter presenter);
-
     }
 }

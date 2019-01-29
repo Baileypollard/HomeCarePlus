@@ -15,7 +15,7 @@
         android:ellipsize="end"
         android:padding="5dp"
         android:singleLine="true"
-        android:text="{12:00 - 12:30}"
+        android:text="1:00 pm - 2:00 pm"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,30 +60,33 @@
 
     <TextView
         android:id="@+id/appointmentStatusTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="NEW"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="end"
+        android:paddingEnd="5dp"
         android:textColor="@color/colorBlack"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
-        app:layout_constraintVertical_bias="1.0"
-        tools:text="{status}" />
+        tools:text="COMPLETE" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="16dp"
         android:paddingStart="5dp"
         android:text="PC"
         android:textColor="@color/colorBlack"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appointmentStatusTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/appointmentStatusTextView"
         app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView" />
 
 </android.support.constraint.ConstraintLayout>

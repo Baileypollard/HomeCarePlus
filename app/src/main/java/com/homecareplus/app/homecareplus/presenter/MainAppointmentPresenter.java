@@ -20,6 +20,7 @@ import com.couchbase.lite.ResultSet;
 import com.couchbase.lite.SelectResult;
 import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
+import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.model.Employee;
@@ -137,20 +138,28 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
 
                     for (int i = 0; i < array.count(); i++)
                     {
-                        String clientFirstName = array.getDictionary(i).getString("first_name");
+                        Dictionary dictionary = array.getDictionary(i);
 
-                        String clientLastName = array.getDictionary(i).getString("last_name");
-                        String clientAddress = array.getDictionary(i).getString("address");
-                        String clientGender = array.getDictionary(i).getString("gender");
+                        String clientFirstName = dictionary.getString("first_name");
 
-                        String appointmentId = array.getDictionary(i).getString("appointment_id");
-                        String status =  array.getDictionary(i).getString("status");
-                        String startTime =  array.getDictionary(i).getString("start_time");
-                        String endTime =  array.getDictionary(i).getString("end_time");
+                        String clientLastName = dictionary.getString("last_name");
+                        String clientAddress = dictionary.getString("address");
+                        String clientGender = dictionary.getString("gender");
+
+                        String appointmentId = dictionary.getString("appointment_id");
+                        String status =  dictionary.getString("status");
+                        String startTime =  dictionary.getString("start_time");
+                        String endTime =  dictionary.getString("end_time");
+                        String punchedInTime = dictionary.getString("punched_in_time");
+                        String punchedOutTime = dictionary.getString("punched_out_time");
+                        String comment = dictionary.getString("comment");
+                        String kmsTravelled = dictionary.getString("kms_travelled") != null ? dictionary.getString("kms_travelled") : "";
 
                         Client client = new Client("1", clientFirstName, clientLastName, clientAddress, clientGender);
 
-                        Appointment appointment = new Appointment(appointmentId, employee, client, date, status, startTime, endTime, "Clean shit");
+                        Appointment appointment = new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
+                                startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,
+                                kmsTravelled);
 
                         view.displayAppointment(appointment);
                     }

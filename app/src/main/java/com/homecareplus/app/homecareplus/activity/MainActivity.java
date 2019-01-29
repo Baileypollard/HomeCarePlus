@@ -14,12 +14,14 @@ import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.CustomSectionedAdapter;
+import com.homecareplus.app.homecareplus.callback.ItemTouchHelperCallback;
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Employee;
 import com.homecareplus.app.homecareplus.presenter.MainAppointmentPresenter;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
+import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
 public class MainActivity extends AppCompatActivity implements MainAppointmentsContract.view
 {
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     private MainAppointmentPresenter presenter;
     private CustomSectionedAdapter adapter;
     private TextView employeeNameTextView;
+    private ItemTouchHelperExtension extension;
+    private ItemTouchHelperExtension.Callback callback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
                 startActivity(intent);
             }
         });
+        this.callback = new ItemTouchHelperCallback();
+        this.extension = new ItemTouchHelperExtension(callback);
 
         this.presenter.fetchAppointments();
         this.presenter.fetchEmployeeName(SharedPreference.getSharedInstance(getApplicationContext()).getEmployeeId());
@@ -62,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
         divider.setDrawable(ContextCompat.getDrawable(getBaseContext(), R.drawable.cell_divider));
         this.recyclerView.addItemDecoration(divider);
         this.recyclerView.setAdapter(adapter);
+        this.extension.attachToRecyclerView(recyclerView);
+        this.adapter.setmItemTouchHelperExtension(extension);
     }
 
     @Override

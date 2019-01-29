@@ -3,14 +3,15 @@ package com.homecareplus.app.homecareplus.adapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.util.DateUtil;
 import com.homecareplus.app.homecareplus.viewholder.AppointmentHeaderViewHolder;
 import com.homecareplus.app.homecareplus.viewholder.AppointmentRowViewHolder;
+import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters;
@@ -20,24 +21,20 @@ public class AppointmentSection extends StatelessSection
 {
     private List<Appointment> appointmentList;
     private String title;
-    private String tag;
     private AppointmentRowOnClickListener onClickListener;
+    private ItemTouchHelperExtension itemTouchHelperExtension;
 
-    public AppointmentSection(String title, String tag, AppointmentRowOnClickListener appointmentRowOnClickListener) {
+    public AppointmentSection(String title, String tag, AppointmentRowOnClickListener appointmentRowOnClickListener, ItemTouchHelperExtension mItemTouchHelperExtension)
+    {
         super(SectionParameters.builder()
-                .itemResourceId(com.homecareplus.app.homecareplus.R.layout.client_appointment_row)
-                .headerResourceId(com.homecareplus.app.homecareplus.R.layout.section_header)
+                .itemResourceId(R.layout.client_appointment_row)
+                .headerResourceId(R.layout.section_header)
                 .build());
 
         this.appointmentList = new ArrayList<>();
         this.title = title;
-        this.tag = tag;
         this.onClickListener = appointmentRowOnClickListener;
-    }
-
-    public String getTag()
-    {
-        return this.tag;
+        this.itemTouchHelperExtension= mItemTouchHelperExtension;
     }
 
     public void addAppointment(Appointment appointment)
@@ -99,7 +96,7 @@ public class AppointmentSection extends StatelessSection
         viewHolder.setAppointmentTime(appointment.getAppointmentTime());
         viewHolder.setAppointmentStatus(appointment.getStatus());
 
-        viewHolder.itemView.getRootView().setOnClickListener(new View.OnClickListener()
+        viewHolder.getAppointmentRow().setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -107,7 +104,15 @@ public class AppointmentSection extends StatelessSection
                 onClickListener.onItemClick(v, appointment);
             }
         });
-        //Set all the values and shit here
+
+        viewHolder.getCallClientTextView().setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+            }
+        });
     }
 
     public boolean containsAppointment(Appointment appointment)

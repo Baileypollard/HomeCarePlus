@@ -1,88 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/appointmentTimeTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:text="1:00 pm - 21:00 pm"
-        android:textColor="@android:color/black"
+    <include
+        layout="@layout/client_appointment_row_call_client"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/clientNameTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:ellipsize="end"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:text="{Name}"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toStartOf="@+id/appointmentTimeTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/clientAddressTextView"
-        android:layout_width="0dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/appointmentRow"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="2"
-        android:autoLink="map"
-        android:ellipsize="end"
-        android:padding="5dp"
-        android:singleLine="true"
-        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clientNameTextView"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="10 Nova Court Port Hawkesbury NS" />
-
-    <TextView
-        android:id="@+id/appointmentStatusTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="12dp"
-        android:gravity="end"
-        android:paddingEnd="5dp"
-        android:textColor="@color/colorBlack"
-        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
-        tools:text="COMPLETE" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="PC"
-        android:textColor="@color/colorBlack"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appointmentStatusTextView"
-        app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/appointmentTimeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="1:00 pm - 21:00 pm"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/appointmentStatusTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="end"
+            android:paddingEnd="5dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
+            tools:text="COMPLETE" />
+
+        <TextView
+            android:id="@+id/clientAddressTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="2"
+            android:autoLink="map"
+            android:ellipsize="end"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clientNameTextView"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="10 Nova Court Port Hawkesbury NS" />
+
+        <TextView
+            android:id="@+id/clientNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="{Name}"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/appointmentTimeTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="PC"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/appointmentStatusTextView"
+            app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
+            app:layout_constraintVertical_bias="0.0" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

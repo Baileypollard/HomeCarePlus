@@ -2,23 +2,30 @@ package com.homecareplus.app.homecareplus.adapter;
 
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
 public class CustomSectionedAdapter extends SectionedRecyclerViewAdapter
 {
     private AppointmentRowOnClickListener onClickListener;
+    private ItemTouchHelperExtension mItemTouchHelperExtension;
 
     public CustomSectionedAdapter(AppointmentRowOnClickListener onClickListener)
     {
         this.onClickListener = onClickListener;
     }
 
+    public void setmItemTouchHelperExtension(ItemTouchHelperExtension mItemTouchHelperExtension)
+    {
+        this.mItemTouchHelperExtension = mItemTouchHelperExtension;
+    }
+
     public void addAppointment(Appointment appointment)
     {
         if (getSection(appointment.getDate()) == null)
         {
-            AppointmentSection section = new AppointmentSection(appointment.getDate(), appointment.getDate(), onClickListener);
+            AppointmentSection section = new AppointmentSection(appointment.getDate(), appointment.getDate(), onClickListener, mItemTouchHelperExtension);
             addSection(appointment.getDate(), section);
         }
 

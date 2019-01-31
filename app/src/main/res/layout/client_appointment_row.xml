@@ -18,7 +18,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/appointmentRow"
         android:layout_width="match_parent"
-        android:background="@color/colorWhite"
+        android:background="@drawable/appointment_row_background"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

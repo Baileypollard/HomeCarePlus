@@ -5,4 +5,6 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorOrange">#EEFF8400</color>
+    <color name="colorGreen">#EE458B35</color>
+    <color name="colorDarkGreen">#EE174917</color>
 </resources>

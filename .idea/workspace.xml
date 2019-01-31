@@ -9,7 +9,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="excep" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="exception" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -61,10 +61,10 @@
         <counts>
           <entry key="class" value="17" />
           <entry key="gradle" value="11" />
-          <entry key="java" value="288" />
+          <entry key="java" value="294" />
           <entry key="png" value="1" />
           <entry key="properties" value="8" />
-          <entry key="xml" value="106" />
+          <entry key="xml" value="117" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -72,27 +72,27 @@
           <entry key="CLASS" value="17" />
           <entry key="Groovy" value="11" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="288" />
+          <entry key="JAVA" value="294" />
           <entry key="Properties" value="8" />
-          <entry key="XML" value="106" />
+          <entry key="XML" value="117" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
           <entry key="gradle" value="134" />
-          <entry key="java" value="18500" />
-          <entry key="txt" value="1501" />
-          <entry key="xml" value="1308" />
+          <entry key="java" value="18671" />
+          <entry key="txt" value="1503" />
+          <entry key="xml" value="1474" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Groovy" value="134" />
-          <entry key="JAVA" value="18500" />
-          <entry key="PLAIN_TEXT" value="1501" />
-          <entry key="XML" value="1308" />
+          <entry key="JAVA" value="18671" />
+          <entry key="PLAIN_TEXT" value="1503" />
+          <entry key="XML" value="1474" />
         </counts>
       </usages-collector>
     </session>
@@ -100,56 +100,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/AppointmentSection.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row_call_client.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1848#1849#0" expanded="true" />
-                <element signature="e#1901#1902#0" expanded="true" />
-                <element signature="e#2398#2399#0" expanded="true" />
-                <element signature="e#2448#2449#0" expanded="true" />
-                <element signature="e#3781#3782#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/viewholder/AppointmentRowViewHolder.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/login_button.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1883#1884#0" expanded="true" />
-                <element signature="e#1920#1921#0" expanded="true" />
-                <element signature="e#1971#1972#0" expanded="true" />
-                <element signature="e#2012#2013#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="107" selection-start-line="2" selection-start-column="107" selection-end-line="2" selection-end-column="107" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="55" column="66" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
     </leaf>
@@ -159,9 +125,9 @@
       <list>
         <option value="Singleton" />
         <option value="Interface" />
-        <option value="resourceFile" />
         <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -2438,10 +2404,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gradle.properties" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_appointment_map.xml" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentRowOnClickListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/AppointmentTabAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/callback/CoordinatesReceivedCallback.java" />
@@ -2452,7 +2414,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/NetworkUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_toolbar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/custom_border.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/appointment_bottom_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/appointment_bottom_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_appointment_layout.xml" />
@@ -2479,20 +2440,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/viewholder/AppointmentHeaderViewHolder.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/CustomSectionedAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/callback/ItemTouchHelperCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/test.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/viewholder/AppointmentRowViewHolder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentRowOnClickListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/CustomSectionedAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/AppointmentSection.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/appointment_row_background.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/login_button.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row_call_client.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="138" />
     <option name="width" value="960" />
     <option name="height" value="1026" />
@@ -2532,6 +2498,13 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="homecareplus" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeCarePlus" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="homecareplus" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="callback" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2545,6 +2518,12 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
+            <path>
+              <item name="HomeCarePlus" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -2554,9 +2533,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="presenter&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentHoursPresenter.java&#10;Date&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/DateUtil.java&#10;login&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/activity/LoginActivity.java&#10;data&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/DatabaseManager.java&#10;client&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/model/Client.java&#10;Appoin&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/model/Appointment.java&#10;netw&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/NetworkUtil.java&#10;activity&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/res/layout/activity_appointment_layout.xml&#10;network&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/NetworkUtil.java&#10;Geo&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/Geocoding.java&#10;CB&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CBSession.java&#10;stringres&#9;PSI&#9;JAVA://android.support.annotation.StringRes&#10;click&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentRowOnClickListener.java&#10;main&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/res/layout/activity_main.xml&#10;database&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/DatabaseManager.java&#10;date&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/DateUtil.java" />
+    <property name="SearchEverywhereHistoryKey" value="appointment&#9;PSI&#9;JAVA://com.homecareplus.app.homecareplus.model.Appointment&#10;presenter&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentHoursPresenter.java&#10;Date&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/DateUtil.java&#10;login&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/activity/LoginActivity.java&#10;data&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/DatabaseManager.java&#10;client&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/model/Client.java&#10;Appoin&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/model/Appointment.java&#10;netw&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/NetworkUtil.java&#10;activity&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/res/layout/activity_appointment_layout.xml&#10;network&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/NetworkUtil.java&#10;Geo&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/Geocoding.java&#10;CB&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CBSession.java&#10;stringres&#9;PSI&#9;JAVA://android.support.annotation.StringRes&#10;click&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentRowOnClickListener.java&#10;main&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/res/layout/activity_main.xml&#10;database&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/DatabaseManager.java&#10;date&#9;FILE&#9;file://C:/Users/Bai/AndroidStudioProjects/HomeCarePlus/app/src/main/java/com/homecareplus/app/homecareplus/util/DateUtil.java" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="Pixel_API_28" />
+    <property name="device.picker.selection" value="Nexus_5_API_28" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DatabaseAssignment" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1548813043033" />
@@ -2705,7 +2684,7 @@
     <frame x="-7" y="-7" width="1295" height="697" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49707603" visible="true" weight="0.2194332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49707603" visible="true" weight="0.2194332" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.50292397" side_tool="true" weight="0.2194332" />
@@ -2742,20 +2721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/appointment_bottom_menu.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/appointment_bottom_menu.xml" />
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/view/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="402" column="20" selection-start-line="402" selection-start-column="20" selection-end-line="402" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_clock.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -2778,13 +2743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/textbox_background.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -2828,13 +2786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/model/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -2897,13 +2848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/model/Appointment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -3007,51 +2951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/CustomSectionedAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="55" column="66" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row_call_client.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/callback/ItemTouchHelperCallback.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -3061,8 +2960,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/viewholder/AppointmentRowViewHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        <state relative-caret-position="249">
+          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1883#1884#0" expanded="true" />
@@ -3073,28 +2972,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state relative-caret-position="90">
+          <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentRowOnClickListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/model/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/model/Appointment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+          <folding>
+            <element signature="e#1639#1640#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="52" column="60" lean-forward="true" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/textbox_background.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="149" column="66" selection-start-line="149" selection-start-column="54" selection-end-line="149" selection-end-column="66" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/login_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="107" selection-start-line="2" selection-start-column="107" selection-end-line="2" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/CustomSectionedAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/appointment_row_background.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/AppointmentSection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+        <state relative-caret-position="289">
+          <caret line="120" column="30" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1848#1849#0" expanded="true" />
             <element signature="e#1901#1902#0" expanded="true" />
             <element signature="e#2398#2399#0" expanded="true" />
             <element signature="e#2448#2449#0" expanded="true" />
+            <element signature="e#3585#3782#0" expanded="true" />
             <element signature="e#3781#3782#0" expanded="true" />
+            <element signature="e#3714#4025#0" expanded="true" />
+            <element signature="e#4024#4025#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row_call_client.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>

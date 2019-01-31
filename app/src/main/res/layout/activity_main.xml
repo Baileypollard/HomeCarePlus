@@ -52,7 +52,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/employeeInfoView"
-        tools:listitem="@layout/client_appointment_row_call_client" />
+        app:layout_constraintTop_toBottomOf="@id/employeeInfoView" />
 
 </android.support.constraint.ConstraintLayout>

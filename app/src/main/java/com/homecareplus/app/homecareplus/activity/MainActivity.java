@@ -1,6 +1,7 @@
 package com.homecareplus.app.homecareplus.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,6 +55,14 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
                 intent.putExtra(SharedPreference.KEY_APPOINTMENT, appointment);
                 startActivity(intent);
             }
+
+            @Override
+            public void onCallClicked(Appointment appointment)
+            {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:"+appointment.getClientPhoneNumber().replace("-", "")));
+                startActivity(callIntent);
+            }
         });
         this.callback = new ItemTouchHelperCallback();
         this.extension = new ItemTouchHelperExtension(callback);
@@ -69,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
         this.recyclerView.addItemDecoration(divider);
         this.recyclerView.setAdapter(adapter);
         this.extension.attachToRecyclerView(recyclerView);
-        this.adapter.setmItemTouchHelperExtension(extension);
+        this.adapter.setItemTouchHelperExtension(extension);
     }
 
     @Override

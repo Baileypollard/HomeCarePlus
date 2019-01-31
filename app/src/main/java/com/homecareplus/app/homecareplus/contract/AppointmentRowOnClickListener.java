@@ -6,4 +6,6 @@ import com.homecareplus.app.homecareplus.model.Appointment;
 public interface AppointmentRowOnClickListener
 {
     void onItemClick(View v, Appointment appointment);
+
+    void onCallClicked(Appointment appointment);
 }

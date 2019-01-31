@@ -16,7 +16,7 @@ public class CustomSectionedAdapter extends SectionedRecyclerViewAdapter
         this.onClickListener = onClickListener;
     }
 
-    public void setmItemTouchHelperExtension(ItemTouchHelperExtension mItemTouchHelperExtension)
+    public void setItemTouchHelperExtension(ItemTouchHelperExtension mItemTouchHelperExtension)
     {
         this.mItemTouchHelperExtension = mItemTouchHelperExtension;
     }

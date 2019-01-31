@@ -1,6 +1,9 @@
 package com.homecareplus.app.homecareplus.adapter;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
@@ -110,7 +113,7 @@ public class AppointmentSection extends StatelessSection
             @Override
             public void onClick(View v)
             {
-
+                onClickListener.onCallClicked(appointment);
             }
         });
     }

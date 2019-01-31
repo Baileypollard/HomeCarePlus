@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.contract.AppointmentInformationContract;
+import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
 
 public class AppointmentInfoTabFragment extends Fragment implements AppointmentInformationContract.view
@@ -20,6 +21,11 @@ public class AppointmentInfoTabFragment extends Fragment implements AppointmentI
     private TextView appointmentTimeTextView;
     private TextView appointmentInfoTextView;
     private TextView commentsTextView;
+    private TextView appointmentStatusTextView;
+    private TextView clientGenderTextView;
+    private TextView clientPhoneNumberTextView;
+
+    private View commentsView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -40,8 +46,18 @@ public class AppointmentInfoTabFragment extends Fragment implements AppointmentI
         appointmentTimeTextView = view.findViewById(R.id.scheduledTimeTextView);
         appointmentInfoTextView = view.findViewById(R.id.appointmentDescriptonTextView);
         commentsTextView = view.findViewById(R.id.appointmentCommentTextView);
+        appointmentStatusTextView = view.findViewById(R.id.appointmentStatusTextView);
+        clientPhoneNumberTextView = view.findViewById(R.id.clientPhoneNumberTextView);
+        clientGenderTextView = view.findViewById(R.id.clientGenderTextView);
+        commentsView = view.findViewById(R.id.commentsLayout);
 
         displayAppointmentInfo();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
     }
 
     @Override
@@ -56,6 +72,14 @@ public class AppointmentInfoTabFragment extends Fragment implements AppointmentI
         clientAddressTextView.setText(appointment.getAddress());
         appointmentTimeTextView.setText(appointment.getAppointmentTime());
         appointmentInfoTextView.setText(appointment.getAppointmentInfo());
-        commentsTextView.setText(appointment.getComment());
+        appointmentStatusTextView.setText(appointment.getStatus().getValue());
+        clientGenderTextView.setText(appointment.getClientGender());
+        clientPhoneNumberTextView.setText(appointment.getClientPhoneNumber());
+
+        if (appointment.getStatus() == AppointmentStatus.COMPLETED)
+        {
+            commentsView.setVisibility(View.VISIBLE);
+            commentsTextView.setText(appointment.getComment());
+        }
     }
 }

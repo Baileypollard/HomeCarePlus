@@ -1,7 +1,11 @@
 package com.homecareplus.app.homecareplus.activity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +25,8 @@ public class LoginActivity extends AppCompatActivity
     private EditText employeeIdEditText;
     private EditText employeePasswordEditText;
     private TextView loginErrorTextView;
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    private boolean mLocationPermissionGranted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -48,8 +54,7 @@ public class LoginActivity extends AppCompatActivity
         public void onLoginSuccess(String id, String sessionId)
         {
             SharedPreference.getSharedInstance(getApplicationContext()).setEmployeeId(id);
-            DatabaseManager.getSharedInstance(getApplicationContext(), id);
-            DatabaseManager.beginDatabaseReplication(sessionId);
+            DatabaseManager.getSharedInstance(getApplicationContext(), id, sessionId);
             startMainActivity();
         }
     };
@@ -64,9 +69,9 @@ public class LoginActivity extends AppCompatActivity
     public void onClickSignIn(View view)
     {
         String id = employeeIdEditText.getText().toString().trim();
-        String password =  employeePasswordEditText.getText().toString().trim();
+        String password = employeePasswordEditText.getText().toString().trim();
 
-       new CBSession.getSessionId(id, password, loginAttemptedCallback).execute();
+        new CBSession.getSessionId(id, password, loginAttemptedCallback).execute();
     }
 }
 

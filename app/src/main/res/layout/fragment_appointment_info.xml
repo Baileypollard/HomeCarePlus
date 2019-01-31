@@ -28,7 +28,7 @@
                 android:background="@color/colorPrimary"
                 android:gravity="center_vertical"
                 android:paddingStart="15dp"
-                android:text="Client Name"
+                android:text="Client Information"
                 android:textColor="@color/colorWhite"
                 android:textSize="17sp" />
 
@@ -38,21 +38,11 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:padding="15dp"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp"
                 tools:text="{name}" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Client Address"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/clientAddressTextView"
@@ -60,10 +50,37 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:padding="15dp"
+                android:paddingStart="15dp"
+                android:paddingTop="7dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp"
                 tools:text="{address}" />
+
+            <TextView
+                android:id="@+id/clientPhoneNumberTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="phone"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:paddingTop="7dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                tools:text="{phoneNumber}" />
+
+            <TextView
+                android:id="@+id/clientGenderTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp"
+                tools:text="{gender}" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -110,26 +127,56 @@
                 android:textSize="17sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center_vertical"
                 android:paddingStart="15dp"
-                android:text="Comments"
+                android:text="Appointment Status"
                 android:textColor="@color/colorWhite"
                 android:textSize="17sp" />
 
             <TextView
-                android:id="@+id/appointmentCommentTextView"
+                android:id="@+id/appointmentStatusTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
                 android:padding="15dp"
-                android:text="{Comment}"
+                android:text="{status}"
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/commentsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:paddingStart="15dp"
+                    android:text="Comments"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/appointmentCommentTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    android:text="{Comment}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="17sp" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

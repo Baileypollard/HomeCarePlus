@@ -9,14 +9,26 @@ public class Client implements Serializable
     private String lastName;
     private String address;
     private String gender;
+    private String phoneNumber;
 
-    public Client(String id, String firstName, String lastName, String address, String gender)
+    public Client(String id, String firstName, String lastName, String address, String gender, String phoneNumber)
     {
         this.clientId = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.gender = gender;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getGender()
+    {
+        return this.gender;
+    }
+
+    public String getPhoneNumber()
+    {
+        return this.phoneNumber;
     }
 
     public String getFirstName()

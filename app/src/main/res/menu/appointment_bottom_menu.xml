@@ -6,7 +6,7 @@
         android:id="@+id/actionAppInfo"
         android:enabled="true"
         android:icon="@drawable/ic_person"
-        android:title="Appointment Info"
+        android:title="Information"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/actionCompleteApp"

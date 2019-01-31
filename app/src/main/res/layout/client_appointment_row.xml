@@ -11,11 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
-        android:layout_weight="1.5"
-        android:ellipsize="end"
         android:padding="5dp"
         android:singleLine="true"
-        android:text="1:00 pm - 2:00 pm"
+        android:text="1:00 pm - 21:00 pm"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,10 +37,10 @@
 
     <TextView
         android:id="@+id/clientAddressTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="2dp"
         android:layout_marginBottom="5dp"
         android:layout_weight="2"
         android:autoLink="map"
@@ -62,15 +60,13 @@
         android:id="@+id/appointmentStatusTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="12dp"
         android:gravity="end"
         android:paddingEnd="5dp"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
         tools:text="COMPLETE" />
 
@@ -78,15 +74,15 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="112dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:paddingStart="5dp"
         android:text="PC"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/appointmentStatusTextView"
-        app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView" />
+        app:layout_constraintEnd_toStartOf="@+id/appointmentStatusTextView"
+        app:layout_constraintTop_toBottomOf="@+id/appointmentTimeTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

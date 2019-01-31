@@ -26,12 +26,13 @@ public class DatabaseManager
     private static Replicator replicator;
     private static ListenerToken token;
 
-    private DatabaseManager(Context context, String employeeId)
+    private DatabaseManager(Context context, String employeeId, String sessionId)
     {
         DatabaseConfiguration config = new DatabaseConfiguration(context);
         try
         {
-            database = new Database("appointments-testuser", config);
+            database = new Database("appointments-" + employeeId, config);
+            beginDatabaseReplication(sessionId);
         }
         catch (CouchbaseLiteException e)
         {
@@ -63,7 +64,6 @@ public class DatabaseManager
             @Override
             public void changed(ReplicatorChange change)
             {
-
                 if (change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.IDLE))
                 {
                     Log.e("Replication Comp Log", "Scheduler Completed");
@@ -78,7 +78,6 @@ public class DatabaseManager
                     {
                         Log.d("TAG", "Exception: " + e);
                     }
-
                 }
             }
         });
@@ -92,11 +91,11 @@ public class DatabaseManager
         instance = null;
     }
 
-    public static DatabaseManager getSharedInstance(Context context, String employeeId)
+    public static DatabaseManager getSharedInstance(Context context, String employeeId, String sessionId)
     {
         if (instance == null)
         {
-            instance = new DatabaseManager(context, employeeId);
+            instance = new DatabaseManager(context, employeeId, sessionId);
         }
         return instance;
     }

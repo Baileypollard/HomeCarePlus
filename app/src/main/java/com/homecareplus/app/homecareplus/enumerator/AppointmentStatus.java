@@ -3,7 +3,7 @@ package com.homecareplus.app.homecareplus.enumerator;
 public enum AppointmentStatus
 {
     NEW("NEW"),
-    IN_PROGRESS("IN PROGRESS"),
+    IN_PROGRESS("IN_PROGRESS"),
     COMPLETED("COMPLETED"),
     CONFIRMED("CONFIRMED");
 

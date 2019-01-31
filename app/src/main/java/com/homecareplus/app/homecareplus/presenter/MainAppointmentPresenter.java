@@ -35,31 +35,40 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
     public void fetchEmployeeName(String employeeId)
     {
         final Database database = DatabaseManager.getDatabase();
-        String fullName;
 
-        Query query = QueryBuilder.select(SelectResult.expression(Expression.property("first_name")),
+        final Query query = QueryBuilder.select(
+                SelectResult.expression(Expression.property("first_name")),
                 SelectResult.expression(Expression.property("last_name")))
                 .from(DataSource.database(database))
-                .where(Expression.property("employee_id").equalTo(Expression.string(employeeId)));
+                .where(Expression.property("type").equalTo(Expression.string("employee"))
+                        .and(Expression.property("employee_id").equalTo(Expression.string(employeeId))));
+
+        query.addChangeListener(new QueryChangeListener()
+        {
+            @Override
+            public void changed(QueryChange change)
+            {
+                ResultSet results = change.getResults();
+                List<Result> resultList = results.allResults();
+
+                if (resultList.size() == 0)
+                {
+                    return;
+                }
+                String firstName = resultList.get(0).getString("first_name");
+                String lastName = resultList.get(0).getString("last_name");
+                String fullName = firstName + " " + lastName;
+                view.displayEmployeeName(fullName);
+            }
+        });
+
         try
         {
-            ResultSet results = query.execute();
-            List<Result> resultList = results.allResults();
-
-            if (resultList.size() == 0)
-            {
-                return;
-            }
-            String firstName = resultList.get(0).getString("first_name");
-            String lastName = resultList.get(0).getString("last_name");
-            fullName = firstName + " " + lastName;
-            view.displayEmployeeName(fullName);
+            query.execute();
         }
         catch(CouchbaseLiteException e)
         {
-            fullName = "ERROR FETCHING NAME";
             Log.e("TAG", "Could not execute query - " + e.getMessage());
-            view.displayEmployeeName(fullName);
         }
     }
 
@@ -145,6 +154,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                         String clientLastName = dictionary.getString("last_name");
                         String clientAddress = dictionary.getString("address");
                         String clientGender = dictionary.getString("gender");
+                        String clientPhoneNumber = dictionary.getString("phone_number");
 
                         String appointmentId = dictionary.getString("appointment_id");
                         String status =  dictionary.getString("status");
@@ -155,7 +165,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                         String comment = dictionary.getString("comment");
                         String kmsTravelled = dictionary.getString("kms_travelled") != null ? dictionary.getString("kms_travelled") : "";
 
-                        Client client = new Client("1", clientFirstName, clientLastName, clientAddress, clientGender);
+                        Client client = new Client("1", clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
 
                         Appointment appointment = new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
                                 startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,

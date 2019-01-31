@@ -27,7 +27,7 @@ public class AppointmentHoursPresenter implements AppointmentHoursContract.prese
         appointment.setPunchedInTime(DateUtil.getStartedAppointmentFormat(new Date()));
         appointment.setStatus(AppointmentStatus.IN_PROGRESS);
         saveAppointment(appointment);
-        view.displayPunchedInTime(appointment);
+        view.showAppointmentStarted(appointment);
     }
 
     @Override
@@ -35,8 +35,13 @@ public class AppointmentHoursPresenter implements AppointmentHoursContract.prese
     {
         appointment.setPunchedOutTime(DateUtil.getStartedAppointmentFormat(new Date()));
         appointment.setStatus(AppointmentStatus.COMPLETED);
+        appointment.setTotalTimeSpent(DateUtil.calculateMinutesBetweenDates(appointment.getPunchedInTime(),
+                appointment.getPunchedOutTime()));
+        appointment.setComment(view.getCommentText());
+        appointment.setKmsTravelled(view.getKmText());
+
         saveAppointment(appointment);
-        view.displayPunchedOutTime(appointment);
+        view.showAppointmentCompleted(appointment);
     }
 
     @Override

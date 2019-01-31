@@ -15,10 +15,14 @@ public interface AppointmentHoursContract
 
     interface view
     {
-        void displayPunchedInTime(Appointment appointment);
+        void showAppointmentStarted(Appointment appointment);
 
-        void displayPunchedOutTime(Appointment appointment);
+        void showAppointmentCompleted(Appointment appointment);
 
         void setPresenter(AppointmentHoursContract.presenter presenter);
+
+        String getCommentText();
+
+        String getKmText();
     }
 }

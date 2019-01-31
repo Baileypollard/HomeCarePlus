@@ -1,6 +1,7 @@
 package com.homecareplus.app.homecareplus.model;
 
 import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
+import com.homecareplus.app.homecareplus.util.DateUtil;
 
 import java.io.Serializable;
 
@@ -18,6 +19,7 @@ public class Appointment implements Serializable
     private String punchedOutTime;
     private String comment;
     private String kmsTravelled;
+    private String totalTimeSpent;
 
     public Appointment(String id, Employee employee, Client client, String date, AppointmentStatus status,
                        String startTime, String endTime, String appointmentInfo, String punchedInTime,
@@ -35,6 +37,17 @@ public class Appointment implements Serializable
         this.punchedOutTime = punchedOutTime;
         this.comment = comment;
         this.kmsTravelled = kmsTravelled;
+        this.totalTimeSpent = DateUtil.calculateMinutesBetweenDates(punchedInTime, punchedOutTime);
+    }
+
+    public void setTotalTimeSpent(String totalTime)
+    {
+        this.totalTimeSpent = totalTime;
+    }
+
+    public String getTotalTimeSpent()
+    {
+        return this.totalTimeSpent;
     }
 
     public void setKmsTravelled(String kms)
@@ -45,6 +58,16 @@ public class Appointment implements Serializable
     public String getKmsTravelled()
     {
         return this.kmsTravelled;
+    }
+
+    public String getClientPhoneNumber()
+    {
+        return this.client.getPhoneNumber();
+    }
+
+    public String getClientGender()
+    {
+        return this.client.getGender();
     }
 
     public void setComment(String comment)

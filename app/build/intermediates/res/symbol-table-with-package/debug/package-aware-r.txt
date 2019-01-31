@@ -1161,12 +1161,15 @@ id chains
 id checkbox
 id chronometer
 id clientAddressTextView
+id clientGenderTextView
 id clientNameTextView
+id clientPhoneNumberTextView
 id client_appointment_RecyclerView
 id clip_horizontal
 id clip_vertical
 id collapseActionView
 id commentEditText
+id commentsLayout
 id completeAppButton
 id container
 id content
@@ -1223,6 +1226,7 @@ id imageBottomGuide
 id imageLeftGuide
 id imageRightGuide
 id imageTopGuide
+id inProgressLayout
 id info
 id invisible
 id italic
@@ -1235,6 +1239,7 @@ id light
 id line1
 id line3
 id linearLayout
+id linearLayout3
 id listMode
 id list_item
 id login_error_text
@@ -1332,11 +1337,11 @@ id textView
 id textView10
 id textView11
 id textView12
+id textView13
 id textView2
 id textView3
 id textView4
 id textView5
-id textView6
 id textView7
 id textView8
 id textView9

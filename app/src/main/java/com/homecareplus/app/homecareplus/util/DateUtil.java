@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class DateUtil
 {
@@ -31,6 +32,27 @@ public class DateUtil
     {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss");
         return sdf.format(date);
+    }
+
+    public static String calculateMinutesBetweenDates(String date1, String date2)
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss");
+
+        try
+        {
+            Date d1 = sdf.parse(date1);
+            Date d2 = sdf.parse(date2);
+
+            long diff = Math.abs(d1.getTime() - d2.getTime());
+            return Long.toString(TimeUnit.MILLISECONDS.toMinutes(diff)) + " minutes "
+                    + Long.toString(TimeUnit.MILLISECONDS.toSeconds(diff) -
+                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff)))   + " seconds ";
+        }
+        catch (ParseException e)
+        {
+            Log.d("TAG","Parse failed getting ms");
+        }
+        return "";
     }
 
     public static String getTodayFormatted()

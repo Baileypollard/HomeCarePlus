@@ -2,7 +2,6 @@ package com.homecareplus.app.homecareplus.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +24,7 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
     private EditText commentsEditText;
     private Button startAppointmentButton;
     private Button completeAppointmentButton;
+    private View inProgressLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -47,6 +47,7 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
         commentsEditText = view.findViewById(R.id.commentEditText);
         startAppointmentButton = view.findViewById(R.id.startAppButton);
         completeAppointmentButton = view.findViewById(R.id.completeAppButton);
+        inProgressLayout = view.findViewById(R.id.inProgressLayout);
 
         startAppointmentButton.setOnClickListener(new View.OnClickListener()
         {
@@ -62,15 +63,26 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
             @Override
             public void onClick(View v)
             {
-                appointment.setComment(commentsEditText.getText().toString());
-                appointment.setKmsTravelled(kmTravelledEditText.getText().toString());
                 presenter.completeAppointment(appointment);
             }
         });
         appointmentStartTimeTextView.setText(appointment.getPunchedInTime());
         appointmentEndTimeTextView.setText(appointment.getPunchedOutTime());
+        totalAppointmentTimeTextView.setText(appointment.getTotalTimeSpent());
 
         configureView();
+    }
+
+    @Override
+    public String getCommentText()
+    {
+        return commentsEditText.getText().toString();
+    }
+
+    @Override
+    public String getKmText()
+    {
+        return kmTravelledEditText.getText().toString();
     }
 
     private void configureView()
@@ -95,6 +107,7 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
     {
         kmTravelledEditText.setEnabled(true);
         commentsEditText.setEnabled(true);
+
         startAppointmentButton.setEnabled(false);
         completeAppointmentButton.setEnabled(true);
     }
@@ -103,6 +116,7 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
     {
         kmTravelledEditText.setEnabled(false);
         commentsEditText.setEnabled(false);
+
         startAppointmentButton.setEnabled(true);
         completeAppointmentButton.setEnabled(false);
     }
@@ -111,21 +125,28 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
     {
         kmTravelledEditText.setEnabled(false);
         commentsEditText.setEnabled(false);
+
+        commentsEditText.setText(appointment.getComment());
+        kmTravelledEditText.setText(appointment.getKmsTravelled());
+
+        kmTravelledEditText.setEnabled(false);
+        commentsEditText.setEnabled(false);
         startAppointmentButton.setEnabled(false);
         completeAppointmentButton.setEnabled(false);
     }
 
     @Override
-    public void displayPunchedInTime(Appointment appointment)
+    public void showAppointmentStarted(Appointment appointment)
     {
         appointmentStartTimeTextView.setText(appointment.getPunchedInTime());
         configureAppointmentInProgress();
     }
 
     @Override
-    public void displayPunchedOutTime(Appointment appointment)
+    public void showAppointmentCompleted(Appointment appointment)
     {
         appointmentEndTimeTextView.setText(appointment.getPunchedOutTime());
+        totalAppointmentTimeTextView.setText(appointment.getTotalTimeSpent());
         configureAppointmentCompleted();
     }
 

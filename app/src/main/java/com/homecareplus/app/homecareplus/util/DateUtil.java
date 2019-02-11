@@ -38,6 +38,11 @@ public class DateUtil
     {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss");
 
+        if (date1 == null || date2 == null)
+        {
+            return "N/A";
+        }
+
         try
         {
             Date d1 = sdf.parse(date1);

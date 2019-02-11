@@ -31,6 +31,11 @@ public class CBSession
         }
 
         @Override
+        protected void onPreExecute()
+        {
+        }
+
+        @Override
         protected String doInBackground(Void... params)
         {
             return getSessionId(user, password);

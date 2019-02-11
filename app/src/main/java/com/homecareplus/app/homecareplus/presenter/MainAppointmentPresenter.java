@@ -28,6 +28,7 @@ import com.homecareplus.app.homecareplus.util.DateUtil;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class MainAppointmentPresenter implements MainAppointmentsContract.presenter
 {
@@ -145,6 +146,9 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
 
                     Array array = appointmentDict.getArray("schedule");
 
+                    if (array == null)
+                        return;
+
                     for (int i = 0; i < array.count(); i++)
                     {
                         Dictionary dictionary = array.getDictionary(i);
@@ -165,7 +169,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                         String comment = dictionary.getString("comment");
                         String kmsTravelled = dictionary.getString("kms_travelled") != null ? dictionary.getString("kms_travelled") : "";
 
-                        Client client = new Client("1", clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
+                        Client client = new Client(UUID.randomUUID().toString(), clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
 
                         Appointment appointment = new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
                                 startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,

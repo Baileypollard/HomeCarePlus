@@ -73,6 +73,7 @@ public class DatabaseManager
                     try
                     {
                         database.close();
+                        Log.d("TAG","Database deleted: " + database.getPath());
                     }
                     catch (CouchbaseLiteException e)
                     {

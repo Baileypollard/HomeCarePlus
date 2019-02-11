@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\6797d1cd0faf586517c6835e4357d3f1\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",

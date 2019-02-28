@@ -25,6 +25,7 @@ import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.model.Employee;
 import com.homecareplus.app.homecareplus.util.DateUtil;
+import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -87,8 +88,11 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
         try
         {
             DatabaseManager.closeDatabase();
+            //Clear the shared instances
+            SharedPreference.getSharedInstance(view.getActivity()).clear();
             view.startLoginActivity();
-        } catch (CouchbaseLiteException e)
+        }
+        catch (CouchbaseLiteException e)
         {
             Log.e("TAG", "Error logging out: " + e.getMessage());
         }
@@ -198,7 +202,8 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
         try
         {
             query.execute();
-        } catch (CouchbaseLiteException e)
+        }
+        catch (CouchbaseLiteException e)
         {
             e.printStackTrace();
         }

@@ -31,11 +31,6 @@ public class CBSession
         }
 
         @Override
-        protected void onPreExecute()
-        {
-        }
-
-        @Override
         protected String doInBackground(Void... params)
         {
             return getSessionId(user, password);
@@ -52,7 +47,7 @@ public class CBSession
                 String sessionId = results.getString("session_id");
                 if (sessionId != null)
                 {
-                    loginAttemptedCallback.onLoginSuccess(user, sessionId);
+                    loginAttemptedCallback.onLoginSuccess(user, password, sessionId);
                 }
             } catch (JSONException e)
             {

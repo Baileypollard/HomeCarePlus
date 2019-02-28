@@ -66,6 +66,16 @@ public class Appointment implements Serializable
         this.punchedOutLocation = punchedOutLocation;
     }
 
+    public String getClientLastName()
+    {
+        return client.getLastName();
+    }
+
+    public String getClientFirstName()
+    {
+        return client.getFirstName();
+    }
+
     public void setTotalTimeSpent(String totalTime)
     {
         this.totalTimeSpent = totalTime;

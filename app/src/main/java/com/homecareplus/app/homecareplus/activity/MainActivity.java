@@ -1,5 +1,6 @@
 package com.homecareplus.app.homecareplus.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
@@ -107,6 +108,12 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     public void onClickLogout(View v)
     {
         presenter.logout();
+    }
+
+    @Override
+    public Activity getActivity()
+    {
+        return this;
     }
 
     @Override

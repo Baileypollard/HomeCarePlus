@@ -11,9 +11,10 @@ public class SharedPreference
 
     private final String SHARED_PREF_KEY = "SHARED_PREFERENCES";
     private final String KEY_EMPLOYEE_ID = "KEY_EMPLOYEE_ID";
+    private final String KEY_EMPLOYEE_PASSWORD = "KEY_EMPLOYEE_PASSWORD";
     public static final String KEY_APPOINTMENT = "KEY_APPOINTMENT_KEY";
 
-    public SharedPreference(Context context)
+    private SharedPreference(Context context)
     {
         this.context = context;
         this.sharedPreference = context.getSharedPreferences(SHARED_PREF_KEY, Context.MODE_PRIVATE);
@@ -24,6 +25,23 @@ public class SharedPreference
         SharedPreferences.Editor editor = sharedPreference.edit();
         editor.putString(KEY_EMPLOYEE_ID, id);
         editor.apply();
+    }
+
+    public String getEmployeePassword()
+    {
+        return sharedPreference.getString(KEY_EMPLOYEE_PASSWORD, "");
+    }
+
+    public void setEmployeePassword(String password)
+    {
+        SharedPreferences.Editor editor = sharedPreference.edit();
+        editor.putString(KEY_EMPLOYEE_PASSWORD, password);
+        editor.apply();
+    }
+
+    public void clear()
+    {
+        sharedPreference.getAll().clear();
     }
 
     public String getEmployeeId()

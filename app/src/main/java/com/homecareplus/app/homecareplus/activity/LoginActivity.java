@@ -53,9 +53,10 @@ public class LoginActivity extends AppCompatActivity
         }
 
         @Override
-        public void onLoginSuccess(String id, String sessionId)
+        public void onLoginSuccess(String id, String password, String sessionId)
         {
             SharedPreference.getSharedInstance(getApplicationContext()).setEmployeeId(id);
+            SharedPreference.getSharedInstance(getApplicationContext()).setEmployeePassword(password);
             DatabaseManager.getSharedInstance(getApplicationContext(), id, sessionId);
             startMainActivity();
         }
@@ -72,8 +73,8 @@ public class LoginActivity extends AppCompatActivity
     {
         String id = employeeIdEditText.getText().toString().trim();
         String password = employeePasswordEditText.getText().toString().trim();
-
-        new CBSession.getSessionId(id, password, loginAttemptedCallback).execute();
+        CBSession.getSessionId sessionIdTask =  new CBSession.getSessionId(id, password, loginAttemptedCallback);
+        sessionIdTask.execute();
     }
 }
 

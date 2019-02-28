@@ -1,5 +1,6 @@
 package com.homecareplus.app.homecareplus.presenter;
 
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.couchbase.lite.CouchbaseLiteException;
@@ -13,6 +14,7 @@ import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
 import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
 import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.util.AppointmentVerification;
 import com.homecareplus.app.homecareplus.util.DateUtil;
 import com.homecareplus.app.homecareplus.util.GPSTracker;
 
@@ -66,6 +68,12 @@ public class AppointmentHoursPresenter implements AppointmentHoursContract.prese
                 appointment.setPunchedOutLocation(createLatLngMap(latLng));
                 saveAppointment(appointment);
                 view.showAppointmentCompleted(appointment);
+
+                AppointmentVerification.VerifyAppointment verify = new AppointmentVerification.VerifyAppointment(appointment);
+                if (verify.getStatus() != AsyncTask.Status.RUNNING)
+                {
+                    verify.execute();
+                }
             }
 
             @Override

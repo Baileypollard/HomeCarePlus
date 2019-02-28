@@ -4,5 +4,5 @@ public interface LoginAttemptedCallback
 {
     void onLoginFailed();
 
-    void onLoginSuccess(String id, String sessionId);
+    void onLoginSuccess(String id, String password, String sessionId);
 }

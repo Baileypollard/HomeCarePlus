@@ -34,8 +34,7 @@ public class CustomSectionedAdapter extends SectionedRecyclerViewAdapter
         {
             section.updateAppointment(section.getAppointmentPosition(appointment), appointment);
             notifyItemChangedInSection(section, section.getAppointmentPosition(appointment));
-        }
-        else
+        } else
         {
             section.addAppointment(appointment);
             notifyItemChangedInSection(section, section.getAppointmentPosition(appointment));

@@ -6,19 +6,19 @@ import android.widget.TextView;
 
 public class AppointmentHeaderViewHolder extends RecyclerView.ViewHolder
 {
-  private TextView headerTitle;
+    private TextView headerTitle;
 
-  public AppointmentHeaderViewHolder(View view)
-  {
-    super(view);
+    public AppointmentHeaderViewHolder(View view)
+    {
+        super(view);
 
-    headerTitle = view.findViewById(com.homecareplus.app.homecareplus.R.id.headerDateTextView);
-  }
+        headerTitle = view.findViewById(com.homecareplus.app.homecareplus.R.id.headerDateTextView);
+    }
 
 
-  public void setHeaderTitle(String name)
-  {
-    headerTitle.setText(name);
-  }
+    public void setHeaderTitle(String name)
+    {
+        headerTitle.setText(name);
+    }
 
 }

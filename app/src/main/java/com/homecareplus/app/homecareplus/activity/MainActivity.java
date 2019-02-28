@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
             public void onCallClicked(Appointment appointment)
             {
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:"+appointment.getClientPhoneNumber().replace("-", "")));
+                callIntent.setData(Uri.parse("tel:" + appointment.getClientPhoneNumber().replace("-", "")));
                 startActivity(callIntent);
             }
         });

@@ -54,8 +54,7 @@ public class CBSession
                 {
                     loginAttemptedCallback.onLoginSuccess(user, sessionId);
                 }
-            }
-            catch (JSONException e)
+            } catch (JSONException e)
             {
                 loginAttemptedCallback.onLoginFailed();
             }
@@ -80,13 +79,11 @@ public class CBSession
             try
             {
                 return NetworkUtil.doPostRequest(client, url, body).body().string();
-            }
-            catch (IOException e)
+            } catch (IOException e)
             {
                 Log.d("TAG", "Failed: " + e.getMessage());
             }
-        }
-        catch (JSONException e)
+        } catch (JSONException e)
         {
 
         }

@@ -51,11 +51,10 @@ public class DateUtil
             long diff = Math.abs(d1.getTime() - d2.getTime());
             return Long.toString(TimeUnit.MILLISECONDS.toMinutes(diff)) + " minutes "
                     + Long.toString(TimeUnit.MILLISECONDS.toSeconds(diff) -
-                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff)))   + " seconds ";
-        }
-        catch (ParseException e)
+                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(diff))) + " seconds ";
+        } catch (ParseException e)
         {
-            Log.d("TAG","Parse failed getting ms");
+            Log.d("TAG", "Parse failed getting ms");
         }
         return "";
     }
@@ -75,10 +74,9 @@ public class DateUtil
         {
             Date d = sdf.parse(date);
             return d.getTime();
-        }
-        catch (ParseException e)
+        } catch (ParseException e)
         {
-            Log.d("TAG","Parse failed getting ms");
+            Log.d("TAG", "Parse failed getting ms");
         }
         return new Date().getTime();
     }

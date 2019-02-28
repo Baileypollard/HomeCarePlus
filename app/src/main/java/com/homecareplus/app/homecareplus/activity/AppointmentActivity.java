@@ -33,7 +33,8 @@ public class AppointmentActivity extends AppCompatActivity
     private AppointmentTabAdapter pagerAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_layout);
 
@@ -100,6 +101,7 @@ public class AppointmentActivity extends AppCompatActivity
         mainViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
         {
             private MenuItem prevMenuItem;
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
             {
@@ -112,8 +114,7 @@ public class AppointmentActivity extends AppCompatActivity
                 if (prevMenuItem != null)
                 {
                     prevMenuItem.setChecked(false);
-                }
-                else
+                } else
                 {
                     navigationView.getMenu().getItem(0).setChecked(false);
                 }

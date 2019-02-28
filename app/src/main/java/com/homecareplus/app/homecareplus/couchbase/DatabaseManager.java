@@ -33,8 +33,7 @@ public class DatabaseManager
         {
             database = new Database("appointments-" + employeeId, config);
             beginDatabaseReplication(sessionId);
-        }
-        catch (CouchbaseLiteException e)
+        } catch (CouchbaseLiteException e)
         {
             e.printStackTrace();
         }
@@ -46,8 +45,7 @@ public class DatabaseManager
         try
         {
             url = new URI("ws://35.235.100.173:4984/homecareplus");
-        }
-        catch (URISyntaxException e)
+        } catch (URISyntaxException e)
         {
             e.printStackTrace();
         }
@@ -73,9 +71,8 @@ public class DatabaseManager
                     try
                     {
                         database.close();
-                        Log.d("TAG","Database deleted: " + database.getPath());
-                    }
-                    catch (CouchbaseLiteException e)
+                        Log.d("TAG", "Database deleted: " + database.getPath());
+                    } catch (CouchbaseLiteException e)
                     {
                         Log.d("TAG", "Exception: " + e);
                     }

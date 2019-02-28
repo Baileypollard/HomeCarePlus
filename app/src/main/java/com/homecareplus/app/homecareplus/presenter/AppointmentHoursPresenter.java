@@ -78,8 +78,7 @@ public class AppointmentHoursPresenter implements AppointmentHoursContract.prese
         try
         {
             database.save(doc);
-        }
-        catch (CouchbaseLiteException e)
+        } catch (CouchbaseLiteException e)
         {
             Log.d("TAG", "COUCHBASE EXCEPTION: " + e);
         }

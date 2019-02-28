@@ -37,7 +37,7 @@ public class AppointmentSection extends StatelessSection
         this.appointmentList = new ArrayList<>();
         this.title = title;
         this.onClickListener = appointmentRowOnClickListener;
-        this.itemTouchHelperExtension= mItemTouchHelperExtension;
+        this.itemTouchHelperExtension = mItemTouchHelperExtension;
     }
 
     public void addAppointment(Appointment appointment)

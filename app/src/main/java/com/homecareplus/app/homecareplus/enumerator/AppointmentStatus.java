@@ -8,6 +8,7 @@ public enum AppointmentStatus
     CONFIRMED("CONFIRMED");
 
     private String value;
+
     AppointmentStatus(String value)
     {
         this.value = value;

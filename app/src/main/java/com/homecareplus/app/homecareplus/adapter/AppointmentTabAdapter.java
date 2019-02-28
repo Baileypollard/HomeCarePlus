@@ -13,6 +13,7 @@ import java.util.List;
 public class AppointmentTabAdapter extends FragmentStatePagerAdapter
 {
     List<Fragment> mFragmentList;
+
     public AppointmentTabAdapter(FragmentManager fm)
     {
         super(fm);

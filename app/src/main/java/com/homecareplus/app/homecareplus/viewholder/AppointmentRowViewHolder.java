@@ -30,9 +30,11 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
         callClientTextView = view.findViewById(R.id.callClientTextView);
         clientNameTv = view.findViewById(com.homecareplus.app.homecareplus.R.id.clientNameTextView);
         clientAddressTv = view.findViewById(com.homecareplus.app.homecareplus.R.id.clientAddressTextView);
-        clientAddressTv.setOnClickListener(new View.OnClickListener() {
+        clientAddressTv.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent geoIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + clientAddressTv.getText().toString()));
                 v.getContext().startActivity(geoIntent);
             }
@@ -56,7 +58,8 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
         appointmentStatusTv.setText(status.getValue());
     }
 
-    public void setClientName(String name) {
+    public void setClientName(String name)
+    {
         clientNameTv.setText(name);
     }
 
@@ -67,12 +70,14 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
         clientAddressTv.setText(spanStr);
     }
 
-    public void setAppointmentTime(String time) {
+    public void setAppointmentTime(String time)
+    {
         appointmentTimeTv.setText(time);
     }
 
     @Override
-    public float getActionWidth() {
+    public float getActionWidth()
+    {
         return callClientTextView.getWidth();
     }
 }

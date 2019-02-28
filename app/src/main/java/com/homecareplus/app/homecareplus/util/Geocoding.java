@@ -61,13 +61,12 @@ public class Geocoding
             double lng = location.getDouble("lng");
             double lat = location.getDouble("lat");
 
-            return new LatLng(lat,lng);
-        }
-        catch (JSONException e)
+            return new LatLng(lat, lng);
+        } catch (JSONException e)
         {
             Log.e("TAG", "Could not retrieve lat and lng values from JSON " + e.getLocalizedMessage());
         }
-        return new LatLng(45.617,  -61.349); // Default to Lat/Long coordinates for Port Hawkesbury...
+        return new LatLng(45.617, -61.349); // Default to Lat/Long coordinates for Port Hawkesbury...
     }
 
 
@@ -87,8 +86,7 @@ public class Geocoding
             {
                 return new JSONObject(response.body().string());
             }
-        }
-        catch (Exception  e)
+        } catch (Exception e)
         {
             Log.d("TAG", "Error occurred: " + e.getMessage());
         }

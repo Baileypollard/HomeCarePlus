@@ -66,8 +66,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
         try
         {
             query.execute();
-        }
-        catch(CouchbaseLiteException e)
+        } catch (CouchbaseLiteException e)
         {
             Log.e("TAG", "Could not execute query - " + e.getMessage());
         }
@@ -87,8 +86,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
         {
             DatabaseManager.closeDatabase();
             view.startLoginActivity();
-        }
-        catch (CouchbaseLiteException e)
+        } catch (CouchbaseLiteException e)
         {
             Log.e("TAG", "Error logging out: " + e.getMessage());
         }
@@ -102,8 +100,8 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
         final DataSource employeeDs = DataSource.database(database).as("employeeDS");
 
         Join employeeJoin = Join.innerJoin(employeeDs).on(Expression.property("employee_id").from("appointmentDS")
-                        .equalTo(Expression.property("employee_id").from("employeeDS"))
-                        .and(Expression.property("type").from("appointmentDS").equalTo(Expression.string("appointment"))
+                .equalTo(Expression.property("employee_id").from("employeeDS"))
+                .and(Expression.property("type").from("appointmentDS").equalTo(Expression.string("appointment"))
                         .and(Expression.property("type").from("employeeDS").equalTo(Expression.string("employee")))
                         .and(Expression.property("employee_id").from("appointmentDS").equalTo(Expression.string("testuser")))));
 
@@ -128,7 +126,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                 }
                 List<Result> rowList = rows.allResults();
 
-                for (Result r: rowList)
+                for (Result r : rowList)
                 {
                     Dictionary appointmentDict = r.getDictionary("appointmentDS");
                     Dictionary employeeDict = r.getDictionary("employeeDS");
@@ -161,9 +159,9 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                         String clientPhoneNumber = dictionary.getString("phone_number");
 
                         String appointmentId = dictionary.getString("appointment_id");
-                        String status =  dictionary.getString("status");
-                        String startTime =  dictionary.getString("start_time");
-                        String endTime =  dictionary.getString("end_time");
+                        String status = dictionary.getString("status");
+                        String startTime = dictionary.getString("start_time");
+                        String endTime = dictionary.getString("end_time");
                         String punchedInTime = dictionary.getString("punched_in_time");
                         String punchedOutTime = dictionary.getString("punched_out_time");
                         String comment = dictionary.getString("comment");
@@ -184,8 +182,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
         try
         {
             query.execute();
-        }
-        catch (CouchbaseLiteException e)
+        } catch (CouchbaseLiteException e)
         {
             e.printStackTrace();
         }

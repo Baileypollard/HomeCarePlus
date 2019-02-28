@@ -26,6 +26,13 @@ public class AppointmentMapPresenter implements AppointmentMapContract.presenter
             {
                 view.displayMarkerOnMaps(latLng);
             }
+
+            @Override
+            public void onCoordinatesFailed()
+            {
+
+            }
+
         }).execute();
     }
 }

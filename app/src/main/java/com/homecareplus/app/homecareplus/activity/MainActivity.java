@@ -21,6 +21,7 @@ import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Employee;
 import com.homecareplus.app.homecareplus.presenter.MainAppointmentPresenter;
+import com.homecareplus.app.homecareplus.util.GPSTracker;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        GPSTracker.init(this);
+
         this.employeeNameTextView = findViewById(R.id.employeeNameTextView);
 
         this.presenter = new MainAppointmentPresenter(this);

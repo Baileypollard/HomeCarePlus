@@ -27,7 +27,9 @@ import com.homecareplus.app.homecareplus.model.Employee;
 import com.homecareplus.app.homecareplus.util.DateUtil;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public class MainAppointmentPresenter implements MainAppointmentsContract.presenter
@@ -167,11 +169,25 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                         String comment = dictionary.getString("comment");
                         String kmsTravelled = dictionary.getString("kms_travelled") != null ? dictionary.getString("kms_travelled") : "";
 
+                        Dictionary punchedInDict = dictionary.getDictionary("punched_in_loc");
+                        Dictionary punchedOutDict = dictionary.getDictionary("punched_out_loc");
+
+                        Map<String, Double> punchedInLoc = new HashMap<>();
+                        Map<String, Double> punchedOutLoc = new HashMap<>();
+
+                        if (punchedInDict != null && punchedOutDict != null)
+                        {
+                            punchedInLoc.put("lat", punchedInDict.getDouble("lat"));
+                            punchedInLoc.put("lng", punchedInDict.getDouble("lng"));
+
+                            punchedOutLoc.put("lat", punchedOutDict.getDouble("lat"));
+                            punchedOutLoc.put("lng", punchedOutDict.getDouble("lng"));
+                        }
                         Client client = new Client(UUID.randomUUID().toString(), clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
 
                         Appointment appointment = new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
                                 startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,
-                                kmsTravelled);
+                                kmsTravelled, punchedInLoc, punchedOutLoc);
 
                         view.displayAppointment(appointment);
                     }

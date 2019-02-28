@@ -44,29 +44,29 @@ public class Geocoding
         @Override
         protected void onPostExecute(JSONObject result)
         {
-            LatLng latLongAddressLocation = getLatLgnFromJSON(result);
-            callback.onCoordinatesReceived(latLongAddressLocation);
+            try
+            {
+                LatLng latLongAddressLocation = getLatLgnFromJSON(result);
+                callback.onCoordinatesReceived(latLongAddressLocation);
+            }
+            catch (JSONException e)
+            {
+                callback.onCoordinatesFailed();
+            }
         }
     }
 
-    private static LatLng getLatLgnFromJSON(JSONObject jsonObject)
+    private static LatLng getLatLgnFromJSON(JSONObject jsonObject) throws JSONException
     {
-        try
-        {
-            JSONArray results = jsonObject.getJSONArray("results");
-            JSONObject resultsJSONObject = results.getJSONObject(0);
-            JSONObject geometry = resultsJSONObject.getJSONObject("geometry");
-            JSONObject location = geometry.getJSONObject("location");
+        JSONArray results = jsonObject.getJSONArray("results");
+        JSONObject resultsJSONObject = results.getJSONObject(0);
+        JSONObject geometry = resultsJSONObject.getJSONObject("geometry");
+        JSONObject location = geometry.getJSONObject("location");
 
-            double lng = location.getDouble("lng");
-            double lat = location.getDouble("lat");
+        double lng = location.getDouble("lng");
+        double lat = location.getDouble("lat");
 
-            return new LatLng(lat, lng);
-        } catch (JSONException e)
-        {
-            Log.e("TAG", "Could not retrieve lat and lng values from JSON " + e.getLocalizedMessage());
-        }
-        return new LatLng(45.617, -61.349); // Default to Lat/Long coordinates for Port Hawkesbury...
+        return new LatLng(lat, lng);
     }
 
 

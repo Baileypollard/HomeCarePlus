@@ -4,6 +4,7 @@ import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.util.DateUtil;
 
 import java.io.Serializable;
+import java.util.Map;
 
 public class Appointment implements Serializable
 {
@@ -20,10 +21,13 @@ public class Appointment implements Serializable
     private String comment;
     private String kmsTravelled;
     private String totalTimeSpent;
+    private Map<String, Double> punchedInLocation;
+    private Map<String, Double> punchedOutLocation;
 
     public Appointment(String id, Employee employee, Client client, String date, AppointmentStatus status,
                        String startTime, String endTime, String appointmentInfo, String punchedInTime,
-                       String punchedOutTime, String comment, String kmsTravelled)
+                       String punchedOutTime, String comment, String kmsTravelled, Map<String, Double> punchedInLocation,
+                       Map<String, Double> punchedOutLocation)
     {
         this.id = id;
         this.employee = employee;
@@ -38,6 +42,28 @@ public class Appointment implements Serializable
         this.comment = comment;
         this.kmsTravelled = kmsTravelled;
         this.totalTimeSpent = DateUtil.calculateMinutesBetweenDates(punchedInTime, punchedOutTime);
+        this.punchedInLocation = punchedInLocation;
+        this.punchedOutLocation = punchedOutLocation;
+    }
+
+    public Map<String, Double> getPunchedInLocation()
+    {
+        return punchedInLocation;
+    }
+
+    public void setPunchedInLocation(Map<String, Double> punchedInLocation)
+    {
+        this.punchedInLocation = punchedInLocation;
+    }
+
+    public Map<String, Double> getPunchedOutLocation()
+    {
+        return punchedOutLocation;
+    }
+
+    public void setPunchedOutLocation(Map<String, Double> punchedOutLocation)
+    {
+        this.punchedOutLocation = punchedOutLocation;
     }
 
     public void setTotalTimeSpent(String totalTime)

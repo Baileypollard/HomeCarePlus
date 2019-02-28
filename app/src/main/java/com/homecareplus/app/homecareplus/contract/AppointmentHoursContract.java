@@ -1,5 +1,6 @@
 package com.homecareplus.app.homecareplus.contract;
 
+import android.app.Activity;
 import com.homecareplus.app.homecareplus.model.Appointment;
 
 public interface AppointmentHoursContract
@@ -15,6 +16,8 @@ public interface AppointmentHoursContract
 
     interface view
     {
+        void displayWarningMessage();
+
         void showAppointmentStarted(Appointment appointment);
 
         void showAppointmentCompleted(Appointment appointment);

@@ -167,8 +167,8 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
 
                         String appointmentId = dictionary.getString("appointment_id");
                         String status = dictionary.getString("status");
-                        String startTime = DateUtil.getTimeFromMs(dictionary.getLong("start_time"));
-                        String endTime = DateUtil.getTimeFromMs(dictionary.getLong("end_time"));
+                        long startTime = dictionary.getLong("start_time");
+                        long endTime = dictionary.getLong("end_time");
                         String punchedInTime = dictionary.getString("punched_in_time");
                         String punchedOutTime = dictionary.getString("punched_out_time");
                         String comment = dictionary.getString("comment");

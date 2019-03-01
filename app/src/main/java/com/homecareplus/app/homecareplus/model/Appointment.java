@@ -13,8 +13,8 @@ public class Appointment implements Serializable
     private String date;
     private String appointmentInfo;
     private Client client;
-    private String startTime;
-    private String endTime;
+    private long startTime;
+    private long endTime;
     private AppointmentStatus status;
     private String punchedInTime;
     private String punchedOutTime;
@@ -25,7 +25,7 @@ public class Appointment implements Serializable
     private Map<String, Double> punchedOutLocation;
 
     public Appointment(String id, Employee employee, Client client, String date, AppointmentStatus status,
-                       String startTime, String endTime, String appointmentInfo, String punchedInTime,
+                       long startTime, long endTime, String appointmentInfo, String punchedInTime,
                        String punchedOutTime, String comment, String kmsTravelled, Map<String, Double> punchedInLocation,
                        Map<String, Double> punchedOutLocation)
     {
@@ -176,18 +176,18 @@ public class Appointment implements Serializable
         return this.client.getAddress();
     }
 
-    public String getStartTime()
+    public long getStartTime()
     {
         return this.startTime;
     }
 
-    public String getEndTime()
+    public long getEndTime()
     {
         return this.endTime;
     }
 
     public String getAppointmentTime()
     {
-        return getStartTime() + " - " + getEndTime();
+        return DateUtil.getTimeFromMs(getStartTime()) + " - " + DateUtil.getTimeFromMs(getEndTime());
     }
 }

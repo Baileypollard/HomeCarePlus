@@ -154,7 +154,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                     if (array == null)
                         return;
                     List<Appointment> appointments = new ArrayList<>();
-                    for (int i = array.count() - 1; i >= 0; i--)
+                    for (int i = 0; i < array.count(); i++)
                     {
                         Dictionary dictionary = array.getDictionary(i);
 
@@ -167,8 +167,8 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
 
                         String appointmentId = dictionary.getString("appointment_id");
                         String status = dictionary.getString("status");
-                        String startTime = dictionary.getString("start_time");
-                        String endTime = dictionary.getString("end_time");
+                        String startTime = DateUtil.getTimeFromMs(dictionary.getLong("start_time"));
+                        String endTime = DateUtil.getTimeFromMs(dictionary.getLong("end_time"));
                         String punchedInTime = dictionary.getString("punched_in_time");
                         String punchedOutTime = dictionary.getString("punched_out_time");
                         String comment = dictionary.getString("comment");

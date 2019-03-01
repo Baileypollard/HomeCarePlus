@@ -6,218 +6,218 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="0dp"
+  <ScrollView
+      android:id="@+id/scrollView2"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
+
+      <TextView
+          android:id="@+id/textView12"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:background="@color/colorPrimary"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:text="Appointment Hours"
+          android:textColor="@color/colorWhite"
+          android:textSize="17sp" />
+
+      <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+          <TextView
+              android:id="@+id/textView4"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Start Time: "
+              android:textColor="@color/colorBlack"
+              android:textSize="18sp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+              android:id="@+id/textView7"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="End Time:"
+              android:textColor="@color/colorBlack"
+              android:textSize="18sp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+          <TextView
+              android:id="@+id/textView11"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Total Time:"
+              android:textColor="@color/colorBlack"
+              android:textSize="18sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Appointment Hours"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp" />
+          <TextView
+              android:id="@+id/startDateTextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/colorBlack"
+              android:textSize="18sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              tools:text="{start time}" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+          <TextView
+              android:id="@+id/endDateTextView"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textColor="@color/colorBlack"
+              android:textSize="18sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/textView7"
+              app:layout_constraintTop_toBottomOf="@+id/startDateTextView"
+              tools:text="{end_time}" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0">
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Start Time: "
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="End Time:"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Total Time:"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/startDateTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="{start time}" />
-
-                    <TextView
-                        android:id="@+id/endDateTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textView7"
-                        app:layout_constraintTop_toBottomOf="@+id/startDateTextView"
-                        tools:text="{end_time}" />
-
-                    <TextView
-                        android:id="@+id/totalTimeTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textView11"
-                        app:layout_constraintTop_toBottomOf="@+id/endDateTextView"
-                        tools:text="{time}" />
-                </LinearLayout>
-
-            </android.support.constraint.ConstraintLayout>
-
-            <LinearLayout
-                android:id="@+id/inProgressLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:background="@color/colorPrimary"
-                    android:gravity="center_vertical"
-                    android:paddingStart="15dp"
-                    android:text="Kilometers Travelled"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:id="@+id/kmEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/textbox_background"
-                    android:ems="10"
-                    android:enabled="true"
-                    android:hint="KM"
-                    android:paddingStart="10dp"
-                    android:textColor="@color/colorBlack" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:background="@color/colorPrimary"
-                    android:gravity="center_vertical"
-                    android:paddingStart="15dp"
-                    android:text="Comments"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:id="@+id/commentEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="157dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/textbox_background"
-                    android:enabled="true"
-                    android:gravity="top|left"
-                    android:hint="Comment"
-                    android:paddingStart="10dp"
-                    android:textColor="@color/colorBlack"
-                    android:textColorHint="@color/colorAccent" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textbox_background"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/startAppButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:text="Start Appointment" />
-
-                <Button
-                    android:id="@+id/completeAppButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:enabled="false"
-                    android:padding="10dp"
-                    android:text="Complete Appointment" />
-            </LinearLayout>
-
+          <TextView
+              android:id="@+id/totalTimeTextView"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textColor="@color/colorBlack"
+              android:textSize="18sp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/textView11"
+              app:layout_constraintTop_toBottomOf="@+id/endDateTextView"
+              tools:text="{time}" />
         </LinearLayout>
-    </ScrollView>
+
+      </android.support.constraint.ConstraintLayout>
+
+      <LinearLayout
+          android:id="@+id/inProgressLayout"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:visibility="visible">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="Kilometers Travelled"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/kmEditText"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/textbox_background"
+            android:ems="10"
+            android:enabled="true"
+            android:hint="KM"
+            android:paddingStart="10dp"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="Comments"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/commentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/textbox_background"
+            android:enabled="true"
+            android:gravity="top|left"
+            android:hint="Comment"
+            android:paddingStart="10dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorAccent" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="73dp"
+          android:layout_marginStart="5dp"
+          android:layout_marginTop="5dp"
+          android:layout_marginEnd="5dp"
+          android:layout_marginBottom="10dp"
+          android:background="@drawable/textbox_background"
+          android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/startAppButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Start Appointment" />
+
+        <Button
+            android:id="@+id/completeAppButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:padding="10dp"
+            android:text="Complete Appointment" />
+      </LinearLayout>
+
+    </LinearLayout>
+  </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

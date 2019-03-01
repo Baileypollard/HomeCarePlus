@@ -6,179 +6,179 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+  <ScrollView
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="match_parent"
+          android:layout_height="46dp"
+          android:background="@color/colorPrimary"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:text="Client Information"
+          android:textColor="@color/colorWhite"
+          android:textSize="17sp" />
+
+      <TextView
+          android:id="@+id/clientNameTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="10dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{name}" />
+
+      <TextView
+          android:id="@+id/clientAddressTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="7dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{address}" />
+
+      <TextView
+          android:id="@+id/clientPhoneNumberTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:autoLink="phone"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="7dp"
+          android:textColor="@color/colorPrimary"
+          android:textSize="17sp"
+          tools:text="{phoneNumber}" />
+
+      <TextView
+          android:id="@+id/clientGenderTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="7dp"
+          android:paddingBottom="10dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{gender}" />
+
+      <TextView
+          android:id="@+id/textView8"
+          android:layout_width="match_parent"
+          android:layout_height="46dp"
+          android:background="@color/colorPrimary"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:text="Scheduled Time"
+          android:textColor="@color/colorWhite"
+          android:textSize="17sp" />
+
+      <TextView
+          android:id="@+id/scheduledTimeTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:padding="15dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{time}" />
+
+      <TextView
+          android:id="@+id/textView3"
+          android:layout_width="match_parent"
+          android:layout_height="46dp"
+          android:background="@color/colorPrimary"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:text="Appointment Description"
+          android:textColor="@color/colorWhite"
+          android:textSize="17sp" />
+
+      <TextView
+          android:id="@+id/appointmentDescriptonTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:padding="15dp"
+          android:text="{description}"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp" />
+
+      <TextView
+          android:id="@+id/textView13"
+          android:layout_width="match_parent"
+          android:layout_height="46dp"
+          android:background="@color/colorPrimary"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:text="Appointment Status"
+          android:textColor="@color/colorWhite"
+          android:textSize="17sp" />
+
+      <TextView
+          android:id="@+id/appointmentStatusTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:padding="15dp"
+          android:text="{status}"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp" />
+
+      <LinearLayout
+          android:id="@+id/commentsLayout"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:text="Comments"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/appointmentCommentTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:text="{Comment}"
+            android:textColor="@color/colorBlack"
+            android:textSize="17sp" />
+      </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Client Information"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/clientNameTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:textColor="@color/colorBlack"
-                android:textSize="17sp"
-                tools:text="{name}" />
-
-            <TextView
-                android:id="@+id/clientAddressTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:paddingTop="7dp"
-                android:textColor="@color/colorBlack"
-                android:textSize="17sp"
-                tools:text="{address}" />
-
-            <TextView
-                android:id="@+id/clientPhoneNumberTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoLink="phone"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:paddingTop="7dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="17sp"
-                tools:text="{phoneNumber}" />
-
-            <TextView
-                android:id="@+id/clientGenderTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="10dp"
-                android:textColor="@color/colorBlack"
-                android:textSize="17sp"
-                tools:text="{gender}" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Scheduled Time"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/scheduledTimeTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:padding="15dp"
-                android:textColor="@color/colorBlack"
-                android:textSize="17sp"
-                tools:text="{time}" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Appointment Description"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/appointmentDescriptonTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:padding="15dp"
-                android:text="{description}"
-                android:textColor="@color/colorBlack"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Appointment Status"
-                android:textColor="@color/colorWhite"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/appointmentStatusTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:padding="15dp"
-                android:text="{status}"
-                android:textColor="@color/colorBlack"
-                android:textSize="17sp" />
-
-            <LinearLayout
-                android:id="@+id/commentsLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:background="@color/colorPrimary"
-                    android:gravity="center_vertical"
-                    android:paddingStart="15dp"
-                    android:text="Comments"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:id="@+id/appointmentCommentTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorWhite"
-                    android:gravity="center_vertical"
-                    android:padding="15dp"
-                    android:text="{Comment}"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="17sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
+  </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

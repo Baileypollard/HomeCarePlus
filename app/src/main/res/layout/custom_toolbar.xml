@@ -8,52 +8,52 @@
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
 
-        <TextView
-            android:id="@+id/toolbar_title"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:fontFamily="@font/amaranth"
-            android:gravity="center"
-            android:paddingRight="26dp"
-            android:text="HomeCare+"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="26sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/logout_imageView"
-            app:layout_constraintHorizontal_bias="0.482"
-            app:layout_constraintStart_toEndOf="@+id/emptyBackButtonHolder"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/toolbar_title"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/amaranth"
+        android:gravity="center"
+        android:paddingRight="26dp"
+        android:text="HomeCare+"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logout_imageView"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toEndOf="@+id/emptyBackButtonHolder"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/logout_imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:background="@mipmap/ic_logout"
-            android:onClick="onClickLogout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:id="@+id/logout_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@mipmap/ic_logout"
+        android:onClick="onClickLogout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/emptyBackButtonHolder"
-            android:layout_width="50dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+    <ImageView
+        android:id="@+id/emptyBackButtonHolder"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-    </android.support.constraint.ConstraintLayout>
+  </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.Toolbar>

@@ -67,6 +67,14 @@ public class DateUtil
         return sdf.format(dateMs);
     }
 
+    public static String getTimeFromMs(long ms)
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
+        Date date = new Date(ms);
+
+        return sdf.format(date);
+    }
+
     public static long getDateMilliseconds(String date)
     {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

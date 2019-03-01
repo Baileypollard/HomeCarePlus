@@ -10,7 +10,6 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,7 +19,7 @@ import com.homecareplus.app.homecareplus.callback.ItemTouchHelperCallback;
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
-import com.homecareplus.app.homecareplus.model.Employee;
+import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.homecareplus.app.homecareplus.presenter.MainAppointmentPresenter;
 import com.homecareplus.app.homecareplus.util.GPSTracker;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
@@ -93,9 +92,9 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     }
 
     @Override
-    public void displayAppointment(Appointment appointment)
+    public void displayAppointmentSection(AppointmentSectionModel appointmentSec)
     {
-        adapter.addAppointment(appointment);
+        adapter.displayAppointmentSection(appointmentSec);
     }
 
     @Override

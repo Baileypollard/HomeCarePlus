@@ -32,7 +32,7 @@ public class AppointmentTabAdapter extends FragmentStatePagerAdapter
         return mFragmentList.size();
     }
 
-    public void addFragement(Fragment fragment)
+    public void addFragment(Fragment fragment)
     {
         mFragmentList.add(fragment);
     }

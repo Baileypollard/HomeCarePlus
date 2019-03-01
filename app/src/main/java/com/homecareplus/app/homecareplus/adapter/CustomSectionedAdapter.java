@@ -1,7 +1,10 @@
 package com.homecareplus.app.homecareplus.adapter;
 
+import android.util.Log;
+
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
@@ -21,25 +24,25 @@ public class CustomSectionedAdapter extends SectionedRecyclerViewAdapter
         this.mItemTouchHelperExtension = mItemTouchHelperExtension;
     }
 
-    public void addAppointment(Appointment appointment)
+    public void displayAppointmentSection(AppointmentSectionModel sec)
     {
-        if (getSection(appointment.getDate()) == null)
+        if(sec.getAppointmentList().size() == 0)
         {
-            AppointmentSection section = new AppointmentSection(appointment.getDate(), appointment.getDate(), onClickListener, mItemTouchHelperExtension);
-            addSection(appointment.getDate(), section);
+            removeSection(sec.getDate());
+            notifyDataSetChanged();
+            return;
         }
 
-        AppointmentSection section = (AppointmentSection) getSection(appointment.getDate());
-        if (section.containsAppointment(appointment))
+        if (getSection(sec.getDate()) == null)
         {
-            section.updateAppointment(section.getAppointmentPosition(appointment), appointment);
-            notifyItemChangedInSection(section, section.getAppointmentPosition(appointment));
-        } else
+            AppointmentSection section = new AppointmentSection(sec.getDate(), sec.getAppointmentList(), onClickListener, mItemTouchHelperExtension);
+            addSection(sec.getDate(), section);
+        }
+        else
         {
-            section.addAppointment(appointment);
-            notifyItemChangedInSection(section, section.getAppointmentPosition(appointment));
+            AppointmentSection section = (AppointmentSection) getSection(sec.getDate());
+            section.setAppointmentList(sec.getAppointmentList());
+            notifyDataSetChanged();
         }
     }
-
-
 }

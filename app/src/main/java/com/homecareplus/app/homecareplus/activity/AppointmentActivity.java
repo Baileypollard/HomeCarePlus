@@ -6,7 +6,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -70,9 +69,9 @@ public class AppointmentActivity extends AppCompatActivity
 
         this.pagerAdapter = new AppointmentTabAdapter(getSupportFragmentManager());
 
-        this.pagerAdapter.addFragement(appointmentInfoTabFragment);
-        this.pagerAdapter.addFragement(appointmentHoursTabFragment);
-        this.pagerAdapter.addFragement(mapTabFragment);
+        this.pagerAdapter.addFragment(appointmentInfoTabFragment);
+        this.pagerAdapter.addFragment(appointmentHoursTabFragment);
+        this.pagerAdapter.addFragment(mapTabFragment);
 
         this.mainViewPager.setAdapter(pagerAdapter);
 

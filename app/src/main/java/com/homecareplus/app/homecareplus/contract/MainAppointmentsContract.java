@@ -2,8 +2,7 @@ package com.homecareplus.app.homecareplus.contract;
 
 import android.app.Activity;
 
-import com.homecareplus.app.homecareplus.model.Appointment;
-import com.homecareplus.app.homecareplus.model.Employee;
+import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 
 public interface MainAppointmentsContract
 {
@@ -13,7 +12,7 @@ public interface MainAppointmentsContract
 
         void startLoginActivity();
 
-        void displayAppointment(Appointment appointment);
+        void displayAppointmentSection(AppointmentSectionModel appointmentSectionModel);
 
         void displayEmployeeName(String name);
     }

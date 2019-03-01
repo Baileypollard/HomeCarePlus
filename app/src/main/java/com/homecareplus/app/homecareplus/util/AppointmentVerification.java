@@ -55,7 +55,7 @@ public class AppointmentVerification
         @Override
         protected void onPostExecute(Boolean result)
         {
-            Log.d("TAG", "YEP: " + result);
+
         }
     }
 }

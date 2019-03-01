@@ -1,9 +1,6 @@
 package com.homecareplus.app.homecareplus.adapter;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
@@ -14,7 +11,6 @@ import com.homecareplus.app.homecareplus.viewholder.AppointmentHeaderViewHolder;
 import com.homecareplus.app.homecareplus.viewholder.AppointmentRowViewHolder;
 import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters;
@@ -25,41 +21,22 @@ public class AppointmentSection extends StatelessSection
     private List<Appointment> appointmentList;
     private String title;
     private AppointmentRowOnClickListener onClickListener;
-    private ItemTouchHelperExtension itemTouchHelperExtension;
 
-    public AppointmentSection(String title, String tag, AppointmentRowOnClickListener appointmentRowOnClickListener, ItemTouchHelperExtension mItemTouchHelperExtension)
+    public AppointmentSection(String title, List<Appointment> appointments, AppointmentRowOnClickListener appointmentRowOnClickListener, ItemTouchHelperExtension mItemTouchHelperExtension)
     {
         super(SectionParameters.builder()
                 .itemResourceId(R.layout.client_appointment_row)
                 .headerResourceId(R.layout.section_header)
                 .build());
 
-        this.appointmentList = new ArrayList<>();
+        this.appointmentList = appointments;
         this.title = title;
         this.onClickListener = appointmentRowOnClickListener;
-        this.itemTouchHelperExtension = mItemTouchHelperExtension;
     }
 
-    public void addAppointment(Appointment appointment)
+    public void setAppointmentList(List<Appointment> appointmentList)
     {
-        this.appointmentList.add(appointment);
-    }
-
-    public void updateAppointment(int position, Appointment appointment)
-    {
-        this.appointmentList.set(position, appointment);
-    }
-
-    public int getAppointmentPosition(Appointment appointment)
-    {
-        for (Appointment a : appointmentList)
-        {
-            if (a.getId().equals(appointment.getId()))
-            {
-                return appointmentList.indexOf(a);
-            }
-        }
-        return -1;
+        this.appointmentList = appointmentList;
     }
 
     @Override
@@ -116,17 +93,5 @@ public class AppointmentSection extends StatelessSection
                 onClickListener.onCallClicked(appointment);
             }
         });
-    }
-
-    public boolean containsAppointment(Appointment appointment)
-    {
-        for (Appointment a : appointmentList)
-        {
-            if (a.getId().equals(appointment.getId()))
-            {
-                return true;
-            }
-        }
-        return false;
     }
 }

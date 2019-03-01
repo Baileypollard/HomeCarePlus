@@ -9,7 +9,6 @@ import com.couchbase.lite.Database;
 import com.couchbase.lite.Dictionary;
 import com.couchbase.lite.Expression;
 import com.couchbase.lite.Join;
-import com.couchbase.lite.ListenerToken;
 import com.couchbase.lite.Ordering;
 import com.couchbase.lite.Query;
 import com.couchbase.lite.QueryBuilder;
@@ -22,12 +21,13 @@ import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
 import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.model.Employee;
 import com.homecareplus.app.homecareplus.util.DateUtil;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -134,6 +134,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
 
                 for (Result r : rowList)
                 {
+
                     Dictionary appointmentDict = r.getDictionary("appointmentDS");
                     Dictionary employeeDict = r.getDictionary("employeeDS");
 
@@ -152,8 +153,8 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
 
                     if (array == null)
                         return;
-
-                    for (int i = 0; i < array.count(); i++)
+                    List<Appointment> appointments = new ArrayList<>();
+                    for (int i = array.count() - 1; i >= 0; i--)
                     {
                         Dictionary dictionary = array.getDictionary(i);
 
@@ -193,8 +194,9 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                                 startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,
                                 kmsTravelled, punchedInLoc, punchedOutLoc);
 
-                        view.displayAppointment(appointment);
+                        appointments.add(appointment);
                     }
+                    view.displayAppointmentSection(new AppointmentSectionModel(date, appointments));
                 }
             }
         });

@@ -10,11 +10,11 @@ import com.homecareplus.app.homecareplus.activity.AppointmentMapTabFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppointmentTabAdapter extends FragmentStatePagerAdapter
+public class FragmentTabAdapter extends FragmentStatePagerAdapter
 {
     List<Fragment> mFragmentList;
 
-    public AppointmentTabAdapter(FragmentManager fm)
+    public FragmentTabAdapter(FragmentManager fm)
     {
         super(fm);
         mFragmentList = new ArrayList<>();

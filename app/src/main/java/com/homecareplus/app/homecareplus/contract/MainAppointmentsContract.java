@@ -22,7 +22,7 @@ public interface MainAppointmentsContract
     {
         void logout();
 
-        void fetchAppointments();
+        void fetchAppointments(String employeeId);
 
         void fetchEmployeeName(String employeeId);
     }

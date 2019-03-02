@@ -69,7 +69,7 @@ public class DateUtil
 
     public static String getTimeFromMs(long ms)
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
+        SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
         Date date = new Date(ms);
 
         return sdf.format(date);

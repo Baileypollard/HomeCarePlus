@@ -21,6 +21,11 @@ public class Client implements Serializable
         this.phoneNumber = phoneNumber;
     }
 
+    public String getClientId()
+    {
+        return clientId;
+    }
+
     public String getGender()
     {
         return this.gender;

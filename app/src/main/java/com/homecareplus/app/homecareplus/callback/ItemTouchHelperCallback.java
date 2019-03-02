@@ -3,6 +3,7 @@ package com.homecareplus.app.homecareplus.callback;
 import android.graphics.Canvas;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 
 import com.homecareplus.app.homecareplus.viewholder.AppointmentHeaderViewHolder;
 import com.homecareplus.app.homecareplus.viewholder.AppointmentRowViewHolder;
@@ -18,7 +19,7 @@ public class ItemTouchHelperCallback extends ItemTouchHelperExtension.Callback
         {
             return 0;
         }
-        return makeMovementFlags(0, ItemTouchHelper.START);
+        return makeMovementFlags(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
     }
 
     @Override

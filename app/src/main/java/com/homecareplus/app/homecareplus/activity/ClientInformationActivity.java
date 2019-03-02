@@ -11,31 +11,19 @@ import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.FragmentTabAdapter;
-import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
-import com.homecareplus.app.homecareplus.contract.AppointmentInformationContract;
-import com.homecareplus.app.homecareplus.contract.AppointmentMapContract;
-import com.homecareplus.app.homecareplus.model.Appointment;
-import com.homecareplus.app.homecareplus.presenter.AppointmentHoursPresenter;
-import com.homecareplus.app.homecareplus.presenter.AppointmentInfoPresenter;
-import com.homecareplus.app.homecareplus.presenter.AppointmentMapPresenter;
-import com.homecareplus.app.homecareplus.util.SharedPreference;
+import com.homecareplus.app.homecareplus.model.Client;
 
-
-public class AppointmentActivity extends AppCompatActivity
+public class ClientInformationActivity extends AppCompatActivity
 {
     private ViewPager mainViewPager;
     private BottomNavigationView navigationView;
-    private Appointment appointment;
-    private AppointmentInformationContract.presenter appInfoPresenter;
-    private AppointmentMapContract.presenter appMapPresenter;
-    private AppointmentHoursContract.presenter appHoursPresenter;
-    private FragmentTabAdapter pagerAdapter;
+    private Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment_layout);
+        setContentView(R.layout.activity_client_details);
 
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
@@ -51,27 +39,13 @@ public class AppointmentActivity extends AppCompatActivity
             }
         });
 
-        this.appInfoPresenter = new AppointmentInfoPresenter();
-        this.appMapPresenter = new AppointmentMapPresenter();
-        this.appHoursPresenter = new AppointmentHoursPresenter();
-
-        this.appointment = (Appointment) getIntent().getSerializableExtra(SharedPreference.KEY_APPOINTMENT);
         this.mainViewPager = findViewById(R.id.mainViewPager);
         this.navigationView = findViewById(R.id.bottom_navigation);
 
-        AppointmentInfoTabFragment appointmentInfoTabFragment = new AppointmentInfoTabFragment();
-        AppointmentHoursTabFragment appointmentHoursTabFragment = new AppointmentHoursTabFragment();
-        AppointmentMapTabFragment mapTabFragment = new AppointmentMapTabFragment();
+        ClientPreviousAppointmentsFragment previousAppointmentsFragment = new ClientPreviousAppointmentsFragment();
 
-        this.appInfoPresenter.setView(appointmentInfoTabFragment);
-        this.appMapPresenter.setView(mapTabFragment);
-        this.appHoursPresenter.setView(appointmentHoursTabFragment);
-
-        this.pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
-
-        this.pagerAdapter.addFragment(appointmentInfoTabFragment);
-        this.pagerAdapter.addFragment(appointmentHoursTabFragment);
-        this.pagerAdapter.addFragment(mapTabFragment);
+        FragmentTabAdapter pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
+        pagerAdapter.addFragment(previousAppointmentsFragment);
 
         this.mainViewPager.setAdapter(pagerAdapter);
 
@@ -88,9 +62,6 @@ public class AppointmentActivity extends AppCompatActivity
                                 break;
                             case R.id.actionCompleteApp:
                                 mainViewPager.setCurrentItem(1);
-                                break;
-                            case R.id.actionAppMap:
-                                mainViewPager.setCurrentItem(2);
                                 break;
                         }
                         return false;
@@ -129,14 +100,8 @@ public class AppointmentActivity extends AppCompatActivity
             }
         });
     }
-
-    public void onClickLogout(View v)
+    public Client getClient()
     {
-
-    }
-
-    public Appointment getAppointment()
-    {
-        return this.appointment;
+        return client;
     }
 }

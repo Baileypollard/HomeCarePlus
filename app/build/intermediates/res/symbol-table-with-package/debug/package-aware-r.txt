@@ -1456,6 +1456,7 @@ layout design_text_input_password_icon
 layout fragment_appointment_hours
 layout fragment_appointment_info
 layout fragment_appointment_map
+layout fragment_client_info
 layout fragment_client_previous_apps
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include

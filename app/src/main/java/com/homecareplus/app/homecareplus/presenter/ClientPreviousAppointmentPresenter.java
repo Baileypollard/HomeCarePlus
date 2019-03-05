@@ -1,7 +1,5 @@
 package com.homecareplus.app.homecareplus.presenter;
 
-import android.util.Log;
-
 import com.couchbase.lite.Array;
 import com.couchbase.lite.ArrayExpression;
 import com.couchbase.lite.DataSource;
@@ -17,29 +15,27 @@ import com.couchbase.lite.QueryChangeListener;
 import com.couchbase.lite.Result;
 import com.couchbase.lite.ResultSet;
 import com.couchbase.lite.SelectResult;
-import com.couchbase.lite.VariableExpression;
 import com.homecareplus.app.homecareplus.contract.ClientPreviousAppointmentContract;
 import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
 import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
-import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.model.Employee;
-import com.homecareplus.app.homecareplus.util.DateUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 public class ClientPreviousAppointmentPresenter implements ClientPreviousAppointmentContract.presenter
 {
     private ClientPreviousAppointmentContract.view view;
+
     @Override
     public void setView(ClientPreviousAppointmentContract.view view)
     {
         this.view = view;
+        view.setPresenter(this);
     }
 
     @Override

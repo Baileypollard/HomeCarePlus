@@ -51,12 +51,14 @@ public class ClientInformationActivity extends AppCompatActivity
         this.navigationView = findViewById(R.id.bottom_navigation);
 
         ClientPreviousAppointmentsFragment previousAppointmentsFragment = new ClientPreviousAppointmentsFragment();
+        ClientInformationFragment clientInformationFragment = new ClientInformationFragment();
 
         this.previousAppointmentPresenter = new ClientPreviousAppointmentPresenter();
         this.previousAppointmentPresenter.setView(previousAppointmentsFragment);
-        previousAppointmentsFragment.setPresenter(previousAppointmentPresenter);
 
         FragmentTabAdapter pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
+
+        pagerAdapter.addFragment(clientInformationFragment);
         pagerAdapter.addFragment(previousAppointmentsFragment);
 
         this.mainViewPager.setAdapter(pagerAdapter);
@@ -72,9 +74,9 @@ public class ClientInformationActivity extends AppCompatActivity
                             case R.id.actionAppInfo:
                                 mainViewPager.setCurrentItem(0);
                                 break;
-//                            case R.id.actionPreviousApp:
-//                                mainViewPager.setCurrentItem(1);
-//                                break;
+                            case R.id.actionPreviousApp:
+                                mainViewPager.setCurrentItem(1);
+                                break;
                         }
                         return false;
                     }

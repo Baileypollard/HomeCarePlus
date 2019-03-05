@@ -19,7 +19,7 @@ import com.couchbase.lite.ResultSet;
 import com.couchbase.lite.SelectResult;
 import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
-import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
+import com.homecareplus.app.homecareplus.couchbase.DictionaryToModel;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.homecareplus.app.homecareplus.model.Client;
@@ -28,10 +28,7 @@ import com.homecareplus.app.homecareplus.util.DateUtil;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 
 public class MainAppointmentPresenter implements MainAppointmentsContract.presenter
 {
@@ -134,66 +131,24 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
 
                 for (Result r : rowList)
                 {
-
                     Dictionary appointmentDict = r.getDictionary("appointmentDS");
                     Dictionary employeeDict = r.getDictionary("employeeDS");
 
                     String date = appointmentDict.getString("date");
 
-                    String employeeId = employeeDict.getString("employee_id");
-                    String employeeFirstName = employeeDict.getString("first_name");
-                    String employeeLastName = employeeDict.getString("last_name");
-                    String employeeAddress = employeeDict.getString("address");
-                    String employeeGender = employeeDict.getString("gender");
-                    String employeePhoneNumber = employeeDict.getString("phone_number");
-
-                    Employee employee = new Employee(employeeId, employeeFirstName, employeeLastName, employeePhoneNumber, employeeAddress, employeeGender);
+                    Employee employee = DictionaryToModel.getEmployeeFromDictionary(employeeDict);
 
                     Array array = appointmentDict.getArray("schedule");
 
                     if (array == null)
                         return;
+
                     List<Appointment> appointments = new ArrayList<>();
                     for (int i = 0; i < array.count(); i++)
                     {
                         Dictionary dictionary = array.getDictionary(i);
-
-                        String clientFirstName = dictionary.getString("first_name");
-
-                        String clientLastName = dictionary.getString("last_name");
-                        String clientAddress = dictionary.getString("address");
-                        String clientGender = dictionary.getString("gender");
-                        String clientPhoneNumber = dictionary.getString("phone_number");
-                        String clientId = dictionary.getString("client_id");
-                        String appointmentId = dictionary.getString("appointment_id");
-                        String status = dictionary.getString("status");
-                        long startTime = dictionary.getLong("start_time");
-                        long endTime = dictionary.getLong("end_time");
-                        String punchedInTime = dictionary.getString("punched_in_time");
-                        String punchedOutTime = dictionary.getString("punched_out_time");
-                        String comment = dictionary.getString("comment");
-                        String kmsTravelled = dictionary.getString("kms_travelled") != null ? dictionary.getString("kms_travelled") : "";
-
-                        Dictionary punchedInDict = dictionary.getDictionary("punched_in_loc");
-                        Dictionary punchedOutDict = dictionary.getDictionary("punched_out_loc");
-
-                        Map<String, Double> punchedInLoc = new HashMap<>();
-                        Map<String, Double> punchedOutLoc = new HashMap<>();
-
-                        if (punchedInDict != null && punchedOutDict != null)
-                        {
-                            punchedInLoc.put("lat", punchedInDict.getDouble("lat"));
-                            punchedInLoc.put("lng", punchedInDict.getDouble("lng"));
-
-                            punchedOutLoc.put("lat", punchedOutDict.getDouble("lat"));
-                            punchedOutLoc.put("lng", punchedOutDict.getDouble("lng"));
-                        }
-                        Client client = new Client(clientId, clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
-
-                        Appointment appointment = new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
-                                startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,
-                                kmsTravelled, punchedInLoc, punchedOutLoc);
-
+                        Client client = DictionaryToModel.getClientFromDictionary(dictionary);
+                        Appointment appointment = DictionaryToModel.getAppointmentFromDictionary(dictionary, client, employee, date);
                         appointments.add(appointment);
                     }
                     view.displayAppointmentSection(new AppointmentSectionModel(date, appointments));
@@ -210,4 +165,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
             e.printStackTrace();
         }
     }
+
+
+
 }

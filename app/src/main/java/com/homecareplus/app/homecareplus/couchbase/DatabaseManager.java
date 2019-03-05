@@ -39,7 +39,7 @@ public class DatabaseManager
         }
     }
 
-    public static void beginDatabaseReplication(String sessionId)
+    private static void beginDatabaseReplication(String sessionId)
     {
         URI url = null;
         try

@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class DateUtil
@@ -17,7 +18,7 @@ public class DateUtil
     {
         long dateMs = getDateMilliseconds(date);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy", Locale.US);
         Date d = new Date(dateMs);
 
         if (DateUtils.isToday(dateMs))
@@ -30,13 +31,13 @@ public class DateUtil
 
     public static String getStartedAppointmentFormat(Date date)
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss", Locale.US);
         return sdf.format(date);
     }
 
     public static String calculateMinutesBetweenDates(String date1, String date2)
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy HH:mm:ss", Locale.US);
 
         if (date1 == null || date2 == null)
         {
@@ -62,14 +63,14 @@ public class DateUtil
     public static String getTodayFormatted()
     {
         long dateMs = new Date().getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
         return sdf.format(dateMs);
     }
 
     public static String getTimeFromMs(long ms)
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
+        SimpleDateFormat sdf = new SimpleDateFormat("h:mm a", Locale.US);
         Date date = new Date(ms);
 
         return sdf.format(date);
@@ -77,7 +78,7 @@ public class DateUtil
 
     public static long getDateMilliseconds(String date)
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         try
         {
             Date d = sdf.parse(date);

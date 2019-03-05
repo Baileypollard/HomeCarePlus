@@ -13,11 +13,6 @@ public class AppointmentSectionModel
         this.appointmentList = appointmentList;
     }
 
-    public AppointmentSectionModel()
-    {
-
-    }
-
     public String getDate()
     {
         return date;

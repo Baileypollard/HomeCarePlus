@@ -86,7 +86,8 @@ public class Geocoding
             {
                 return new JSONObject(response.body().string());
             }
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             Log.d("TAG", "Error occurred: " + e.getMessage());
         }

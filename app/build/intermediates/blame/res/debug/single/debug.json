@@ -204,6 +204,10 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\menu_client_details_bottom_menu.xml.flat",
+        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\menu\\client_details_bottom_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\color\\abc_tint_edittext.xml"
     },
@@ -316,16 +320,16 @@
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable-hdpi\\ic_person.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_checkbox.xml.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_checkbox.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_borderless_text_material.xml.flat",
@@ -1902,6 +1906,10 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_client_details.xml.flat",
+        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\layout\\activity_client_details.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",

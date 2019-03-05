@@ -46,6 +46,11 @@ public class Appointment implements Serializable
         this.punchedOutLocation = punchedOutLocation;
     }
 
+    public Client getClient()
+    {
+        return client;
+    }
+
     public Map<String, Double> getPunchedInLocation()
     {
         return punchedInLocation;

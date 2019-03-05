@@ -2,12 +2,15 @@ package com.homecareplus.app.homecareplus.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.homecareplus.app.homecareplus.R;
+import com.homecareplus.app.homecareplus.adapter.PreviousAppointmentAdapter;
 import com.homecareplus.app.homecareplus.contract.ClientPreviousAppointmentContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Client;
@@ -19,6 +22,7 @@ public class ClientPreviousAppointmentsFragment extends Fragment implements Clie
     private ClientPreviousAppointmentContract.presenter presenter;
     private Client client;
     private RecyclerView previousAppointmentsRecyclerView;
+    private PreviousAppointmentAdapter appointmentAdapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -34,6 +38,11 @@ public class ClientPreviousAppointmentsFragment extends Fragment implements Clie
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
         previousAppointmentsRecyclerView = view.findViewById(R.id.previousAppointmentRv);
+        appointmentAdapter = new PreviousAppointmentAdapter(getContext());
+        previousAppointmentsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        previousAppointmentsRecyclerView.setAdapter(appointmentAdapter);
+
+        presenter.loadPreviousAppointments(client);
     }
 
     @Override
@@ -51,6 +60,6 @@ public class ClientPreviousAppointmentsFragment extends Fragment implements Clie
     @Override
     public void displayAppointments(List<Appointment> appointmentList)
     {
-
+        appointmentAdapter.setAppointmentList(appointmentList);
     }
 }

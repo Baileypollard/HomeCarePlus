@@ -10,6 +10,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
+import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.presenter.MainAppointmentPresenter;
 import com.homecareplus.app.homecareplus.util.GPSTracker;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
@@ -66,6 +68,14 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 callIntent.setData(Uri.parse("tel:" + appointment.getClientPhoneNumber().replace("-", "")));
                 startActivity(callIntent);
+            }
+
+            @Override
+            public void onClientInfoClicked(Client client)
+            {
+                Intent intent = new Intent(MainActivity.this, ClientInformationActivity.class);
+                intent.putExtra(SharedPreference.KEY_CLIENT, client);
+                startActivity(intent);
             }
         });
         this.callback = new ItemTouchHelperCallback();

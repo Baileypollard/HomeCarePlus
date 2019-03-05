@@ -164,7 +164,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                         String clientAddress = dictionary.getString("address");
                         String clientGender = dictionary.getString("gender");
                         String clientPhoneNumber = dictionary.getString("phone_number");
-
+                        String clientId = dictionary.getString("client_id");
                         String appointmentId = dictionary.getString("appointment_id");
                         String status = dictionary.getString("status");
                         long startTime = dictionary.getLong("start_time");
@@ -188,7 +188,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                             punchedOutLoc.put("lat", punchedOutDict.getDouble("lat"));
                             punchedOutLoc.put("lng", punchedOutDict.getDouble("lng"));
                         }
-                        Client client = new Client(UUID.randomUUID().toString(), clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
+                        Client client = new Client(clientId, clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
 
                         Appointment appointment = new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
                                 startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,

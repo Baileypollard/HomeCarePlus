@@ -18,6 +18,7 @@
       tools:ignore="GoogleAppIndexingWarning">
 
     <activity android:name=".activity.MainActivity"></activity>
+    <activity android:name=".activity.ClientInformationActivity"></activity>
 
     <activity android:name=".activity.AppointmentActivity"
         android:windowSoftInputMode="adjustPan">

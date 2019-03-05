@@ -21,7 +21,7 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
     private TextView appointmentTimeTv;
     private TextView appointmentStatusTv;
     private TextView callClientTextView;
-    private TextView viewClientTextView;
+    private TextView viewClientInformationTextView;
     private View appointmentRow;
 
     public AppointmentRowViewHolder(View view)
@@ -29,9 +29,9 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
         super(view);
         appointmentRow = view.findViewById(R.id.appointmentRow);
         callClientTextView = view.findViewById(R.id.callClientTextView);
-        viewClientTextView = view.findViewById(R.id.viewClientTextView);
-        clientNameTv = view.findViewById(com.homecareplus.app.homecareplus.R.id.clientNameTextView);
-        clientAddressTv = view.findViewById(com.homecareplus.app.homecareplus.R.id.clientAddressTextView);
+        viewClientInformationTextView = view.findViewById(R.id.viewClientTextView);
+        clientNameTv = view.findViewById(R.id.clientNameTextView);
+        clientAddressTv = view.findViewById(R.id.clientAddressTextView);
         clientAddressTv.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -53,6 +53,11 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
     public View getCallClientTextView()
     {
         return callClientTextView;
+    }
+
+    public View getViewClientDetailsTextView()
+    {
+        return viewClientInformationTextView;
     }
 
     public void setAppointmentStatus(AppointmentStatus status)

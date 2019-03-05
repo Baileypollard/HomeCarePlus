@@ -61,10 +61,9 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
                 SelectResult.all().from("employeeDS"))
                 .from(dataSource)
                 .join(employeeJoin)
-                .where(Expression.property("date").from("appointmentDS").greaterThanOrEqualTo(Expression.string(DateUtil.getTodayFormatted()))
-                        .and(ArrayExpression.any(ArrayExpression.variable("appointment"))
-                                .in(Expression.property("schedule"))
-                                .satisfies(ArrayExpression.variable("appointment.client_id").equalTo(Expression.string(client.getClientId())))))
+                .where(ArrayExpression.any(ArrayExpression.variable("appointment"))
+                                .in(Expression.property("schedule").from("appointmentDS"))
+                                .satisfies(ArrayExpression.variable("appointment.client_id").equalTo(Expression.string(client.getClientId()))))
                 .orderBy(Ordering.expression(Expression.property("date").from("appointmentDS")).ascending());
 
         query.addChangeListener(new QueryChangeListener()
@@ -72,6 +71,7 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
             @Override
             public void changed(QueryChange change)
             {
+                List<Appointment> appointments = new ArrayList<>();
                 ResultSet rows = change.getResults();
 
                 if (rows == null)
@@ -101,7 +101,7 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
 
                     if (array == null)
                         return;
-                    List<Appointment> appointments = new ArrayList<>();
+
                     for (int i = 0; i < array.count(); i++)
                     {
                         Dictionary dictionary = array.getDictionary(i);
@@ -121,6 +121,7 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
                         String punchedOutTime = dictionary.getString("punched_out_time");
                         String comment = dictionary.getString("comment");
                         String kmsTravelled = dictionary.getString("kms_travelled") != null ? dictionary.getString("kms_travelled") : "";
+                        String clientId = dictionary.getString("client_id");
 
                         Dictionary punchedInDict = dictionary.getDictionary("punched_in_loc");
                         Dictionary punchedOutDict = dictionary.getDictionary("punched_out_loc");
@@ -136,17 +137,16 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
                             punchedOutLoc.put("lat", punchedOutDict.getDouble("lat"));
                             punchedOutLoc.put("lng", punchedOutDict.getDouble("lng"));
                         }
-                        Client client = new Client(UUID.randomUUID().toString(), clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
+                        Client client = new Client(clientId, clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
 
                         Appointment appointment = new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
                                 startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,
                                 kmsTravelled, punchedInLoc, punchedOutLoc);
 
                         appointments.add(appointment);
-
-                        Log.d("TAG", "size: " + appointments.size());
                     }
                 }
+                view.displayAppointments(appointments);
             }
         });
     }

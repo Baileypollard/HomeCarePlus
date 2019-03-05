@@ -6,23 +6,29 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.FragmentTabAdapter;
+import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Client;
+import com.homecareplus.app.homecareplus.presenter.ClientPreviousAppointmentPresenter;
+import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 public class ClientInformationActivity extends AppCompatActivity
 {
     private ViewPager mainViewPager;
     private BottomNavigationView navigationView;
     private Client client;
+    private ClientPreviousAppointmentPresenter previousAppointmentPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_client_details);
 
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
@@ -39,10 +45,16 @@ public class ClientInformationActivity extends AppCompatActivity
             }
         });
 
+        this.client = (Client) getIntent().getSerializableExtra(SharedPreference.KEY_CLIENT);
+
         this.mainViewPager = findViewById(R.id.mainViewPager);
         this.navigationView = findViewById(R.id.bottom_navigation);
 
         ClientPreviousAppointmentsFragment previousAppointmentsFragment = new ClientPreviousAppointmentsFragment();
+
+        this.previousAppointmentPresenter = new ClientPreviousAppointmentPresenter();
+        this.previousAppointmentPresenter.setView(previousAppointmentsFragment);
+        previousAppointmentsFragment.setPresenter(previousAppointmentPresenter);
 
         FragmentTabAdapter pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
         pagerAdapter.addFragment(previousAppointmentsFragment);
@@ -60,9 +72,9 @@ public class ClientInformationActivity extends AppCompatActivity
                             case R.id.actionAppInfo:
                                 mainViewPager.setCurrentItem(0);
                                 break;
-                            case R.id.actionCompleteApp:
-                                mainViewPager.setCurrentItem(1);
-                                break;
+//                            case R.id.actionPreviousApp:
+//                                mainViewPager.setCurrentItem(1);
+//                                break;
                         }
                         return false;
                     }

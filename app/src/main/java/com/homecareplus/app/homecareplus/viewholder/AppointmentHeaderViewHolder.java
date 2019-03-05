@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.homecareplus.app.homecareplus.R;
+
 public class AppointmentHeaderViewHolder extends RecyclerView.ViewHolder
 {
     private TextView headerTitle;
@@ -12,7 +14,7 @@ public class AppointmentHeaderViewHolder extends RecyclerView.ViewHolder
     {
         super(view);
 
-        headerTitle = view.findViewById(com.homecareplus.app.homecareplus.R.id.headerDateTextView);
+        headerTitle = view.findViewById(R.id.headerDateTextView);
     }
 
 

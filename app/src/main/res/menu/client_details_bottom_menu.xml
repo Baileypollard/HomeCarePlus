@@ -6,12 +6,12 @@
         android:id="@+id/actionAppInfo"
         android:enabled="true"
         android:icon="@drawable/ic_person"
-        android:title="Information"
+        android:title="Client Information"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/actionCompleteApp"
+        android:id="@+id/actionPreviousApp"
         android:enabled="true"
         android:icon="@drawable/ic_clock"
-        android:title="Complete Hours"
+        android:title="Previous Appointments"
         app:showAsAction="ifRoom" />
 </menu>

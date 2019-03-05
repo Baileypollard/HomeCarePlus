@@ -85,6 +85,15 @@ public class AppointmentSection extends StatelessSection
             }
         });
 
+        viewHolder.getViewClientDetailsTextView().setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                onClickListener.onClientInfoClicked(appointment.getClient());
+            }
+        });
+
         viewHolder.getCallClientTextView().setOnClickListener(new View.OnClickListener()
         {
             @Override

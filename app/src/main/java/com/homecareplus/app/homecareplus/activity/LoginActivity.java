@@ -27,8 +27,6 @@ public class LoginActivity extends AppCompatActivity
     private EditText employeeIdEditText;
     private EditText employeePasswordEditText;
     private TextView loginErrorTextView;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    private boolean mLocationPermissionGranted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,6 +47,7 @@ public class LoginActivity extends AppCompatActivity
         public void onLoginFailed()
         {
             //Display the error
+            buttonSignIn.setEnabled(true);
             loginErrorTextView.setVisibility(View.VISIBLE);
         }
 
@@ -75,6 +74,9 @@ public class LoginActivity extends AppCompatActivity
         String password = employeePasswordEditText.getText().toString().trim();
         CBSession.getSessionId sessionIdTask =  new CBSession.getSessionId(id, password, loginAttemptedCallback);
         sessionIdTask.execute();
+
+        //Set false to prevent multiple sign in async tasks from executing
+        buttonSignIn.setEnabled(false);
     }
 }
 

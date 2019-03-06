@@ -1,5 +1,7 @@
 package com.homecareplus.app.homecareplus.presenter;
 
+import android.util.Log;
+
 import com.couchbase.lite.Array;
 import com.couchbase.lite.ArrayExpression;
 import com.couchbase.lite.DataSource;
@@ -21,6 +23,7 @@ import com.homecareplus.app.homecareplus.couchbase.DictionaryToModel;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.model.Employee;
+import com.homecareplus.app.homecareplus.util.DateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +40,9 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
     }
 
     @Override
-    public void loadPreviousAppointments(Client client)
+    public void loadPreviousAppointments(final Client client)
     {
         Database database = DatabaseManager.getDatabase();
-
 
         final DataSource dataSource = DataSource.database(database).as("appointmentDS");
         final DataSource employeeDs = DataSource.database(database).as("employeeDS");
@@ -55,9 +57,10 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
                 SelectResult.all().from("employeeDS"))
                 .from(dataSource)
                 .join(employeeJoin)
-                .where(ArrayExpression.any(ArrayExpression.variable("appointment"))
+                .where(Expression.property("date").from("appointmentDS").lessThan(Expression.string(DateUtil.getTodayFormatted()))
+                        .and(ArrayExpression.any(ArrayExpression.variable("appointment"))
                                 .in(Expression.property("schedule").from("appointmentDS"))
-                                .satisfies(ArrayExpression.variable("appointment.client_id").equalTo(Expression.string(client.getClientId()))))
+                                .satisfies(ArrayExpression.variable("appointment.client_id").equalTo(Expression.string(client.getClientId())))))
                 .orderBy(Ordering.expression(Expression.property("date").from("appointmentDS")).ascending());
 
         query.addChangeListener(new QueryChangeListener()
@@ -78,22 +81,20 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
                 {
                     Dictionary appointmentDict = r.getDictionary("appointmentDS");
                     Dictionary employeeDict = r.getDictionary("employeeDS");
-
                     String date = appointmentDict.getString("date");
-
                     Employee employee = DictionaryToModel.getEmployeeFromDictionary(employeeDict);
 
                     Array array = appointmentDict.getArray("schedule");
-
                     if (array == null)
                         return;
 
                     for (int i = 0; i < array.count(); i++)
                     {
                         Dictionary dictionary = array.getDictionary(i);
-                        Client client = DictionaryToModel.getClientFromDictionary(dictionary);
+                        Client newClient = DictionaryToModel.getClientFromDictionary(dictionary);
                         Appointment appointment = DictionaryToModel.getAppointmentFromDictionary(dictionary, client, employee, date);
-                        appointments.add(appointment);
+                        if (client.getClientId().equals(newClient.getClientId()) && appointment.isVerified())
+                            appointments.add(appointment);
                     }
                 }
                 view.displayAppointments(appointments);

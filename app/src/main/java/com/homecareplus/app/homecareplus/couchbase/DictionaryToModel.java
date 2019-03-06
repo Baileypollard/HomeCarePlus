@@ -58,7 +58,6 @@ public class DictionaryToModel
     public static Client getClientFromDictionary(Dictionary dictionary)
     {
         String clientFirstName = dictionary.getString("first_name");
-
         String clientLastName = dictionary.getString("last_name");
         String clientAddress = dictionary.getString("address");
         String clientGender = dictionary.getString("gender");

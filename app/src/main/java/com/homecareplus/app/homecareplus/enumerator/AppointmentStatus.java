@@ -5,7 +5,6 @@ public enum AppointmentStatus
     NEW("NEW"),
     IN_PROGRESS("IN_PROGRESS"),
     COMPLETED("COMPLETED"),
-    CONFIRMED("CONFIRMED"),
     VERIFIED("VERIFIED"),
     DECLINED("DECLINED");
 

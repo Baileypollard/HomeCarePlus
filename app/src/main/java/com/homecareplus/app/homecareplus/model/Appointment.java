@@ -195,4 +195,9 @@ public class Appointment implements Serializable
     {
         return DateUtil.getTimeFromMs(getStartTime()) + " - " + DateUtil.getTimeFromMs(getEndTime());
     }
+
+    public boolean isVerified()
+    {
+        return status.equals(AppointmentStatus.COMPLETED) || status.equals(AppointmentStatus.VERIFIED);
+    }
 }

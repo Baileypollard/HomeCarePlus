@@ -9,6 +9,7 @@ import com.homecareplus.app.homecareplus.viewholder.AppointmentHeaderViewHolder;
 import com.homecareplus.app.homecareplus.viewholder.AppointmentRowViewHolder;
 import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
+
 public class ItemTouchHelperCallback extends ItemTouchHelperExtension.Callback
 {
 

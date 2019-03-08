@@ -44,7 +44,7 @@ public class DatabaseManager
         URI url = null;
         try
         {
-            url = new URI("ws://35.235.124.164:4984/homecareplus");
+            url = new URI("ws://35.235.126.165:4984/homecareplus");
         } catch (URISyntaxException e)
         {
             e.printStackTrace();

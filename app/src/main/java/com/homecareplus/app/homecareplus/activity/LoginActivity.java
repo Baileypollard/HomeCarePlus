@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.callback.LoginAttemptedCallback;
 import com.homecareplus.app.homecareplus.couchbase.CBSession;
-import com.homecareplus.app.homecareplus.couchbase.DatabaseManager;
+import com.homecareplus.app.homecareplus.couchbase.CouchbaseRepository;
 import com.homecareplus.app.homecareplus.util.NetworkUtil;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity
         {
             SharedPreference.getSharedInstance(getApplicationContext()).setEmployeeId(id);
             SharedPreference.getSharedInstance(getApplicationContext()).setEmployeePassword(password);
-            DatabaseManager.getSharedInstance(getApplicationContext(), id, sessionId);
+            CouchbaseRepository.init(getApplicationContext(), id, sessionId);
             startMainActivity();
         }
     };

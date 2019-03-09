@@ -2,7 +2,12 @@ package com.homecareplus.app.homecareplus.contract;
 
 import android.app.Activity;
 
+import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
+
+import java.util.List;
+
+import io.reactivex.Observable;
 
 public interface MainAppointmentsContract
 {

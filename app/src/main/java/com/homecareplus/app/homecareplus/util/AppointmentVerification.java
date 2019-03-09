@@ -33,7 +33,7 @@ public class AppointmentVerification
         protected Boolean doInBackground(Void... params)
         {
             OkHttpClient client = NetworkUtil.createAuthenticatedClient(username, password);
-            String url = "http://10.0.2.2:8080/rest/secured/verify";
+            String url = "http://192.168.2.24:8080/rest/secured/verify";
 
 
             final MediaType JSON = MediaType.parse("application/json;charset=utf-8");

@@ -26,8 +26,10 @@ public class ClientPreviousAppointmentPresenter implements ClientPreviousAppoint
     @Override
     public void loadPreviousAppointments(final Client client)
     {
-        Disposable disposable = CouchbaseRepository.getInstance().loadPreviousAppointmentsForClient(client).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<Appointment>>()
+        Disposable disposable = CouchbaseRepository.getInstance().loadPreviousAppointmentsForClient(client)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<List<Appointment>>()
                 {
                     @Override
                     public void accept(List<Appointment> section)

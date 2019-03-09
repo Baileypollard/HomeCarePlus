@@ -99,6 +99,8 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
             case IN_PROGRESS:
                 configureAppointmentInProgress();
                 break;
+            case DECLINED:
+            case VERIFIED:
             case COMPLETED:
                 configureAppointmentCompleted();
                 break;

@@ -1,5 +1,6 @@
 package com.homecareplus.app.homecareplus.presenter;
 
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import com.couchbase.lite.CouchbaseLiteException;
@@ -18,6 +19,8 @@ import io.reactivex.schedulers.Schedulers;
 public class MainAppointmentPresenter implements MainAppointmentsContract.presenter
 {
     private MainAppointmentsContract.view view;
+    private Disposable appointmentDisposable;
+    private Disposable employeeNameDisposable;
 
     public MainAppointmentPresenter(MainAppointmentsContract.view view)
     {
@@ -27,8 +30,10 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
     @Override
     public void fetchAppointments(String employeeId)
     {
-        Disposable disposable = CouchbaseRepository.getInstance().fetchAppointments(employeeId).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<AppointmentSectionModel>()
+        appointmentDisposable = CouchbaseRepository.getInstance().fetchAppointments(employeeId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<AppointmentSectionModel>()
                 {
                     @Override
                     public void accept(AppointmentSectionModel section)
@@ -41,8 +46,10 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
     @Override
     public void fetchEmployeeName(String employeeId)
     {
-        Disposable disposable = CouchbaseRepository.getInstance().fetchEmployeeName(employeeId).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<String>()
+        employeeNameDisposable = CouchbaseRepository.getInstance().fetchEmployeeName(employeeId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>()
                 {
                     @Override
                     public void accept(String fullName)
@@ -50,6 +57,14 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
                         view.displayEmployeeName(fullName);
                     }
                 });
+    }
+
+    @Override
+    public void destroyObservables()
+    {
+        Log.d("TAG", "Destroyed");
+        employeeNameDisposable.dispose();
+        appointmentDisposable.dispose();
     }
 
     @Override

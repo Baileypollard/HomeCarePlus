@@ -25,6 +25,8 @@ public interface MainAppointmentsContract
 
     interface presenter
     {
+        void destroyObservables();
+
         void logout();
 
         void fetchAppointments(String employeeId);

@@ -102,6 +102,13 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     }
 
     @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        presenter.destroyObservables();
+    }
+
+    @Override
     public void displayAppointmentSection(AppointmentSectionModel appointmentSec)
     {
         adapter.displayAppointmentSection(appointmentSec);

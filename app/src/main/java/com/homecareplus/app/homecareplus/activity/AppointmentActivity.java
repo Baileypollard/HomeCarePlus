@@ -25,7 +25,6 @@ public class AppointmentActivity extends AppCompatActivity
     private BottomNavigationView navigationView;
     private Appointment appointment;
     private AppointmentInformationContract.presenter appInfoPresenter;
-    private AppointmentHoursContract.presenter appHoursPresenter;
     private FragmentTabAdapter pagerAdapter;
 
     @Override
@@ -49,7 +48,6 @@ public class AppointmentActivity extends AppCompatActivity
         });
 
         this.appInfoPresenter = new AppointmentInfoPresenter();
-        this.appHoursPresenter = new AppointmentHoursPresenter();
 
         this.appointment = (Appointment) getIntent().getSerializableExtra(SharedPreference.KEY_APPOINTMENT);
         this.mainViewPager = findViewById(R.id.mainViewPager);
@@ -60,7 +58,6 @@ public class AppointmentActivity extends AppCompatActivity
         AppointmentMapTabFragment mapTabFragment = new AppointmentMapTabFragment();
 
         this.appInfoPresenter.setView(appointmentInfoTabFragment);
-        this.appHoursPresenter.setView(appointmentHoursTabFragment);
 
         this.pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
 

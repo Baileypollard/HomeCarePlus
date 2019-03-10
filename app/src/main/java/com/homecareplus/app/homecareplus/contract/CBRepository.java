@@ -20,9 +20,11 @@ public interface CBRepository
 
     void closeDatabase();
 
-    MutableLiveData<List<AppointmentSectionModel>> getAppointmentData();
+    MutableLiveData<List<AppointmentSectionModel>> getAppointmentSectionData();
 
     MutableLiveData<String> getEmployeeNameData();
 
     MutableLiveData<List<Appointment>> getPreviousAppointmentData();
+
+    MutableLiveData<Appointment> getAppointmentData();
 }

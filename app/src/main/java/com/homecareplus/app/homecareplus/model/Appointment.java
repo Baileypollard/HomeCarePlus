@@ -200,4 +200,15 @@ public class Appointment implements Serializable
     {
         return status.equals(AppointmentStatus.COMPLETED) || status.equals(AppointmentStatus.VERIFIED);
     }
+
+    public boolean isCompleted()
+    {
+        return status.equals(AppointmentStatus.COMPLETED) || status.equals(AppointmentStatus.VERIFIED) ||
+                status.equals(AppointmentStatus.DECLINED);
+    }
+
+    public boolean isInProgress()
+    {
+        return status.equals(AppointmentStatus.IN_PROGRESS);
+    }
 }

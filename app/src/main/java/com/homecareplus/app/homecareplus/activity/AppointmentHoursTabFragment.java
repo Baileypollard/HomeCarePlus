@@ -1,6 +1,9 @@
 package com.homecareplus.app.homecareplus.activity;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +15,11 @@ import android.widget.Toast;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
+import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.viewmodel.AppointmentHoursViewModel;
 
-public class AppointmentHoursTabFragment extends Fragment implements AppointmentHoursContract.view
+public class AppointmentHoursTabFragment extends Fragment
 {
     private AppointmentHoursContract.presenter presenter;
     private Appointment appointment;
@@ -25,7 +30,7 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
     private EditText commentsEditText;
     private Button startAppointmentButton;
     private Button completeAppointmentButton;
-    private View inProgressLayout;
+    private AppointmentHoursViewModel viewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -41,6 +46,54 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
+        viewModel = ViewModelProviders.of(this).get(AppointmentHoursViewModel.class);
+        viewModel.init();
+
+        viewModel.getAppointmentData().observe(this, new Observer<Appointment>()
+        {
+            @Override
+            public void onChanged(Appointment appointment)
+            {
+                if (appointment.isInProgress())
+                {
+                    configureAppointmentInProgress();
+                }
+                else if (appointment.isCompleted())
+                {
+                    configureAppointmentCompleted();
+                }
+
+            }
+        });
+
+        viewModel.coordinatesFailedData().observe(this, new Observer<Boolean>()
+        {
+            @Override
+            public void onChanged(Boolean failed)
+            {
+                if (failed)
+                {
+                    displayWarningMessage();
+                }
+            }
+        });
+
+        viewModel.getVerificationData().observe(this, new Observer<Boolean>()
+        {
+            @Override
+            public void onChanged(Boolean verified)
+            {
+                if (verified)
+                {
+                    displaySuccessToast();
+                }
+                else
+                {
+                    displayErrorToast();
+                }
+            }
+        });
+
         appointmentEndTimeTextView = view.findViewById(R.id.endDateTextView);
         appointmentStartTimeTextView = view.findViewById(R.id.startDateTextView);
         totalAppointmentTimeTextView = view.findViewById(R.id.totalTimeTextView);
@@ -48,14 +101,13 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
         commentsEditText = view.findViewById(R.id.commentEditText);
         startAppointmentButton = view.findViewById(R.id.startAppButton);
         completeAppointmentButton = view.findViewById(R.id.completeAppButton);
-        inProgressLayout = view.findViewById(R.id.inProgressLayout);
 
         startAppointmentButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                presenter.startAppointment(appointment);
+                viewModel.startAppointment(appointment);
             }
         });
 
@@ -64,9 +116,10 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
             @Override
             public void onClick(View v)
             {
-                presenter.completeAppointment(appointment);
+                viewModel.completeAppointment(appointment, getCommentText(), getKmText());
             }
         });
+
         appointmentStartTimeTextView.setText(appointment.getPunchedInTime());
         appointmentEndTimeTextView.setText(appointment.getPunchedOutTime());
         totalAppointmentTimeTextView.setText(appointment.getTotalTimeSpent());
@@ -74,15 +127,11 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
         configureView();
     }
 
-
-
-    @Override
     public String getCommentText()
     {
         return commentsEditText.getText().toString();
     }
 
-    @Override
     public String getKmText()
     {
         return kmTravelledEditText.getText().toString();
@@ -140,43 +189,32 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
         completeAppointmentButton.setEnabled(false);
     }
 
-    @Override
-    public void displayWarningMessage()
+    private void displayWarningMessage()
     {
         Toast.makeText(getActivity(), "You must have location services enabled, please do so in the application settings.",
                 Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void displaySuccessToast()
+    private void displaySuccessToast()
     {
         Toast.makeText(getContext(), "Your appointment has been completed successfully", Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void displayErrorToast()
+    private void displayErrorToast()
     {
         Toast.makeText(getContext(), "There has been an error completing your appointment", Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void showAppointmentStarted(Appointment appointment)
+    private void showAppointmentStarted(Appointment appointment)
     {
         appointmentStartTimeTextView.setText(appointment.getPunchedInTime());
         configureAppointmentInProgress();
     }
 
-    @Override
-    public void showAppointmentCompleted(Appointment appointment)
+    private void showAppointmentCompleted(Appointment appointment)
     {
         appointmentEndTimeTextView.setText(appointment.getPunchedOutTime());
         totalAppointmentTimeTextView.setText(appointment.getTotalTimeSpent());
         configureAppointmentCompleted();
-    }
-
-    @Override
-    public void setPresenter(AppointmentHoursContract.presenter presenter)
-    {
-        this.presenter = presenter;
     }
 }

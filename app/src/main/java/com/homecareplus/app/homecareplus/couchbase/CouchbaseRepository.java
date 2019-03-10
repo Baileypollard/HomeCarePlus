@@ -4,7 +4,6 @@ import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.util.Log;
 
-import com.couchbase.lite.AbstractReplicator;
 import com.couchbase.lite.Array;
 import com.couchbase.lite.ArrayExpression;
 import com.couchbase.lite.CouchbaseLiteException;
@@ -50,9 +49,10 @@ public class CouchbaseRepository implements CBRepository
     private static Database database;
     private static Replicator replicator;
     private static ListenerToken token;
-    private MutableLiveData<List<AppointmentSectionModel>> appointmentLiveData = new MutableLiveData<>();;
+    private MutableLiveData<List<AppointmentSectionModel>> appointmentSectionLiveData = new MutableLiveData<>();;
     private MutableLiveData<String> employeeNameData = new MutableLiveData<>();
     private MutableLiveData<List<Appointment>> previousAppointmentData = new MutableLiveData<>();
+    private MutableLiveData<Appointment> appointmentData = new MutableLiveData<>();
 
     public static void init(Context context, String employeeId, String sessionId)
     {
@@ -124,6 +124,7 @@ public class CouchbaseRepository implements CBRepository
         try
         {
             database.save(doc);
+            appointmentData.postValue(appointment);
         }
         catch (CouchbaseLiteException e)
         {
@@ -224,7 +225,7 @@ public class CouchbaseRepository implements CBRepository
                     }
                     appointmentSectionModels.add(new AppointmentSectionModel(date, appointments));
                 }
-                appointmentLiveData.postValue(appointmentSectionModels);
+                appointmentSectionLiveData.postValue(appointmentSectionModels);
             }
         });
     }
@@ -299,9 +300,15 @@ public class CouchbaseRepository implements CBRepository
     }
 
     @Override
-    public MutableLiveData<List<AppointmentSectionModel>> getAppointmentData()
+    public MutableLiveData<Appointment> getAppointmentData()
     {
-        return appointmentLiveData;
+        return appointmentData;
+    }
+
+    @Override
+    public MutableLiveData<List<AppointmentSectionModel>> getAppointmentSectionData()
+    {
+        return appointmentSectionLiveData;
     }
 
     @Override
@@ -315,7 +322,7 @@ public class CouchbaseRepository implements CBRepository
         URI url = null;
         try
         {
-            url = new URI("ws://35.235.81.133:4984/homecareplus");
+            url = new URI("ws://35.235.93.59:4984/homecareplus");
         } catch (URISyntaxException e)
         {
             e.printStackTrace();

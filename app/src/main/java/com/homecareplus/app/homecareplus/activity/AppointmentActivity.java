@@ -11,10 +11,8 @@ import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.FragmentTabAdapter;
-import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
 import com.homecareplus.app.homecareplus.contract.AppointmentInformationContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
-import com.homecareplus.app.homecareplus.presenter.AppointmentHoursPresenter;
 import com.homecareplus.app.homecareplus.presenter.AppointmentInfoPresenter;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 

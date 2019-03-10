@@ -3,7 +3,6 @@ package com.homecareplus.app.homecareplus.activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.homecareplus.app.homecareplus.R;
-import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
-import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.viewmodel.AppointmentHoursViewModel;
 
 public class AppointmentHoursTabFragment extends Fragment
 {
-    private AppointmentHoursContract.presenter presenter;
     private Appointment appointment;
     private TextView appointmentStartTimeTextView;
     private TextView appointmentEndTimeTextView;

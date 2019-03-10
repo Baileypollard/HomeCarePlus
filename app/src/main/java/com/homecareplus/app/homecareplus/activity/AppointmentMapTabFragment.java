@@ -16,7 +16,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.homecareplus.app.homecareplus.R;
-import com.homecareplus.app.homecareplus.contract.AppointmentMapContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.viewmodel.AppointmentMapViewModel;
 

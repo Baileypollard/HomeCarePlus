@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.PreviousAppointmentAdapter;
-import com.homecareplus.app.homecareplus.contract.ClientPreviousAppointmentContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.viewmodel.PreviousAppointmentViewModel;

@@ -1,62 +1,43 @@
 package com.homecareplus.app.homecareplus.couchbase;
 
-import android.os.AsyncTask;
-import android.util.Log;
+import android.content.Context;
 
-import com.homecareplus.app.homecareplus.callback.LoginAttemptedCallback;
 import com.homecareplus.app.homecareplus.util.NetworkUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
+import io.reactivex.Observable;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 
 public class CBSession
 {
-    public static class getSessionId extends AsyncTask<Void, Void, String>
+    public static Observable<String> getSessionId(final String username, final String password, final Context context)
     {
-        private String user;
-        private String password;
-        private LoginAttemptedCallback loginAttemptedCallback;
-
-        public getSessionId(String user, String password, LoginAttemptedCallback loginAttemptedCallback)
+        return Observable.fromCallable(new Callable<String>()
         {
-            this.loginAttemptedCallback = loginAttemptedCallback;
-            this.user = user;
-            this.password = password;
-        }
-
-        @Override
-        protected String doInBackground(Void... params)
-        {
-            return getSessionId(user, password);
-        }
-
-        @Override
-        protected void onPostExecute(String result)
-        {
-            Log.d("TAG", "Session id: " + result);
-
-            try
+            @Override
+            public String call() throws Exception
             {
-                JSONObject results = new JSONObject(result);
+                String sessionJSON = postForSessionId(username, password);
+                JSONObject results = new JSONObject(sessionJSON);
                 String sessionId = results.getString("session_id");
-                if (sessionId != null)
-                {
-                    loginAttemptedCallback.onLoginSuccess(user, password, sessionId);
-                }
-            } catch (JSONException e)
-            {
-                loginAttemptedCallback.onLoginFailed();
+                CouchbaseRepository.init(context, username, sessionId);
+
+                return sessionId;
             }
-        }
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 
-    private static String getSessionId(String id, String password)
+    private static String postForSessionId(String id, String password) throws JSONException
     {
         OkHttpClient client = NetworkUtil.createAuthenticatedClient(id, password);
 
@@ -64,26 +45,19 @@ public class CBSession
 
         final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
         JSONObject jo = new JSONObject();
+
+        jo.put("username", id);
+        jo.put("password", password);
+
+        RequestBody body = RequestBody.create(JSON, jo.toString());
         try
         {
-            jo.put("username", id);
-            jo.put("password", password);
-
-            RequestBody body = RequestBody.create(JSON, jo.toString());
-
-            try
-            {
-                return NetworkUtil.doPostRequest(client, url, body).body().string();
-            } catch (IOException e)
-            {
-                Log.d("TAG", "Failed: " + e.getMessage());
-            }
-        } catch (JSONException e)
-        {
-
+            return NetworkUtil.doPostRequest(client, url, body).body().string();
         }
-
-        return "N/A";
+        catch (IOException e)
+        {
+            return "Cannot Receive Session ID";
+        }
     }
 
 

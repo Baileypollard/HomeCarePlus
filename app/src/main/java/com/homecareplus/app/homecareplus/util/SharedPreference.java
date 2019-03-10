@@ -50,12 +50,13 @@ public class SharedPreference
         return sharedPreference.getString(KEY_EMPLOYEE_ID, "");
     }
 
-    public static SharedPreference getSharedInstance(Context context)
+    public static void init(Context context)
     {
-        if (instance == null)
-        {
-            instance = new SharedPreference(context);
-        }
+        instance = new SharedPreference(context);
+    }
+
+    public static SharedPreference getSharedInstance()
+    {
         return instance;
     }
 

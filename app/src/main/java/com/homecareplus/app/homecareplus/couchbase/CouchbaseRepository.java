@@ -3,6 +3,7 @@ package com.homecareplus.app.homecareplus.couchbase;
 import android.content.Context;
 import android.util.Log;
 
+import com.couchbase.lite.AbstractReplicator;
 import com.couchbase.lite.Array;
 import com.couchbase.lite.ArrayExpression;
 import com.couchbase.lite.CouchbaseLiteException;
@@ -318,7 +319,7 @@ public class CouchbaseRepository implements CBRepository
         URI url = null;
         try
         {
-            url = new URI("ws://35.236.0.225:4984/homecareplus");
+            url = new URI("ws://35.235.81.133:4984/homecareplus");
         } catch (URISyntaxException e)
         {
             e.printStackTrace();
@@ -340,7 +341,7 @@ public class CouchbaseRepository implements CBRepository
                 {
                     Log.e("Replication Comp Log", "Scheduler Completed");
                 }
-                if (change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.STOPPED))
+                else if (change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.STOPPED))
                 {
                     try
                     {
@@ -350,6 +351,10 @@ public class CouchbaseRepository implements CBRepository
                     {
                         Log.d("TAG", "Exception: " + e);
                     }
+                }
+                else if (change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.OFFLINE))
+                {
+                    Log.d("TAG", "OFFLINE");
                 }
             }
         });

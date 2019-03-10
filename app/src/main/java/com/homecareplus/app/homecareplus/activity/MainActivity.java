@@ -81,8 +81,10 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
         this.callback = new ItemTouchHelperCallback();
         this.extension = new ItemTouchHelperExtension(callback);
 
-        this.presenter.fetchAppointments(SharedPreference.getSharedInstance(getApplicationContext()).getEmployeeId());
-        this.presenter.fetchEmployeeName(SharedPreference.getSharedInstance(getApplicationContext()).getEmployeeId());
+        String employeeId = SharedPreference.getSharedInstance().getEmployeeId();
+
+        this.presenter.fetchAppointments(employeeId);
+        this.presenter.fetchEmployeeName(employeeId);
 
         this.recyclerView = findViewById(R.id.client_appointment_RecyclerView);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

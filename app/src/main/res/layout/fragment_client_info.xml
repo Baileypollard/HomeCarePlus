@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
       <TextView
@@ -81,36 +81,6 @@
           android:textColor="@color/colorBlack"
           android:textSize="17sp"
           tools:text="{gender}" />
-
-      <LinearLayout
-          android:id="@+id/commentsLayout"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:orientation="vertical"
-          android:visibility="gone">
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center_vertical"
-            android:paddingStart="15dp"
-            android:text="Comments"
-            android:textColor="@color/colorWhite"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/appointmentCommentTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
-            android:gravity="center_vertical"
-            android:padding="15dp"
-            android:text="{Comment}"
-            android:textColor="@color/colorBlack"
-            android:textSize="17sp" />
-      </LinearLayout>
 
     </LinearLayout>
   </ScrollView>

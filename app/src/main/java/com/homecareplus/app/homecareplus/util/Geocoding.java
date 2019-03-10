@@ -1,12 +1,6 @@
 package com.homecareplus.app.homecareplus.util;
 
-import android.os.AsyncTask;
-import android.util.Log;
-
-import com.couchbase.lite.internal.utils.JsonUtils;
 import com.google.android.gms.maps.model.LatLng;
-import com.homecareplus.app.homecareplus.callback.CoordinatesReceivedCallback;
-import com.homecareplus.app.homecareplus.callback.LoginAttemptedCallback;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,45 +9,28 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
 
 public class Geocoding
 {
-    public static class getLatAndLngForAddress extends AsyncTask<Void, Void, JSONObject>
+    public static Observable<LatLng> getLatLngForAddress(final String address, final String apiKey)
     {
-        private String address;
-        private String apiKey;
-        private CoordinatesReceivedCallback callback;
-
-        public getLatAndLngForAddress(String address, String apiKey, CoordinatesReceivedCallback callback)
+        return Observable.fromCallable(new Callable<LatLng>()
         {
-            this.address = address;
-            this.apiKey = apiKey;
-            this.callback = callback;
-        }
-
-        @Override
-        protected JSONObject doInBackground(Void... params)
-        {
-            return getGeocodeJSONForAddress(address, apiKey);
-        }
-
-        @Override
-        protected void onPostExecute(JSONObject result)
-        {
-            try
+            @Override
+            public LatLng call() throws Exception
             {
-                LatLng latLongAddressLocation = getLatLgnFromJSON(result);
-                callback.onCoordinatesReceived(latLongAddressLocation);
+                JSONObject geoJSON = getGeocodeJSONForAddress(address, apiKey);
+                return getLatLgnFromJSON(geoJSON);
             }
-            catch (JSONException e)
-            {
-                callback.onCoordinatesFailed();
-            }
-        }
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 
     private static LatLng getLatLgnFromJSON(JSONObject jsonObject) throws JSONException
@@ -70,7 +47,7 @@ public class Geocoding
     }
 
 
-    private static JSONObject getGeocodeJSONForAddress(String address, String apiKey)
+    private static JSONObject getGeocodeJSONForAddress(String address, String apiKey) throws IOException, JSONException
     {
         OkHttpClient client = new OkHttpClient.Builder().build();
         Map<String, String> urlParameters = new HashMap<>();
@@ -79,17 +56,10 @@ public class Geocoding
 
         HttpUrl url = NetworkUtil.createHttpURL("https", "maps.googleapis.com", "maps/api/geocode/json", urlParameters);
 
-        try
+        Response response = NetworkUtil.doGetRequest(client, url.toString());
+        if (response != null)
         {
-            Response response = NetworkUtil.doGetRequest(client, url.toString());
-            if (response != null)
-            {
-                return new JSONObject(response.body().string());
-            }
-        }
-        catch (Exception e)
-        {
-            Log.d("TAG", "Error occurred: " + e.getMessage());
+            return new JSONObject(response.body().string());
         }
         return new JSONObject();
     }

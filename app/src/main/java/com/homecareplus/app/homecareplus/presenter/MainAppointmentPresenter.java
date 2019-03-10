@@ -3,13 +3,10 @@ package com.homecareplus.app.homecareplus.presenter;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import com.couchbase.lite.CouchbaseLiteException;
 import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.couchbase.CouchbaseRepository;
 import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
-
-import java.util.Objects;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -72,7 +69,7 @@ public class MainAppointmentPresenter implements MainAppointmentsContract.presen
     {
         CouchbaseRepository.getInstance().closeDatabase();
         //Clear the shared instances
-        SharedPreference.getSharedInstance(view.getActivity()).clear();
+        SharedPreference.getSharedInstance().clear();
         view.startLoginActivity();
     }
 }

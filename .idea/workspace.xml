@@ -3,6 +3,7 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="pixel_xl" />
         <device id="pixel_2_xl" />
         <device id="Nexus 5X" />
         <device id="wear_square" />
@@ -48,23 +49,23 @@
         <counts>
           <entry key="class" value="5" />
           <entry key="gradle" value="5" />
-          <entry key="java" value="358" />
-          <entry key="xml" value="78" />
+          <entry key="java" value="384" />
+          <entry key="xml" value="80" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
           <entry key="Groovy" value="5" />
-          <entry key="JAVA" value="358" />
-          <entry key="XML" value="78" />
+          <entry key="JAVA" value="384" />
+          <entry key="XML" value="80" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
           <entry key="gradle" value="2" />
-          <entry key="java" value="11221" />
+          <entry key="java" value="12873" />
           <entry key="txt" value="160" />
           <entry key="xml" value="115" />
         </counts>
@@ -72,7 +73,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="11221" />
+          <entry key="JAVA" value="12873" />
           <entry key="PLAIN_TEXT" value="178" />
           <entry key="XML" value="115" />
         </counts>
@@ -81,11 +82,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/MainAppointmentPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+            <state relative-caret-position="255">
+              <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,21 +95,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/AppointmentHoursTabFragment.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/AppointmentVerification.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="102" column="26" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
+            <state relative-caret-position="136">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#743#1313#0" expanded="true" />
+                <element signature="e#1312#1313#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientPreviousAppointmentsFragment.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentHoursPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="47" column="12" selection-start-line="47" selection-end-line="48" />
+            <state>
+              <caret column="52" selection-start-column="52" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3688#3689#0" expanded="true" />
+                <element signature="e#3748#3749#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
+            <state relative-caret-position="221">
+              <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
               <folding>
                 <element signature="e#4343#4344#0" expanded="true" />
                 <element signature="e#4375#4376#0" expanded="true" />
@@ -128,51 +136,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/MainAppointmentsContract.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/Geocoding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/GPSTracker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="21" column="40" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="334">
+              <caret line="36" column="82" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2443#2444#0" expanded="true" />
-                <element signature="e#2474#2475#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CouchbaseRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="366" column="9" selection-start-line="366" selection-start-column="9" selection-end-line="366" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#11880#13977#0" expanded="true" />
-                <element signature="e#12095#13951#0" expanded="true" />
-                <element signature="e#13950#13951#0" expanded="true" />
-                <element signature="e#13976#13977#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/ClientPreviousAppointmentPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#801#1074#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/preloaded_fonts.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row_call_client.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/AppointmentTabAdapter.java" />
@@ -222,20 +191,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentRowOnClickListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/viewholder/AppointmentRowViewHolder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/AppointmentSection.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/SharedPreference.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_appointment_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/client_details_bottom_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_client_previous_apps.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/PreviousAppointmentAdpater.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_toolbar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/adapter/PreviousAppointmentAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_client_details.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_client_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientInformationFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientInformationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientPreviousAppointmentsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/Geocoding.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/GPSTracker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/DateUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/model/AppointmentSectionModel.java" />
@@ -247,21 +211,28 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/client_appointment_row.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/DatabaseManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/CBRepository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CBSession.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentHoursPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/AppointmentVerification.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CouchbaseRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/ClientPreviousAppointmentPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/MainAppointmentsContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_appointment_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientPreviousAppointmentsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_client_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CBSession.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentMapPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CouchbaseRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/Geocoding.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/SharedPreference.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/AppointmentVerification.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentHoursContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/AppointmentHoursTabFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentHoursPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/MainAppointmentPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/AppointmentHoursTabFragment.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="510" />
     <option name="y" value="291" />
     <option name="width" value="927" />
@@ -302,14 +273,21 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="homecareplus" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="couchbase" type="462c0819:PsiDirectoryNode" />
+              <item name="callback" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HomeCarePlus" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="homecareplus" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="presenter" type="462c0819:PsiDirectoryNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeCarePlus" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="homecareplus" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -480,7 +458,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25910932" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25910932" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -488,13 +466,13 @@
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.32902032" />
-      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.44362292" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.43992606" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32902032" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32902032" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" weight="0.32902032" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32902032" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.23475046" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.23475046" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Android Profiler" order="9" />
       <window_info anchor="right" id="Assistant" weight="0.32955465" />
@@ -510,29 +488,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_appointment_info.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_client_details.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientInformationFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_client_info.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientInformationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1508">
@@ -545,24 +500,6 @@
             <element signature="e#2621#2622#0" expanded="true" />
             <element signature="e#3582#3583#0" expanded="true" />
             <element signature="e#3611#3612#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/Geocoding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/SharedPreference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding>
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -672,13 +609,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/2c70510784f92eba5ab6a41e47e91d476d1ebc0b/rxjava-2.2.6-sources.jar!/io/reactivex/Observable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
-          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11">
@@ -711,6 +641,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="287" column="28" selection-start-line="287" selection-start-column="28" selection-end-line="287" selection-end-column="28" />
+          <folding>
+            <element signature="e#16657#16658#0" expanded="true" />
+            <element signature="e#16719#16720#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -742,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/NetworkUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/CBRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -759,48 +686,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentHoursContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/AppointmentVerification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CBSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/2c70510784f92eba5ab6a41e47e91d476d1ebc0b/rxjava-2.2.6-sources.jar!/io/reactivex/Flowable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1938">
           <caret line="14625" column="21" lean-forward="true" selection-start-line="14625" selection-start-column="21" selection-end-line="14625" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentMapPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -818,36 +707,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentHoursPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-363">
-          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/ClientPreviousAppointmentPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CouchbaseRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="366" column="9" selection-start-line="366" selection-start-column="9" selection-end-line="366" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11880#13977#0" expanded="true" />
-            <element signature="e#12095#13951#0" expanded="true" />
-            <element signature="e#13950#13951#0" expanded="true" />
-            <element signature="e#13976#13977#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -859,10 +724,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_appointment_layout.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_client_info.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientPreviousAppointmentsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/GPSTracker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="40" />
+        <state relative-caret-position="-23">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2443#2444#0" expanded="true" />
@@ -871,10 +754,151 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/2c70510784f92eba5ab6a41e47e91d476d1ebc0b/rxjava-2.2.6-sources.jar!/io/reactivex/Observable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12238" column="22" selection-start-line="12238" selection-start-column="22" selection-end-line="12238" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/NetworkUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/2c70510784f92eba5ab6a41e47e91d476d1ebc0b/rxjava-2.2.6-sources.jar!/io/reactivex/Observer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.couchbase.lite/couchbase-lite-android/2.1.2/73c70b6a5dd1c4fa1b2d29084e658535cc76b7ac/couchbase-lite-android-2.1.2-sources.jar!/com/couchbase/lite/AbstractReplicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CBSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#625#1043#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/couchbase/CouchbaseRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="321" column="45" selection-start-line="321" selection-start-column="45" selection-end-line="321" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#14716#15572#0" expanded="true" />
+            <element signature="e#15571#15572#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentMapPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#1037#1038#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/SharedPreference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1628#1629#0" expanded="true" />
+            <element signature="e#1694#1695#0" expanded="true" />
+            <element signature="e#1725#1726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/Geocoding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="36" column="82" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#801#1074#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/util/AppointmentVerification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#743#1313#0" expanded="true" />
+            <element signature="e#1312#1313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/AppointmentHoursTabFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="157" column="5" lean-forward="true" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/contract/AppointmentHoursContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/AppointmentHoursPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="52" selection-start-column="52" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3688#3689#0" expanded="true" />
+            <element signature="e#3748#3749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
+        <state relative-caret-position="221">
+          <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
           <folding>
             <element signature="e#4343#4344#0" expanded="true" />
             <element signature="e#4375#4376#0" expanded="true" />
@@ -884,25 +908,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/presenter/MainAppointmentPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/AppointmentHoursTabFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="102" column="26" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/ClientPreviousAppointmentsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="47" column="12" selection-start-line="47" selection-end-line="48" />
+        <state relative-caret-position="255">
+          <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

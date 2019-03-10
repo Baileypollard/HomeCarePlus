@@ -1,15 +1,8 @@
 package com.homecareplus.app.homecareplus.util;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
-import com.homecareplus.app.homecareplus.callback.LoginAttemptedCallback;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-import java.sql.Time;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Authenticator;
 import okhttp3.Credentials;
 import okhttp3.HttpUrl;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;

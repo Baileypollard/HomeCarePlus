@@ -1,62 +1,47 @@
 package com.homecareplus.app.homecareplus.util;
 
-import android.os.AsyncTask;
-import android.util.Log;
-
 import com.homecareplus.app.homecareplus.model.Appointment;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 
 public class AppointmentVerification
 {
-    public static class VerifyAppointment extends AsyncTask<Void, Void, Boolean>
+    public static Observable<Boolean> verifyAppointment(final Appointment appointment)
     {
-        private String username;
-        private String password;
-        private Appointment appointment;
-
-        public VerifyAppointment(Appointment appointment)
+        return Observable.fromCallable(new Callable<Boolean>()
         {
-            this.username = SharedPreference.getSharedInstance(null).getEmployeeId();
-            this.password = SharedPreference.getSharedInstance(null).getEmployeePassword();
-            this.appointment = appointment;
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params)
-        {
-            OkHttpClient client = NetworkUtil.createAuthenticatedClient(username, password);
-            String url = "http://192.168.2.24:8080/rest/secured/verify";
-
-
-            final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
-            JSONObject jo = JsonDocCreator.createAppointmentJSON(appointment);
-
-            RequestBody body = RequestBody.create(JSON, jo.toString());
-
-            try
+            @Override
+            public Boolean call() throws Exception
             {
-                NetworkUtil.doPostRequest(client, url, body);
-                return true;
-            }
-            catch (IOException e)
-            {
-                Log.d("TAG", "Failed: " + e.getMessage());
-                return false;
-            }
-        }
-        @Override
-        protected void onPostExecute(Boolean result)
-        {
+                String username = SharedPreference.getSharedInstance().getEmployeeId();
+                String password = SharedPreference.getSharedInstance().getEmployeePassword();
 
-        }
+                OkHttpClient client = NetworkUtil.createAuthenticatedClient(username, password);
+                String url = "http://192.168.2.24:8080/rest/secured/verify";
+                MediaType JSON = MediaType.parse("application/json;charset=utf-8");
+                JSONObject jo = JsonDocCreator.createAppointmentJSON(appointment);
+                RequestBody body = RequestBody.create(JSON, jo.toString());
+                try
+                {
+                    NetworkUtil.doPostRequest(client, url, body);
+                    return true;
+                }
+                catch (IOException e)
+                {
+                    return false;
+                }
+            }
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 }
 

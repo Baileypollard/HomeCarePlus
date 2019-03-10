@@ -18,6 +18,10 @@ public interface AppointmentHoursContract
     {
         void displayWarningMessage();
 
+        void displaySuccessToast();
+
+        void displayErrorToast();
+
         void showAppointmentStarted(Appointment appointment);
 
         void showAppointmentCompleted(Appointment appointment);

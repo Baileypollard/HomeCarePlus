@@ -1,6 +1,5 @@
 package com.homecareplus.app.homecareplus.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -146,6 +145,18 @@ public class AppointmentHoursTabFragment extends Fragment implements Appointment
     {
         Toast.makeText(getActivity(), "You must have location services enabled, please do so in the application settings.",
                 Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void displaySuccessToast()
+    {
+        Toast.makeText(getContext(), "Your appointment has been completed successfully", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void displayErrorToast()
+    {
+        Toast.makeText(getContext(), "There has been an error completing your appointment", Toast.LENGTH_LONG).show();
     }
 
     @Override

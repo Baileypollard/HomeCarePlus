@@ -45,7 +45,7 @@ public class ClientPreviousAppointmentsFragment extends Fragment implements Clie
         DividerItemDecoration divider = new DividerItemDecoration(previousAppointmentsRecyclerView.getContext(), DividerItemDecoration.VERTICAL);
         divider.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.cell_divider));
         previousAppointmentsRecyclerView.addItemDecoration(divider);
-        presenter.loadPreviousAppointments(client);
+        presenter.loadPreviousAppointments(client); // crash here
     }
 
     @Override

@@ -1,8 +1,5 @@
 package com.homecareplus.app.homecareplus.presenter;
 
-import android.os.AsyncTask;
-import android.util.Log;
-
 import com.google.android.gms.maps.model.LatLng;
 import com.homecareplus.app.homecareplus.callback.CoordinatesReceivedCallback;
 import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
@@ -16,6 +13,9 @@ import com.homecareplus.app.homecareplus.util.GPSTracker;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 public class AppointmentHoursPresenter implements AppointmentHoursContract.presenter
 {
@@ -32,7 +32,6 @@ public class AppointmentHoursPresenter implements AppointmentHoursContract.prese
             @Override
             public void onCoordinatesReceived(LatLng latLng)
             {
-                Log.d("TAG","Coordiantes Recieved");
                 appointment.setPunchedInLocation(createLatLngMap(latLng));
                 saveAppointment(appointment);
                 view.showAppointmentStarted(appointment);
@@ -65,11 +64,39 @@ public class AppointmentHoursPresenter implements AppointmentHoursContract.prese
                 saveAppointment(appointment);
                 view.showAppointmentCompleted(appointment);
 
-                AppointmentVerification.VerifyAppointment verify = new AppointmentVerification.VerifyAppointment(appointment);
-                if (verify.getStatus() != AsyncTask.Status.RUNNING)
+                AppointmentVerification.verifyAppointment(appointment).subscribe(new Observer<Boolean>()
                 {
-                    verify.execute();
-                }
+                    @Override
+                    public void onSubscribe(Disposable d)
+                    {
+
+                    }
+
+                    @Override
+                    public void onNext(Boolean aBoolean)
+                    {
+                        if (aBoolean)
+                        {
+                            view.displaySuccessToast();
+                        }
+                        else
+                        {
+                            view.displayErrorToast();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e)
+                    {
+
+                    }
+
+                    @Override
+                    public void onComplete()
+                    {
+
+                    }
+                });
             }
 
             @Override

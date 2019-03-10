@@ -15,11 +15,7 @@ public interface MainAppointmentsContract
     {
         Activity getActivity();
 
-        void startLoginActivity();
-
-        void displayAppointmentSection(AppointmentSectionModel appointmentSectionModel);
-
-        void displayEmployeeName(String name);
+        void startLoginActivity();;
     }
 
 

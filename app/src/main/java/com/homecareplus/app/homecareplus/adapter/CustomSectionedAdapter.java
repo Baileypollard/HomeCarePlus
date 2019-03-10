@@ -1,8 +1,13 @@
 package com.homecareplus.app.homecareplus.adapter;
 
+import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
+
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
 import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
+
+import java.util.List;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 

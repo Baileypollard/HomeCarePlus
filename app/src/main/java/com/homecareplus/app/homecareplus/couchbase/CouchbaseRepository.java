@@ -1,5 +1,6 @@
 package com.homecareplus.app.homecareplus.couchbase;
 
+import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.util.Log;
 
@@ -43,18 +44,14 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.reactivex.BackpressureStrategy;
-import io.reactivex.Flowable;
-import io.reactivex.FlowableEmitter;
-import io.reactivex.FlowableOnSubscribe;
-import io.reactivex.Observable;
-
 public class CouchbaseRepository implements CBRepository
 {
     private static CBRepository instance;
     private static Database database;
     private static Replicator replicator;
     private static ListenerToken token;
+    private MutableLiveData<List<AppointmentSectionModel>> appointmentLiveData = new MutableLiveData<>();;
+    private MutableLiveData<String> employeeNameData = new MutableLiveData<>();
 
     public static void init(Context context, String employeeId, String sessionId)
     {
@@ -134,7 +131,7 @@ public class CouchbaseRepository implements CBRepository
     }
 
     @Override
-    public Flowable<String> fetchEmployeeName(String employeeId)
+    public void fetchEmployeeName(String employeeId)
     {
         final Query query = QueryBuilder.select(
                 SelectResult.expression(Expression.property("first_name")),
@@ -145,35 +142,28 @@ public class CouchbaseRepository implements CBRepository
 
         executeQuery(query);
 
-        return Flowable.create(new FlowableOnSubscribe<String>()
+        query.addChangeListener(new QueryChangeListener()
         {
             @Override
-            public void subscribe(final FlowableEmitter<String> emitter)
+            public void changed(QueryChange change)
             {
-                query.addChangeListener(new QueryChangeListener()
-                {
-                    @Override
-                    public void changed(QueryChange change)
-                    {
-                        ResultSet results = change.getResults();
-                        List<Result> resultList = results.allResults();
+                ResultSet results = change.getResults();
+                List<Result> resultList = results.allResults();
 
-                        if (resultList.size() == 0)
-                        {
-                            return;
-                        }
-                        String firstName = resultList.get(0).getString("first_name");
-                        String lastName = resultList.get(0).getString("last_name");
-                        String fullName = firstName + " " + lastName;
-                        emitter.onNext(fullName);
-                    }
-                });
+                if (resultList.size() == 0)
+                {
+                    return;
+                }
+                String firstName = resultList.get(0).getString("first_name");
+                String lastName = resultList.get(0).getString("last_name");
+                String fullName = firstName + " " + lastName;
+                employeeNameData.postValue(fullName);
             }
-        }, BackpressureStrategy.BUFFER);
+        });
     }
 
     @Override
-    public Flowable<AppointmentSectionModel> fetchAppointments(String employeeId)
+    public void fetchAppointments(String employeeId)
     {
         final DataSource dataSource = DataSource.database(database).as("appointmentDS");
         final DataSource employeeDs = DataSource.database(database).as("employeeDS");
@@ -194,56 +184,52 @@ public class CouchbaseRepository implements CBRepository
 
         executeQuery(query);
 
-        return Flowable.create(new FlowableOnSubscribe<AppointmentSectionModel>()
+        final List<AppointmentSectionModel> appointmentSectionModels = new ArrayList<>();
+
+        query.addChangeListener(new QueryChangeListener()
         {
             @Override
-            public void subscribe(final FlowableEmitter<AppointmentSectionModel> emitter)
+            public void changed(QueryChange change)
             {
-                query.addChangeListener(new QueryChangeListener()
+                ResultSet rows = change.getResults();
+
+                if (rows == null)
                 {
-                    @Override
-                    public void changed(QueryChange change)
+                    return;
+                }
+                List<Result> rowList = rows.allResults();
+
+                for (Result r : rowList)
+                {
+                    Dictionary appointmentDict = r.getDictionary("appointmentDS");
+                    Dictionary employeeDict = r.getDictionary("employeeDS");
+
+                    String date = appointmentDict.getString("date");
+
+                    Employee employee = DictionaryToModel.getEmployeeFromDictionary(employeeDict);
+
+                    Array array = appointmentDict.getArray("schedule");
+
+                    if (array == null)
+                        return;
+
+                    List<Appointment> appointments = new ArrayList<>();
+                    for (int i = 0; i < array.count(); i++)
                     {
-                        ResultSet rows = change.getResults();
-
-                        if (rows == null)
-                        {
-                            return;
-                        }
-                        List<Result> rowList = rows.allResults();
-
-                        for (Result r : rowList)
-                        {
-                            Dictionary appointmentDict = r.getDictionary("appointmentDS");
-                            Dictionary employeeDict = r.getDictionary("employeeDS");
-
-                            String date = appointmentDict.getString("date");
-
-                            Employee employee = DictionaryToModel.getEmployeeFromDictionary(employeeDict);
-
-                            Array array = appointmentDict.getArray("schedule");
-
-                            if (array == null)
-                                return;
-
-                            List<Appointment> appointments = new ArrayList<>();
-                            for (int i = 0; i < array.count(); i++)
-                            {
-                                Dictionary dictionary = array.getDictionary(i);
-                                Client client = DictionaryToModel.getClientFromDictionary(dictionary);
-                                Appointment appointment = DictionaryToModel.getAppointmentFromDictionary(dictionary, client, employee, date);
-                                appointments.add(appointment);
-                            }
-                            emitter.onNext(new AppointmentSectionModel(date, appointments));
-                        }
+                        Dictionary dictionary = array.getDictionary(i);
+                        Client client = DictionaryToModel.getClientFromDictionary(dictionary);
+                        Appointment appointment = DictionaryToModel.getAppointmentFromDictionary(dictionary, client, employee, date);
+                        appointments.add(appointment);
                     }
-                });
+                    appointmentSectionModels.add(new AppointmentSectionModel(date, appointments));
+                }
+                appointmentLiveData.postValue(appointmentSectionModels);
             }
-        }, BackpressureStrategy.BUFFER);
+        });
     }
 
     @Override
-    public Flowable<List<Appointment>> loadPreviousAppointmentsForClient(final Client client)
+    public void loadPreviousAppointmentsForClient(final Client client)
     {
         final DataSource dataSource = DataSource.database(database).as("appointmentDS");
         final DataSource employeeDs = DataSource.database(database).as("employeeDS");
@@ -266,53 +252,55 @@ public class CouchbaseRepository implements CBRepository
 
         executeQuery(query);
 
-        return Flowable.create(new FlowableOnSubscribe<List<Appointment>>()
+        query.addChangeListener(new QueryChangeListener()
         {
             @Override
-            public void subscribe(final FlowableEmitter<List<Appointment>> emitter)
+            public void changed(QueryChange change)
             {
-                query.addChangeListener(new QueryChangeListener()
+                List<Appointment> appointments = new ArrayList<>();
+                ResultSet rows = change.getResults();
+
+                if (rows == null)
                 {
-                    @Override
-                    public void changed(QueryChange change)
+                    return;
+                }
+                List<Result> rowList = rows.allResults();
+
+                for (Result r : rowList)
+                {
+                    Dictionary appointmentDict = r.getDictionary("appointmentDS");
+                    Dictionary employeeDict = r.getDictionary("employeeDS");
+                    String date = appointmentDict.getString("date");
+                    Employee employee = DictionaryToModel.getEmployeeFromDictionary(employeeDict);
+
+                    Array array = appointmentDict.getArray("schedule");
+                    if (array == null)
+                        return;
+
+                    for (int i = 0; i < array.count(); i++)
                     {
-                        List<Appointment> appointments = new ArrayList<>();
-                        ResultSet rows = change.getResults();
-
-                        if (rows == null)
-                        {
-                            return;
-                        }
-                        List<Result> rowList = rows.allResults();
-
-                        for (Result r : rowList)
-                        {
-                            Dictionary appointmentDict = r.getDictionary("appointmentDS");
-                            Dictionary employeeDict = r.getDictionary("employeeDS");
-                            String date = appointmentDict.getString("date");
-                            Employee employee = DictionaryToModel.getEmployeeFromDictionary(employeeDict);
-
-                            Array array = appointmentDict.getArray("schedule");
-                            if (array == null)
-                                return;
-
-                            for (int i = 0; i < array.count(); i++)
-                            {
-                                Dictionary dictionary = array.getDictionary(i);
-                                Client newClient = DictionaryToModel.getClientFromDictionary(dictionary);
-                                Appointment appointment = DictionaryToModel.getAppointmentFromDictionary(dictionary, client, employee, date);
-                                if (client.getClientId().equals(newClient.getClientId()) && appointment.isVerified())
-                                    appointments.add(appointment);
-                            }
-                        }
-                        emitter.onNext(appointments);
+                        Dictionary dictionary = array.getDictionary(i);
+                        Client newClient = DictionaryToModel.getClientFromDictionary(dictionary);
+                        Appointment appointment = DictionaryToModel.getAppointmentFromDictionary(dictionary, client, employee, date);
+                        if (client.getClientId().equals(newClient.getClientId()) && appointment.isVerified())
+                            appointments.add(appointment);
                     }
-                });
+                }
             }
-        }, BackpressureStrategy.BUFFER);
+        });
     }
 
+    @Override
+    public MutableLiveData<List<AppointmentSectionModel>> getAppointmentData()
+    {
+        return appointmentLiveData;
+    }
 
+    @Override
+    public MutableLiveData<String> getEmployeeNameData()
+    {
+        return employeeNameData;
+    }
 
     private static void beginDatabaseReplication(String sessionId)
     {

@@ -1,6 +1,8 @@
 package com.homecareplus.app.homecareplus.activity;
 
 import android.app.Activity;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
@@ -10,7 +12,6 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,23 +19,25 @@ import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.CustomSectionedAdapter;
 import com.homecareplus.app.homecareplus.callback.ItemTouchHelperCallback;
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
-import com.homecareplus.app.homecareplus.contract.MainAppointmentsContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.homecareplus.app.homecareplus.model.Client;
-import com.homecareplus.app.homecareplus.presenter.MainAppointmentPresenter;
 import com.homecareplus.app.homecareplus.util.GPSTracker;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
+import com.homecareplus.app.homecareplus.viewmodel.MainActivityViewModel;
 import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
-public class MainActivity extends AppCompatActivity implements MainAppointmentsContract.view
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity
 {
     private RecyclerView recyclerView;
-    private MainAppointmentPresenter presenter;
+
     private CustomSectionedAdapter adapter;
     private TextView employeeNameTextView;
     private ItemTouchHelperExtension extension;
     private ItemTouchHelperExtension.Callback callback;
+    private MainActivityViewModel mainActivityViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,8 +48,6 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
         GPSTracker.init(this);
 
         this.employeeNameTextView = findViewById(R.id.employeeNameTextView);
-
-        this.presenter = new MainAppointmentPresenter(this);
 
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
         setSupportActionBar(toolbar);
@@ -83,9 +84,6 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
 
         String employeeId = SharedPreference.getSharedInstance().getEmployeeId();
 
-        this.presenter.fetchAppointments(employeeId);
-        this.presenter.fetchEmployeeName(employeeId);
-
         this.recyclerView = findViewById(R.id.client_appointment_RecyclerView);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
@@ -95,6 +93,42 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
         this.recyclerView.setAdapter(adapter);
         this.extension.attachToRecyclerView(recyclerView);
         this.adapter.setItemTouchHelperExtension(extension);
+
+        mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
+        mainActivityViewModel.init(employeeId);
+
+        mainActivityViewModel.getAppointmentSections().observe(this, new Observer<List<AppointmentSectionModel>>()
+        {
+            @Override
+            public void onChanged(List<AppointmentSectionModel> appointmentSections)
+            {
+                for (AppointmentSectionModel a: appointmentSections)
+                {
+                    adapter.displayAppointmentSection(a);
+                }
+            }
+        });
+
+        mainActivityViewModel.getLogoutData().observe(this, new Observer<Boolean>()
+        {
+            @Override
+            public void onChanged(Boolean logout)
+            {
+                if (logout)
+                {
+                    startLoginActivity();
+                }
+            }
+        });
+
+        mainActivityViewModel.getEmployeeName().observe(this, new Observer<String>()
+        {
+            @Override
+            public void onChanged(String name)
+            {
+                employeeNameTextView.setText(name);
+            }
+        });
     }
 
     @Override
@@ -107,34 +141,21 @@ public class MainActivity extends AppCompatActivity implements MainAppointmentsC
     public void onDestroy()
     {
         super.onDestroy();
-        presenter.destroyObservables();
-    }
 
-    @Override
-    public void displayAppointmentSection(AppointmentSectionModel appointmentSec)
-    {
-        adapter.displayAppointmentSection(appointmentSec);
     }
-
-    @Override
-    public void displayEmployeeName(String name)
-    {
-        employeeNameTextView.setText(name);
-    }
-
 
     public void onClickLogout(View v)
     {
-        presenter.logout();
+        mainActivityViewModel.logout();
     }
 
-    @Override
+
     public Activity getActivity()
     {
         return this;
     }
 
-    @Override
+
     public void startLoginActivity()
     {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);

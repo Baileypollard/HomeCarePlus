@@ -112,6 +112,7 @@ public class ClientInformationActivity extends AppCompatActivity
             }
         });
     }
+
     public Client getClient()
     {
         return client;

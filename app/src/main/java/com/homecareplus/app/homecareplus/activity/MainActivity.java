@@ -32,7 +32,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
 {
     private RecyclerView recyclerView;
-
     private CustomSectionedAdapter adapter;
     private TextView employeeNameTextView;
     private ItemTouchHelperExtension extension;

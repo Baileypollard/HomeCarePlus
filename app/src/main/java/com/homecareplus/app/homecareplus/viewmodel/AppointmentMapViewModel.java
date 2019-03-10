@@ -1,25 +1,36 @@
-package com.homecareplus.app.homecareplus.presenter;
+package com.homecareplus.app.homecareplus.viewmodel;
+
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.ViewModel;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.homecareplus.app.homecareplus.contract.AppointmentMapContract;
 import com.homecareplus.app.homecareplus.util.Geocoding;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-public class AppointmentMapPresenter implements AppointmentMapContract.presenter
+public class AppointmentMapViewModel extends ViewModel
 {
-    private AppointmentMapContract.view view;
+    private MutableLiveData<LatLng> lngLatData;
 
-    @Override
-    public void setView(AppointmentMapContract.view view)
+    public void init(String address, String apiKey)
     {
-        this.view = view;
-        this.view.setPresenter(this);
+        if (lngLatData != null)
+        {
+            return;
+        }
+
+        lngLatData = new MutableLiveData<>();
+        getAddressInformation(address, apiKey);
     }
 
-    @Override
-    public void getAddressInformation(String address, String apiKey)
+    public LiveData<LatLng> getLatLngData()
+    {
+        return lngLatData;
+    }
+
+    private void getAddressInformation(String address, String apiKey)
     {
         Geocoding.getLatLngForAddress(address, apiKey).subscribe(new Observer<LatLng>()
         {
@@ -32,7 +43,7 @@ public class AppointmentMapPresenter implements AppointmentMapContract.presenter
             @Override
             public void onNext(LatLng latLng)
             {
-                view.displayMarkerOnMaps(latLng);
+                lngLatData.postValue(latLng);
             }
 
             @Override

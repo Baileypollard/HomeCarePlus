@@ -13,11 +13,9 @@ import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.FragmentTabAdapter;
 import com.homecareplus.app.homecareplus.contract.AppointmentHoursContract;
 import com.homecareplus.app.homecareplus.contract.AppointmentInformationContract;
-import com.homecareplus.app.homecareplus.contract.AppointmentMapContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.presenter.AppointmentHoursPresenter;
 import com.homecareplus.app.homecareplus.presenter.AppointmentInfoPresenter;
-import com.homecareplus.app.homecareplus.presenter.AppointmentMapPresenter;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 
@@ -27,7 +25,6 @@ public class AppointmentActivity extends AppCompatActivity
     private BottomNavigationView navigationView;
     private Appointment appointment;
     private AppointmentInformationContract.presenter appInfoPresenter;
-    private AppointmentMapContract.presenter appMapPresenter;
     private AppointmentHoursContract.presenter appHoursPresenter;
     private FragmentTabAdapter pagerAdapter;
 
@@ -52,7 +49,6 @@ public class AppointmentActivity extends AppCompatActivity
         });
 
         this.appInfoPresenter = new AppointmentInfoPresenter();
-        this.appMapPresenter = new AppointmentMapPresenter();
         this.appHoursPresenter = new AppointmentHoursPresenter();
 
         this.appointment = (Appointment) getIntent().getSerializableExtra(SharedPreference.KEY_APPOINTMENT);
@@ -64,7 +60,6 @@ public class AppointmentActivity extends AppCompatActivity
         AppointmentMapTabFragment mapTabFragment = new AppointmentMapTabFragment();
 
         this.appInfoPresenter.setView(appointmentInfoTabFragment);
-        this.appMapPresenter.setView(mapTabFragment);
         this.appHoursPresenter.setView(appointmentHoursTabFragment);
 
         this.pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
@@ -113,7 +108,8 @@ public class AppointmentActivity extends AppCompatActivity
                 if (prevMenuItem != null)
                 {
                     prevMenuItem.setChecked(false);
-                } else
+                }
+                else
                 {
                     navigationView.getMenu().getItem(0).setChecked(false);
                 }

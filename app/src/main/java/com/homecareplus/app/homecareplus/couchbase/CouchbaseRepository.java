@@ -52,6 +52,7 @@ public class CouchbaseRepository implements CBRepository
     private static ListenerToken token;
     private MutableLiveData<List<AppointmentSectionModel>> appointmentLiveData = new MutableLiveData<>();;
     private MutableLiveData<String> employeeNameData = new MutableLiveData<>();
+    private MutableLiveData<List<Appointment>> previousAppointmentData = new MutableLiveData<>();
 
     public static void init(Context context, String employeeId, String sessionId)
     {
@@ -229,7 +230,7 @@ public class CouchbaseRepository implements CBRepository
     }
 
     @Override
-    public void loadPreviousAppointmentsForClient(final Client client)
+    public void fetchPreviousAppointmentsForClient(final Client client)
     {
         final DataSource dataSource = DataSource.database(database).as("appointmentDS");
         final DataSource employeeDs = DataSource.database(database).as("employeeDS");
@@ -285,9 +286,16 @@ public class CouchbaseRepository implements CBRepository
                         if (client.getClientId().equals(newClient.getClientId()) && appointment.isVerified())
                             appointments.add(appointment);
                     }
+                    previousAppointmentData.postValue(appointments);
                 }
             }
         });
+    }
+
+    @Override
+    public MutableLiveData<List<Appointment>> getPreviousAppointmentData()
+    {
+        return previousAppointmentData;
     }
 
     @Override

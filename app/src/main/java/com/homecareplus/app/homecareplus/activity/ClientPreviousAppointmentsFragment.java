@@ -1,6 +1,9 @@
 package com.homecareplus.app.homecareplus.activity;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
@@ -15,15 +18,16 @@ import com.homecareplus.app.homecareplus.adapter.PreviousAppointmentAdapter;
 import com.homecareplus.app.homecareplus.contract.ClientPreviousAppointmentContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.Client;
+import com.homecareplus.app.homecareplus.viewmodel.PreviousAppointmentViewModel;
 
 import java.util.List;
 
-public class ClientPreviousAppointmentsFragment extends Fragment implements ClientPreviousAppointmentContract.view
+public class ClientPreviousAppointmentsFragment extends Fragment
 {
-    private ClientPreviousAppointmentContract.presenter presenter;
     private Client client;
     private RecyclerView previousAppointmentsRecyclerView;
     private PreviousAppointmentAdapter appointmentAdapter;
+    private PreviousAppointmentViewModel viewModel;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -38,6 +42,18 @@ public class ClientPreviousAppointmentsFragment extends Fragment implements Clie
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
+        viewModel = ViewModelProviders.of(this).get(PreviousAppointmentViewModel.class);
+        viewModel.init(client);
+
+        viewModel.getAppointmentData().observe(this, new Observer<List<Appointment>>()
+        {
+            @Override
+            public void onChanged(@Nullable List<Appointment> appointmentList)
+            {
+                appointmentAdapter.setAppointmentList(appointmentList);
+            }
+        });
+
         previousAppointmentsRecyclerView = view.findViewById(R.id.previousAppointmentRv);
         appointmentAdapter = new PreviousAppointmentAdapter(getContext());
         previousAppointmentsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -45,8 +61,6 @@ public class ClientPreviousAppointmentsFragment extends Fragment implements Clie
         DividerItemDecoration divider = new DividerItemDecoration(previousAppointmentsRecyclerView.getContext(), DividerItemDecoration.VERTICAL);
         divider.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.cell_divider));
         previousAppointmentsRecyclerView.addItemDecoration(divider);
-
-        presenter.loadPreviousAppointments(client); // crash here
     }
 
     @Override
@@ -55,15 +69,4 @@ public class ClientPreviousAppointmentsFragment extends Fragment implements Clie
         super.onResume();
     }
 
-    @Override
-    public void setPresenter(ClientPreviousAppointmentContract.presenter presenter)
-    {
-        this.presenter = presenter;
-    }
-
-    @Override
-    public void displayAppointments(List<Appointment> appointmentList)
-    {
-        appointmentAdapter.setAppointmentList(appointmentList);
-    }
 }

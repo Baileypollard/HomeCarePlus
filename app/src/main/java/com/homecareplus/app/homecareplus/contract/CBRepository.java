@@ -16,11 +16,13 @@ public interface CBRepository
 
     void fetchAppointments(String employeeId);
 
-    void loadPreviousAppointmentsForClient(final Client client);
+    void fetchPreviousAppointmentsForClient(final Client client);
 
     void closeDatabase();
 
     MutableLiveData<List<AppointmentSectionModel>> getAppointmentData();
 
     MutableLiveData<String> getEmployeeNameData();
+
+    MutableLiveData<List<Appointment>> getPreviousAppointmentData();
 }

@@ -1,6 +1,9 @@
 package com.homecareplus.app.homecareplus.activity;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +18,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.contract.AppointmentMapContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.viewmodel.AppointmentMapViewModel;
 
-public class AppointmentMapTabFragment extends Fragment implements OnMapReadyCallback, AppointmentMapContract.view
+public class AppointmentMapTabFragment extends Fragment implements OnMapReadyCallback
 {
     private GoogleMap googleMap;
-    private AppointmentMapContract.presenter presenter;
     private Appointment appointment;
+    private AppointmentMapViewModel viewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -31,6 +35,13 @@ public class AppointmentMapTabFragment extends Fragment implements OnMapReadyCal
             this.appointment = activity.getAppointment();
         }
         return inflater.inflate(R.layout.fragment_appointment_map, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState)
+    {
+        viewModel = ViewModelProviders.of(this).get(AppointmentMapViewModel.class);
+        viewModel.init(appointment.getAddress(), getResources().getString(R.string.google_api_key));
     }
 
     @Override
@@ -49,10 +60,16 @@ public class AppointmentMapTabFragment extends Fragment implements OnMapReadyCal
     public void onMapReady(GoogleMap googleMap)
     {
         this.googleMap = googleMap;
-        this.presenter.getAddressInformation(appointment.getAddress(), getResources().getString(R.string.google_api_key));
+        viewModel.getLatLngData().observe(this, new Observer<LatLng>()
+        {
+            @Override
+            public void onChanged(@Nullable LatLng latLng)
+            {
+                displayMarkerOnMaps(latLng);
+            }
+        });
     }
 
-    @Override
     public void displayMarkerOnMaps(LatLng latLng)
     {
         googleMap.addMarker(new MarkerOptions().position(latLng).title("Appointment Marker"));
@@ -60,9 +77,4 @@ public class AppointmentMapTabFragment extends Fragment implements OnMapReadyCal
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f));
     }
 
-    @Override
-    public void setPresenter(AppointmentMapContract.presenter presenter)
-    {
-        this.presenter = presenter;
-    }
 }

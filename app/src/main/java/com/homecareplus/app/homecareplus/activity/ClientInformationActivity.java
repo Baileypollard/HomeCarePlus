@@ -12,7 +12,6 @@ import android.view.View;
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.FragmentTabAdapter;
 import com.homecareplus.app.homecareplus.model.Client;
-import com.homecareplus.app.homecareplus.presenter.ClientPreviousAppointmentPresenter;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 public class ClientInformationActivity extends AppCompatActivity
@@ -20,7 +19,6 @@ public class ClientInformationActivity extends AppCompatActivity
     private ViewPager mainViewPager;
     private BottomNavigationView navigationView;
     private Client client;
-    private ClientPreviousAppointmentPresenter previousAppointmentPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -50,9 +48,6 @@ public class ClientInformationActivity extends AppCompatActivity
 
         ClientPreviousAppointmentsFragment previousAppointmentsFragment = new ClientPreviousAppointmentsFragment();
         ClientInformationFragment clientInformationFragment = new ClientInformationFragment();
-
-        this.previousAppointmentPresenter = new ClientPreviousAppointmentPresenter();
-        this.previousAppointmentPresenter.setView(previousAppointmentsFragment);
 
         FragmentTabAdapter pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
 

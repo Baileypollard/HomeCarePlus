@@ -52,11 +52,11 @@ public class AppointmentHoursTabFragment extends Fragment
             {
                 if (appointment.isInProgress())
                 {
-                    configureAppointmentInProgress();
+                    showAppointmentStarted(appointment);
                 }
                 else if (appointment.isCompleted())
                 {
-                    configureAppointmentCompleted();
+                    showAppointmentCompleted(appointment);
                 }
 
             }

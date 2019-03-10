@@ -65,7 +65,7 @@
         <counts>
           <entry key="dummy" value="35" />
           <entry key="gradle" value="19" />
-          <entry key="java" value="16729" />
+          <entry key="java" value="16737" />
           <entry key="txt" value="160" />
           <entry key="xml" value="115" />
         </counts>
@@ -73,7 +73,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="19" />
-          <entry key="JAVA" value="16729" />
+          <entry key="JAVA" value="16737" />
           <entry key="PLAIN_TEXT" value="195" />
           <entry key="XML" value="115" />
         </counts>
@@ -112,8 +112,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/AppointmentHoursTabFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="169" column="38" lean-forward="true" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
+            <state relative-caret-position="241">
+              <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -966,8 +966,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/homecareplus/app/homecareplus/activity/AppointmentHoursTabFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="169" column="38" lean-forward="true" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
+        <state relative-caret-position="241">
+          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

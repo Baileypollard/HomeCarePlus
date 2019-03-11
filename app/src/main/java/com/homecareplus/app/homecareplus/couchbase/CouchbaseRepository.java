@@ -300,8 +300,9 @@ public class CouchbaseRepository implements CBRepository
     }
 
     @Override
-    public MutableLiveData<Appointment> getAppointmentData()
+    public MutableLiveData<Appointment> getAppointmentData(Appointment appointment)
     {
+        appointmentData.setValue(appointment);
         return appointmentData;
     }
 
@@ -322,7 +323,7 @@ public class CouchbaseRepository implements CBRepository
         URI url = null;
         try
         {
-            url = new URI("ws://35.235.93.59:4984/homecareplus");
+            url = new URI("ws://35.235.103.244:4984/homecareplus");
         } catch (URISyntaxException e)
         {
             e.printStackTrace();

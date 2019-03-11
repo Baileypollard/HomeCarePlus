@@ -26,5 +26,5 @@ public interface CBRepository
 
     MutableLiveData<List<Appointment>> getPreviousAppointmentData();
 
-    MutableLiveData<Appointment> getAppointmentData();
+    MutableLiveData<Appointment> getAppointmentData(Appointment appointment);
 }

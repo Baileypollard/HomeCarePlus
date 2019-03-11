@@ -1,6 +1,9 @@
 package com.homecareplus.app.homecareplus.activity;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,13 +11,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
-import com.homecareplus.app.homecareplus.contract.AppointmentInformationContract;
 import com.homecareplus.app.homecareplus.enumerator.AppointmentStatus;
 import com.homecareplus.app.homecareplus.model.Appointment;
+import com.homecareplus.app.homecareplus.viewmodel.AppointmentInfoViewModel;
 
-public class AppointmentInfoTabFragment extends Fragment implements AppointmentInformationContract.view
+public class AppointmentInfoTabFragment extends Fragment
 {
-    private AppointmentInformationContract.presenter presenter;
+    private AppointmentInfoViewModel  viewModel;
     private Appointment appointment;
     private TextView clientNameTextView;
     private TextView clientAddressTextView;
@@ -41,6 +44,9 @@ public class AppointmentInfoTabFragment extends Fragment implements AppointmentI
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
+        viewModel = ViewModelProviders.of(this).get(AppointmentInfoViewModel.class);
+        viewModel.init(appointment);
+
         clientNameTextView = view.findViewById(R.id.clientNameTextView);
         clientAddressTextView = view.findViewById(R.id.clientAddressTextView);
         appointmentTimeTextView = view.findViewById(R.id.scheduledTimeTextView);
@@ -50,8 +56,14 @@ public class AppointmentInfoTabFragment extends Fragment implements AppointmentI
         clientPhoneNumberTextView = view.findViewById(R.id.clientPhoneNumberTextView);
         clientGenderTextView = view.findViewById(R.id.clientGenderTextView);
         commentsView = view.findViewById(R.id.commentsLayout);
-
-        displayAppointmentInfo();
+        viewModel.getAppointmentData().observe(this, new Observer<Appointment>()
+        {
+            @Override
+            public void onChanged(@Nullable Appointment appointment)
+            {
+                displayAppointmentInfo(appointment);
+            }
+        });
     }
 
     @Override
@@ -60,13 +72,7 @@ public class AppointmentInfoTabFragment extends Fragment implements AppointmentI
         super.onResume();
     }
 
-    @Override
-    public void setPresenter(AppointmentInformationContract.presenter presenter)
-    {
-        this.presenter = presenter;
-    }
-
-    public void displayAppointmentInfo()
+    public void displayAppointmentInfo(Appointment appointment)
     {
         clientNameTextView.setText(appointment.getClientName());
         clientAddressTextView.setText(appointment.getAddress());
@@ -82,4 +88,5 @@ public class AppointmentInfoTabFragment extends Fragment implements AppointmentI
             commentsTextView.setText(appointment.getComment());
         }
     }
+
 }

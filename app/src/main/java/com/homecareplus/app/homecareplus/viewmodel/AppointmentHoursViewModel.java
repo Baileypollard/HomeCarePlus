@@ -3,6 +3,7 @@ package com.homecareplus.app.homecareplus.viewmodel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.homecareplus.app.homecareplus.callback.CoordinatesReceivedCallback;
@@ -26,14 +27,9 @@ public class AppointmentHoursViewModel extends ViewModel
     private MutableLiveData<Boolean> coordinatesFailedData;
     private MutableLiveData<Boolean> verificationData;
 
-    public void init()
+    public void init(Appointment appointment)
     {
-        if (appointmentData != null)
-        {
-            return;
-        }
-
-        appointmentData = CouchbaseRepository.getInstance().getAppointmentData();
+        appointmentData = CouchbaseRepository.getInstance().getAppointmentData(appointment);
         coordinatesFailedData = new MutableLiveData<>();
         verificationData = new MutableLiveData<>();
     }

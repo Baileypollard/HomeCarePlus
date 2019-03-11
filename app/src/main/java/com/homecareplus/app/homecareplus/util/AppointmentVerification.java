@@ -27,7 +27,7 @@ public class AppointmentVerification
                 String password = SharedPreference.getSharedInstance().getEmployeePassword();
 
                 OkHttpClient client = NetworkUtil.createAuthenticatedClient(username, password);
-                String url = "http://192.168.2.24:8080/rest/secured/verify";
+                String url = "http://10.0.2.2:8080/rest/secured/verify";
                 MediaType JSON = MediaType.parse("application/json;charset=utf-8");
                 JSONObject jo = JsonDocCreator.createAppointmentJSON(appointment);
                 RequestBody body = RequestBody.create(JSON, jo.toString());

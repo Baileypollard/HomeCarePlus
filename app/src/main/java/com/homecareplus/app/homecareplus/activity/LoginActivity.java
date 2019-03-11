@@ -3,6 +3,7 @@ package com.homecareplus.app.homecareplus.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,6 +68,7 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onError(Throwable e)
             {
+                Log.d("TAG", "Error: " + e.getLocalizedMessage());
                 buttonSignIn.setEnabled(true);
                 loginErrorTextView.setVisibility(View.VISIBLE);
             }

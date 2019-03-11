@@ -43,7 +43,7 @@ public class AppointmentHoursTabFragment extends Fragment
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
         viewModel = ViewModelProviders.of(this).get(AppointmentHoursViewModel.class);
-        viewModel.init();
+        viewModel.init(appointment);
 
         viewModel.getAppointmentData().observe(this, new Observer<Appointment>()
         {
@@ -57,6 +57,10 @@ public class AppointmentHoursTabFragment extends Fragment
                 else if (appointment.isCompleted())
                 {
                     showAppointmentCompleted(appointment);
+                }
+                else
+                {
+                    showAppointmentNew(appointment);
                 }
 
             }
@@ -199,6 +203,11 @@ public class AppointmentHoursTabFragment extends Fragment
     private void displayErrorToast()
     {
         Toast.makeText(getContext(), "There has been an error completing your appointment", Toast.LENGTH_LONG).show();
+    }
+
+    private void showAppointmentNew(Appointment appointment)
+    {
+        configureAppointmentNew();
     }
 
     private void showAppointmentStarted(Appointment appointment)

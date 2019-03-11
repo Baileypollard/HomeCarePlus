@@ -1,6 +1,7 @@
 package com.homecareplus.app.homecareplus.couchbase;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.homecareplus.app.homecareplus.util.NetworkUtil;
 
@@ -28,6 +29,7 @@ public class CBSession
             public String call() throws Exception
             {
                 String sessionJSON = postForSessionId(username, password);
+                Log.d("TAG", "SESSION: " + sessionJSON);
                 JSONObject results = new JSONObject(sessionJSON);
                 String sessionId = results.getString("session_id");
                 CouchbaseRepository.init(context, username, sessionId);
@@ -41,7 +43,7 @@ public class CBSession
     {
         OkHttpClient client = NetworkUtil.createAuthenticatedClient(id, password);
 
-        String url = "http://192.168.2.24:8080/rest/secured/login";
+        String url = "http://10.0.2.2:8080/rest/secured/login";
 
         final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
         JSONObject jo = new JSONObject();
@@ -59,6 +61,5 @@ public class CBSession
             return "Cannot Receive Session ID";
         }
     }
-
 
 }

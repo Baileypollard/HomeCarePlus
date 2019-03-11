@@ -11,9 +11,7 @@ import android.view.View;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.FragmentTabAdapter;
-import com.homecareplus.app.homecareplus.contract.AppointmentInformationContract;
 import com.homecareplus.app.homecareplus.model.Appointment;
-import com.homecareplus.app.homecareplus.presenter.AppointmentInfoPresenter;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 
@@ -22,7 +20,6 @@ public class AppointmentActivity extends AppCompatActivity
     private ViewPager mainViewPager;
     private BottomNavigationView navigationView;
     private Appointment appointment;
-    private AppointmentInformationContract.presenter appInfoPresenter;
     private FragmentTabAdapter pagerAdapter;
 
     @Override
@@ -45,8 +42,6 @@ public class AppointmentActivity extends AppCompatActivity
             }
         });
 
-        this.appInfoPresenter = new AppointmentInfoPresenter();
-
         this.appointment = (Appointment) getIntent().getSerializableExtra(SharedPreference.KEY_APPOINTMENT);
         this.mainViewPager = findViewById(R.id.mainViewPager);
         this.navigationView = findViewById(R.id.bottom_navigation);
@@ -54,8 +49,6 @@ public class AppointmentActivity extends AppCompatActivity
         AppointmentInfoTabFragment appointmentInfoTabFragment = new AppointmentInfoTabFragment();
         AppointmentHoursTabFragment appointmentHoursTabFragment = new AppointmentHoursTabFragment();
         AppointmentMapTabFragment mapTabFragment = new AppointmentMapTabFragment();
-
-        this.appInfoPresenter.setView(appointmentInfoTabFragment);
 
         this.pagerAdapter = new FragmentTabAdapter(getSupportFragmentManager());
 

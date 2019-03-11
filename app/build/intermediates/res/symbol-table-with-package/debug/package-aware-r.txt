@@ -1146,6 +1146,7 @@ id alertTitle
 id all
 id always
 id appointmentCommentTextView
+id appointmentDateTextView
 id appointmentDescriptonTextView
 id appointmentMap
 id appointmentRow
@@ -1438,6 +1439,7 @@ layout activity_login
 layout activity_main
 layout client_appointment_row
 layout client_appointment_row_call_client
+layout client_previous_appointment_row
 layout custom_toolbar
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

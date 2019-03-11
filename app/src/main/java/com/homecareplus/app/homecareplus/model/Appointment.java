@@ -46,6 +46,11 @@ public class Appointment implements Serializable
         this.punchedOutLocation = punchedOutLocation;
     }
 
+    public Employee getEmployee()
+    {
+        return employee;
+    }
+
     public Client getClient()
     {
         return client;
@@ -191,6 +196,11 @@ public class Appointment implements Serializable
         return this.endTime;
     }
 
+    public String getNiceDate()
+    {
+        return DateUtil.getNiceDate(date);
+    }
+
     public String getAppointmentTime()
     {
         return DateUtil.getTimeFromMs(getStartTime()) + " - " + DateUtil.getTimeFromMs(getEndTime());
@@ -198,7 +208,7 @@ public class Appointment implements Serializable
 
     public boolean isVerified()
     {
-        return status.equals(AppointmentStatus.COMPLETED) || status.equals(AppointmentStatus.VERIFIED);
+        return true;
     }
 
     public boolean isCompleted()

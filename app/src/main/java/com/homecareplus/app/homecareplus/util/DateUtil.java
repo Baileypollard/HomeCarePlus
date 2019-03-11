@@ -14,6 +14,17 @@ import java.util.concurrent.TimeUnit;
 
 public class DateUtil
 {
+
+    public static String getNiceDate(String date)
+    {
+        long dateMs = getDateMilliseconds(date);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yy", Locale.US);
+        Date d = new Date(dateMs);
+
+        return sdf.format(d);
+    }
+
     public static String getHeaderDateFormat(String date)
     {
         long dateMs = getDateMilliseconds(date);

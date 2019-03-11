@@ -3,19 +3,18 @@ package com.homecareplus.app.homecareplus.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.model.Appointment;
-import com.homecareplus.app.homecareplus.viewholder.AppointmentRowViewHolder;
+import com.homecareplus.app.homecareplus.viewholder.PreviousAppointmentViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PreviousAppointmentAdapter extends RecyclerView.Adapter<AppointmentRowViewHolder>
+public class PreviousAppointmentAdapter extends RecyclerView.Adapter<PreviousAppointmentViewHolder>
 {
     private LayoutInflater mInflater;
     private List<Appointment> appointmentList;
@@ -34,21 +33,22 @@ public class PreviousAppointmentAdapter extends RecyclerView.Adapter<Appointment
 
     @NonNull
     @Override
-    public AppointmentRowViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
+    public PreviousAppointmentViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
     {
-        View view = mInflater.inflate(R.layout.client_appointment_row, viewGroup, false);
-        return new AppointmentRowViewHolder(view);
+        View view = mInflater.inflate(R.layout.client_previous_appointment_row, viewGroup, false);
+        return new PreviousAppointmentViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AppointmentRowViewHolder viewHolder, int i)
+    public void onBindViewHolder(@NonNull PreviousAppointmentViewHolder viewHolder, int i)
     {
         Appointment appointment = appointmentList.get(i);
 
+        viewHolder.setAppointmentDate(appointment.getNiceDate());
         viewHolder.setClientName(appointment.getClientName());
-        viewHolder.setClientAddress(appointment.getAddress());
+        viewHolder.setAppointmentEmployeeName(appointment.getEmployee().getFullName());
         viewHolder.setAppointmentTime(appointment.getAppointmentTime());
-        viewHolder.setAppointmentStatus(appointment.getStatus());
+
     }
 
     @Override

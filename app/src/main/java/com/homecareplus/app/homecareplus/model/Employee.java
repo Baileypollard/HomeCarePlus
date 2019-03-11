@@ -26,4 +26,9 @@ public class Employee implements Serializable
     {
         return this.employeeId;
     }
+
+    public String getFullName()
+    {
+        return firstName + " " + lastName;
+    }
 }

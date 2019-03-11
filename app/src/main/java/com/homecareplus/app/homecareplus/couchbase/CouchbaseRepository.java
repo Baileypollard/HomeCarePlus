@@ -41,7 +41,9 @@ import com.homecareplus.app.homecareplus.util.DateUtil;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CouchbaseRepository implements CBRepository
 {
@@ -49,6 +51,7 @@ public class CouchbaseRepository implements CBRepository
     private static Database database;
     private static Replicator replicator;
     private static ListenerToken token;
+    private static Map<Query, ListenerToken> tokens = new HashMap<>();
 
     private MutableLiveData<List<AppointmentSectionModel>> appointmentSectionLiveData = new MutableLiveData<>();;
     private MutableLiveData<String> employeeNameData = new MutableLiveData<>();
@@ -90,7 +93,7 @@ public class CouchbaseRepository implements CBRepository
 
         executeQuery(query);
 
-        query.addChangeListener(new QueryChangeListener()
+        ListenerToken token = query.addChangeListener(new QueryChangeListener()
         {
             @Override
             public void changed(QueryChange change)
@@ -107,6 +110,8 @@ public class CouchbaseRepository implements CBRepository
                 clientData.postValue(client);
             }
         });
+
+        tokens.put(query, token);
     }
 
     @Override
@@ -176,7 +181,7 @@ public class CouchbaseRepository implements CBRepository
 
         executeQuery(query);
 
-        query.addChangeListener(new QueryChangeListener()
+        ListenerToken token = query.addChangeListener(new QueryChangeListener()
         {
             @Override
             public void changed(QueryChange change)
@@ -194,6 +199,7 @@ public class CouchbaseRepository implements CBRepository
                 employeeNameData.postValue(fullName);
             }
         });
+        tokens.put(query, token);
     }
 
     @Override
@@ -220,7 +226,7 @@ public class CouchbaseRepository implements CBRepository
 
         final List<AppointmentSectionModel> appointmentSectionModels = new ArrayList<>();
 
-        query.addChangeListener(new QueryChangeListener()
+        ListenerToken token = query.addChangeListener(new QueryChangeListener()
         {
             @Override
             public void changed(QueryChange change)
@@ -260,6 +266,8 @@ public class CouchbaseRepository implements CBRepository
                 appointmentSectionLiveData.postValue(appointmentSectionModels);
             }
         });
+
+        tokens.put(query, token);
     }
 
     @Override
@@ -286,7 +294,7 @@ public class CouchbaseRepository implements CBRepository
 
         executeQuery(query);
 
-        query.addChangeListener(new QueryChangeListener()
+        ListenerToken token = query.addChangeListener(new QueryChangeListener()
         {
             @Override
             public void changed(QueryChange change)
@@ -323,6 +331,8 @@ public class CouchbaseRepository implements CBRepository
                 }
             }
         });
+
+        tokens.put(query, token);
     }
 
     @Override
@@ -389,19 +399,34 @@ public class CouchbaseRepository implements CBRepository
                     try
                     {
                         database.close();
-                        Log.d("TAG", "Database closed: " + database.getPath());
-                    } catch (CouchbaseLiteException e)
+                        instance = null;
+                        Log.d("TAG", "DATABASE CLOSED");
+                    }
+                    catch (CouchbaseLiteException e)
                     {
-                        Log.d("TAG", "Exception: " + e);
+                        Log.e("TAG", "Exception: " + e);
                     }
                 }
                 else if (change.getReplicator().getStatus().getActivityLevel().equals(Replicator.ActivityLevel.OFFLINE))
                 {
-                    Log.d("TAG", "OFFLINE");
+                    Log.e("TAG", "OFFLINE");
                 }
             }
         });
         replicator.start();
+    }
+
+    private static void removeAllQueryListeners()
+    {
+        while (tokens.entrySet().iterator().hasNext())
+        {
+            Map.Entry entry = tokens.entrySet().iterator().next();
+            Query q = (Query) entry.getKey();
+            ListenerToken l = (ListenerToken) entry.getValue();
+
+            q.removeChangeListener(l);
+            tokens.remove(q);
+        }
     }
 
     public static CBRepository getInstance()
@@ -424,8 +449,7 @@ public class CouchbaseRepository implements CBRepository
     @Override
     public void closeDatabase()
     {
-        replicator.removeChangeListener(token);
+        removeAllQueryListeners();
         replicator.stop();
-        instance = null;
     }
 }

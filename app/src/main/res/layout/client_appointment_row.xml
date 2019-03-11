@@ -71,7 +71,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/clientNameTextView"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintWidth_default="wrap"
+            app:layout_constrainedWidth="true"
             tools:text="10 Nova Court Port Hawkesbury Nova Scotia" />
 
         <TextView

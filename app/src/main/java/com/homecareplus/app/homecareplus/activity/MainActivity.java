@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
+import com.homecareplus.app.homecareplus.adapter.AppointmentSection;
 import com.homecareplus.app.homecareplus.adapter.CustomSectionedAdapter;
 import com.homecareplus.app.homecareplus.callback.ItemTouchHelperCallback;
 import com.homecareplus.app.homecareplus.contract.AppointmentRowOnClickListener;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity
     private ItemTouchHelperExtension extension;
     private ItemTouchHelperExtension.Callback callback;
     private MainActivityViewModel mainActivityViewModel;
+    private Observer<String> employeeNameObs;
+    private Observer<List<AppointmentSectionModel>> appointmentSectionObs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -96,7 +99,8 @@ public class MainActivity extends AppCompatActivity
         mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         mainActivityViewModel.init(employeeId);
 
-        mainActivityViewModel.getAppointmentSections().observe(this, new Observer<List<AppointmentSectionModel>>()
+
+        appointmentSectionObs = new Observer<List<AppointmentSectionModel>>()
         {
             @Override
             public void onChanged(List<AppointmentSectionModel> appointmentSections)
@@ -106,7 +110,8 @@ public class MainActivity extends AppCompatActivity
                     adapter.displayAppointmentSection(a);
                 }
             }
-        });
+        };
+        mainActivityViewModel.getAppointmentSections().observe(this, appointmentSectionObs);
 
         mainActivityViewModel.getLogoutData().observe(this, new Observer<Boolean>()
         {
@@ -120,14 +125,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        mainActivityViewModel.getEmployeeName().observe(this, new Observer<String>()
+        employeeNameObs = new Observer<String>()
         {
             @Override
             public void onChanged(String name)
             {
                 employeeNameTextView.setText(name);
             }
-        });
+        };
+        mainActivityViewModel.getEmployeeName().observe(this, employeeNameObs);
     }
 
     @Override
@@ -140,11 +146,12 @@ public class MainActivity extends AppCompatActivity
     public void onDestroy()
     {
         super.onDestroy();
-
     }
 
     public void onClickLogout(View v)
     {
+        mainActivityViewModel.getAppointmentSections().removeObserver(appointmentSectionObs);
+        mainActivityViewModel.getEmployeeName().removeObserver(employeeNameObs);
         mainActivityViewModel.logout();
     }
 

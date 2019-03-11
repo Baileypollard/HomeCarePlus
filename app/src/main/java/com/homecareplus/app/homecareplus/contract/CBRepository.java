@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface CBRepository
 {
+    void fetchClientInformation(Client client);
+
     void saveAppointment(Appointment appointment);
 
     void fetchEmployeeName(String employeeId);
@@ -27,4 +29,6 @@ public interface CBRepository
     MutableLiveData<List<Appointment>> getPreviousAppointmentData();
 
     MutableLiveData<Appointment> getAppointmentData(Appointment appointment);
+
+    MutableLiveData<Client> getClientData(Client client);
 }

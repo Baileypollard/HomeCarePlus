@@ -63,8 +63,8 @@ public class DictionaryToModel
         String clientGender = dictionary.getString("gender");
         String clientPhoneNumber = dictionary.getString("phone_number");
         String clientId = dictionary.getString("client_id");
-
-        return new Client(clientId, clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber);
+        String additionalInformation = dictionary.getString("additional_information");
+        return new Client(clientId, clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber, additionalInformation);
     }
 
 }

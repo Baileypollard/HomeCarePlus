@@ -49,10 +49,12 @@ public class CouchbaseRepository implements CBRepository
     private static Database database;
     private static Replicator replicator;
     private static ListenerToken token;
+
     private MutableLiveData<List<AppointmentSectionModel>> appointmentSectionLiveData = new MutableLiveData<>();;
     private MutableLiveData<String> employeeNameData = new MutableLiveData<>();
     private MutableLiveData<List<Appointment>> previousAppointmentData = new MutableLiveData<>();
     private MutableLiveData<Appointment> appointmentData = new MutableLiveData<>();
+    private MutableLiveData<Client> clientData = new MutableLiveData<>();
 
     public static void init(Context context, String employeeId, String sessionId)
     {
@@ -76,6 +78,36 @@ public class CouchbaseRepository implements CBRepository
     }
 
     //Methods here
+
+    @Override
+    public void fetchClientInformation(final Client client)
+    {
+        final Query query = QueryBuilder.select(SelectResult.all())
+                .from(DataSource.database(database))
+                .where(Expression.property("type").equalTo(Expression.string("client"))
+                        .and(Expression.property("client_id").equalTo(Expression.string(client.getClientId()))))
+                .limit(Expression.intValue(1));
+
+        executeQuery(query);
+
+        query.addChangeListener(new QueryChangeListener()
+        {
+            @Override
+            public void changed(QueryChange change)
+            {
+                ResultSet results = change.getResults();
+                List<Result> resultList = results.allResults();
+
+                if (resultList.size() == 0)
+                {
+                    return;
+                }
+                Dictionary dict = resultList.get(0).getDictionary(0);
+                Client client = DictionaryToModel.getClientFromDictionary(dict);
+                clientData.postValue(client);
+            }
+        });
+    }
 
     @Override
     public void saveAppointment(Appointment appointment)
@@ -291,6 +323,13 @@ public class CouchbaseRepository implements CBRepository
                 }
             }
         });
+    }
+
+    @Override
+    public MutableLiveData<Client> getClientData(Client client)
+    {
+        clientData.setValue(client);
+        return clientData;
     }
 
     @Override

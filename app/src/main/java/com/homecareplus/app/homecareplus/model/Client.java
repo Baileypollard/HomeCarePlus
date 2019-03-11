@@ -10,8 +10,9 @@ public class Client implements Serializable
     private String address;
     private String gender;
     private String phoneNumber;
+    private String additionalInfo;
 
-    public Client(String id, String firstName, String lastName, String address, String gender, String phoneNumber)
+    public Client(String id, String firstName, String lastName, String address, String gender, String phoneNumber, String additionalInfo)
     {
         this.clientId = id;
         this.firstName = firstName;
@@ -19,6 +20,12 @@ public class Client implements Serializable
         this.address = address;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
+        this.additionalInfo = additionalInfo;
+    }
+
+    public String getAdditionalInfo()
+    {
+        return additionalInfo;
     }
 
     public String getClientId()
@@ -49,6 +56,11 @@ public class Client implements Serializable
     public String getAddress()
     {
         return this.address;
+    }
+
+    public String getFullName()
+    {
+        return firstName + " " + lastName;
     }
 
 }

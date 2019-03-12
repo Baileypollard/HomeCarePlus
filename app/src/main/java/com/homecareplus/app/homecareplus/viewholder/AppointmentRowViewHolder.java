@@ -22,12 +22,15 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
     private TextView appointmentStatusTv;
     private TextView callClientTextView;
     private TextView viewClientInformationTextView;
+    private TextView appointmentAbbrevTextView;
+
     private View appointmentRow;
 
     public AppointmentRowViewHolder(View view)
     {
         super(view);
         appointmentRow = view.findViewById(R.id.appointmentRow);
+        appointmentAbbrevTextView = view.findViewById(R.id.appointmentAbbrevTextView);
         callClientTextView = view.findViewById(R.id.callClientTextView);
         viewClientInformationTextView = view.findViewById(R.id.viewClientTextView);
         clientNameTv = view.findViewById(R.id.clientNameTextView);
@@ -63,6 +66,11 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
     public void setAppointmentStatus(AppointmentStatus status)
     {
         appointmentStatusTv.setText(status.getValue());
+    }
+
+    public void setAppointmentAbbrev(String abbrev)
+    {
+        appointmentAbbrevTextView.setText(abbrev);
     }
 
     public void setClientName(String name)

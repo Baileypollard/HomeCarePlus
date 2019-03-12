@@ -26,6 +26,10 @@ public class DictionaryToModel
         Dictionary punchedInDict = dictionary.getDictionary("punched_in_loc");
         Dictionary punchedOutDict = dictionary.getDictionary("punched_out_loc");
 
+        Dictionary type = dictionary.getDictionary("type");
+        String name = type.getString("name");
+        String abbrev = type.getString("abbreviation");
+
         Map<String, Double> punchedInLoc = new HashMap<>();
         Map<String, Double> punchedOutLoc = new HashMap<>();
 
@@ -40,7 +44,7 @@ public class DictionaryToModel
 
         return new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
                 startTime, endTime, description, punchedInTime, punchedOutTime, comment,
-                kmsTravelled, punchedInLoc, punchedOutLoc);
+                kmsTravelled, punchedInLoc, punchedOutLoc, abbrev);
     }
 
     public static Employee getEmployeeFromDictionary(Dictionary dictionary)

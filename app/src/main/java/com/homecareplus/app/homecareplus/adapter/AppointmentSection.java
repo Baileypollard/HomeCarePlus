@@ -75,6 +75,7 @@ public class AppointmentSection extends StatelessSection
         viewHolder.setClientAddress(appointment.getAddress());
         viewHolder.setAppointmentTime(appointment.getAppointmentTime());
         viewHolder.setAppointmentStatus(appointment.getStatus());
+        viewHolder.setAppointmentAbbrev(appointment.getAppointmentAbbrev());
 
         viewHolder.getAppointmentRow().setOnClickListener(new View.OnClickListener()
         {

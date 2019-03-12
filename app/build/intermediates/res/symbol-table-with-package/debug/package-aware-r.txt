@@ -1145,6 +1145,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appointmentAbbrevTextView
 id appointmentCommentTextView
 id appointmentDateTextView
 id appointmentDescriptonTextView
@@ -1352,7 +1353,6 @@ id textView13
 id textView2
 id textView3
 id textView4
-id textView5
 id textView6
 id textView7
 id textView8

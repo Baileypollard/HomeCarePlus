@@ -21,13 +21,15 @@ public class Appointment implements Serializable
     private String comment;
     private String kmsTravelled;
     private String totalTimeSpent;
+    private String appointmentAbbrev;
+
     private Map<String, Double> punchedInLocation;
     private Map<String, Double> punchedOutLocation;
 
     public Appointment(String id, Employee employee, Client client, String date, AppointmentStatus status,
                        long startTime, long endTime, String appointmentInfo, String punchedInTime,
                        String punchedOutTime, String comment, String kmsTravelled, Map<String, Double> punchedInLocation,
-                       Map<String, Double> punchedOutLocation)
+                       Map<String, Double> punchedOutLocation, String appointmentAbbrev)
     {
         this.id = id;
         this.employee = employee;
@@ -44,6 +46,12 @@ public class Appointment implements Serializable
         this.totalTimeSpent = DateUtil.calculateMinutesBetweenDates(punchedInTime, punchedOutTime);
         this.punchedInLocation = punchedInLocation;
         this.punchedOutLocation = punchedOutLocation;
+        this.appointmentAbbrev = appointmentAbbrev;
+    }
+
+    public String getAppointmentAbbrev()
+    {
+        return appointmentAbbrev;
     }
 
     public Employee getEmployee()

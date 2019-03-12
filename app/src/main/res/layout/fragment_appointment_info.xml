@@ -156,7 +156,7 @@
           android:visibility="gone">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/appointmentAbbrevTextView"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:background="@color/colorPrimary"

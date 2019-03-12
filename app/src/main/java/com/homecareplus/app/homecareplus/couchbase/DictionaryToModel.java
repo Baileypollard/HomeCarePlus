@@ -21,6 +21,7 @@ public class DictionaryToModel
         String punchedOutTime = dictionary.getString("punched_out_time");
         String comment = dictionary.getString("comment");
         String kmsTravelled = dictionary.getString("kms_travelled") != null ? dictionary.getString("kms_travelled") : "";
+        String description = dictionary.getString("description");
 
         Dictionary punchedInDict = dictionary.getDictionary("punched_in_loc");
         Dictionary punchedOutDict = dictionary.getDictionary("punched_out_loc");
@@ -38,7 +39,7 @@ public class DictionaryToModel
         }
 
         return new Appointment(appointmentId, employee, client, date, AppointmentStatus.valueOf(status),
-                startTime, endTime, "PC - This client will need a bath a breakfast", punchedInTime, punchedOutTime, comment,
+                startTime, endTime, description, punchedInTime, punchedOutTime, comment,
                 kmsTravelled, punchedInLoc, punchedOutLoc);
     }
 

@@ -373,7 +373,8 @@ public class CouchbaseRepository implements CBRepository
         try
         {
             url = new URI("ws://35.235.103.244:4984/homecareplus");
-        } catch (URISyntaxException e)
+        }
+        catch (URISyntaxException e)
         {
             e.printStackTrace();
         }

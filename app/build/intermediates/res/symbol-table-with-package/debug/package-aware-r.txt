@@ -1169,6 +1169,7 @@ id center_vertical
 id chains
 id checkbox
 id chronometer
+id clientAdditionalIInfoTextView
 id clientAddressTextView
 id clientGenderTextView
 id clientNameTextView
@@ -1352,6 +1353,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView6
 id textView7
 id textView8
 id textView9

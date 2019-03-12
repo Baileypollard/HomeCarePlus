@@ -82,6 +82,30 @@
           android:textSize="17sp"
           tools:text="{gender}" />
 
+      <TextView
+          android:id="@+id/textView6"
+          android:layout_width="match_parent"
+          android:layout_height="46dp"
+          android:background="@color/colorPrimary"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:text="Additional Information"
+          android:textColor="@color/colorWhite"
+          android:textSize="17sp" />
+
+      <TextView
+          android:id="@+id/clientAdditionalIInfoTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="7dp"
+          android:paddingBottom="10dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{Addtional Info}" />
+
     </LinearLayout>
   </ScrollView>
 

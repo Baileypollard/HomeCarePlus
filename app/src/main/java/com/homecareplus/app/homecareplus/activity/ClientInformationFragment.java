@@ -22,6 +22,8 @@ public class ClientInformationFragment extends Fragment
     private TextView clientAddressTextView;
     private TextView clientPhoneNumberTextView;
     private TextView clientGenderTextView;
+    private TextView clientAdditionalInfoTextView;
+
     private ClientInformationViewModel viewModel;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -44,6 +46,7 @@ public class ClientInformationFragment extends Fragment
         clientAddressTextView = view.findViewById(R.id.clientAddressTextView);
         clientPhoneNumberTextView = view.findViewById(R.id.clientPhoneNumberTextView);
         clientGenderTextView = view.findViewById(R.id.clientGenderTextView);
+        clientAdditionalInfoTextView = view.findViewById(R.id.clientAdditionalIInfoTextView);
 
         viewModel.getClientData().observe(this, new Observer<Client>()
         {
@@ -62,6 +65,7 @@ public class ClientInformationFragment extends Fragment
         clientAddressTextView.setText(client.getAddress());
         clientPhoneNumberTextView.setText(client.getPhoneNumber());
         clientGenderTextView.setText(client.getGender());
+        clientAdditionalInfoTextView.setText(client.getAdditionalInfo());
     }
 
 

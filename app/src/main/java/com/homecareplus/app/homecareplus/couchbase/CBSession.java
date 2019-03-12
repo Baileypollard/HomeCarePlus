@@ -43,7 +43,7 @@ public class CBSession
     {
         OkHttpClient client = NetworkUtil.createAuthenticatedClient(id, password);
 
-        String url = "http://10.0.2.2:8080/rest/secured/login";
+        String url = "http://192.168.2.24:8080/rest/secured/login";
 
         final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
         JSONObject jo = new JSONObject();

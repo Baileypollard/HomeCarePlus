@@ -9,6 +9,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.homecareplus.app.homecareplus.callback.CoordinatesReceivedCallback;
@@ -27,18 +28,19 @@ public class GPSTracker
         {
             ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 12);
         }
+        startLocationScanning();
     }
 
-    public void getCurrentLocation(final CoordinatesReceivedCallback callback)
+    private void startLocationScanning()
     {
         if (ActivityCompat.checkSelfPermission(context_, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
-            locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new LocationListener()
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 30, new LocationListener()
             {
                 @Override
                 public void onLocationChanged(Location location)
                 {
-                    callback.onCoordinatesReceived(new LatLng(location.getLatitude(), location.getLongitude()));
+                    Log.d("TAG", "CHANGED: " + location.getLatitude() + " : " + location.getLongitude());
                 }
 
                 @Override
@@ -58,7 +60,29 @@ public class GPSTracker
                 {
 
                 }
-            }, null);
+            });
+        }
+        else
+        {
+            Log.e("TAG", "Failed to start");
+        }
+    }
+
+    public void getCurrentLocation(final CoordinatesReceivedCallback callback)
+    {
+        if (ActivityCompat.checkSelfPermission(context_, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+        {
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (location != null)
+            {
+                LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                callback.onCoordinatesReceived(latLng);
+            }
+            else
+            {
+                callback.onCoordinatesFailed();
+            }
+
         }
         else
         {

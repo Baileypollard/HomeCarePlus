@@ -1,8 +1,11 @@
 package com.homecareplus.app.homecareplus.viewmodel;
 
+import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.homecareplus.app.homecareplus.couchbase.CouchbaseRepository;
@@ -11,11 +14,16 @@ import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 import java.util.List;
 
-public class MainActivityViewModel extends ViewModel
+public class MainActivityViewModel extends AndroidViewModel
 {
     private MutableLiveData<List<AppointmentSectionModel>> listMutableLiveData;
     private MutableLiveData<String> employeeNameData;
     private MutableLiveData<Boolean> logoutData;
+
+    public MainActivityViewModel(@NonNull Application application)
+    {
+        super(application);
+    }
 
     public void init(String employeeId)
     {
@@ -36,7 +44,7 @@ public class MainActivityViewModel extends ViewModel
     {
         CouchbaseRepository.getInstance().closeDatabase();
         //Clear the shared instances
-        SharedPreference.getSharedInstance().clear();
+        SharedPreference.getSharedInstance(getApplication().getApplicationContext()).clear();
         logoutData.postValue(true);
     }
 

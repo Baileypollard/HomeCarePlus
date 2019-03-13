@@ -1,5 +1,7 @@
 package com.homecareplus.app.homecareplus.util;
 
+import android.content.Context;
+
 import com.homecareplus.app.homecareplus.model.Appointment;
 
 import org.json.JSONObject;
@@ -17,15 +19,15 @@ import okhttp3.Response;
 
 public class AppointmentVerification
 {
-    public static Observable<Boolean> verifyAppointment(final Appointment appointment)
+    public static Observable<Boolean> verifyAppointment(final Appointment appointment, final Context context)
     {
         return Observable.fromCallable(new Callable<Boolean>()
         {
             @Override
             public Boolean call() throws Exception
             {
-                String username = SharedPreference.getSharedInstance().getEmployeeId();
-                String password = SharedPreference.getSharedInstance().getEmployeePassword();
+                String username = SharedPreference.getSharedInstance(context).getEmployeeId();
+                String password = SharedPreference.getSharedInstance(context).getEmployeePassword();
 
                 OkHttpClient client = NetworkUtil.createAuthenticatedClient(username, password);
                 String url = "http://10.0.2.2:8080/rest/secured/verify";

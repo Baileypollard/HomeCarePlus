@@ -1,8 +1,11 @@
 package com.homecareplus.app.homecareplus.viewmodel;
 
+import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -21,11 +24,16 @@ import java.util.Map;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-public class AppointmentHoursViewModel extends ViewModel
+public class AppointmentHoursViewModel extends AndroidViewModel
 {
     private MutableLiveData<Appointment> appointmentData;
     private MutableLiveData<Boolean> coordinatesFailedData;
     private MutableLiveData<Boolean> verificationData;
+
+    public AppointmentHoursViewModel(@NonNull Application application)
+    {
+        super(application);
+    }
 
     public void init(Appointment appointment)
     {
@@ -43,7 +51,7 @@ public class AppointmentHoursViewModel extends ViewModel
         appointment.setComment(comment);
         appointment.setKmsTravelled(km);
 
-        GPSTracker.getInstance().getCurrentLocation(new CoordinatesReceivedCallback()
+        GPSTracker.getInstance(getApplication().getApplicationContext()).getCurrentLocation(new CoordinatesReceivedCallback()
         {
             @Override
             public void onCoordinatesReceived(LatLng latLng)
@@ -51,7 +59,7 @@ public class AppointmentHoursViewModel extends ViewModel
                 appointment.setPunchedOutLocation(createLatLngMap(latLng));
                 saveAppointment(appointment);
 
-                AppointmentVerification.verifyAppointment(appointment).subscribe(new Observer<Boolean>()
+                AppointmentVerification.verifyAppointment(appointment, getApplication().getApplicationContext()).subscribe(new Observer<Boolean>()
                 {
                     @Override
                     public void onSubscribe(Disposable d)
@@ -99,7 +107,7 @@ public class AppointmentHoursViewModel extends ViewModel
         appointment.setPunchedInTime(DateUtil.getStartedAppointmentFormat(new Date()));
         appointment.setStatus(AppointmentStatus.IN_PROGRESS);
 
-        GPSTracker.getInstance().getCurrentLocation(new CoordinatesReceivedCallback()
+        GPSTracker.getInstance(getApplication().getApplicationContext()).getCurrentLocation(new CoordinatesReceivedCallback()
         {
             @Override
             public void onCoordinatesReceived(LatLng latLng)

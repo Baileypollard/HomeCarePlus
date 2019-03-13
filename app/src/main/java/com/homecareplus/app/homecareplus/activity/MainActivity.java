@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GPSTracker.init(this);
+        GPSTracker.getInstance(this).startLocationScanning(this);
 
         this.employeeNameTextView = findViewById(R.id.employeeNameTextView);
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity
         this.callback = new ItemTouchHelperCallback();
         this.extension = new ItemTouchHelperExtension(callback);
 
-        String employeeId = SharedPreference.getSharedInstance().getEmployeeId();
+        String employeeId = SharedPreference.getSharedInstance(getApplicationContext()).getEmployeeId();
 
         this.recyclerView = findViewById(R.id.client_appointment_RecyclerView);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

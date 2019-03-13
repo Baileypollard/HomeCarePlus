@@ -4,9 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.homecareplus.app.homecareplus.couchbase.CBSession;
 import com.homecareplus.app.homecareplus.couchbase.CouchbaseRepository;
@@ -100,9 +98,10 @@ public class LoginViewModel extends AndroidViewModel
         JSONObject results = new JSONObject(response.body().string());
         String sessionId = results.getString("session_id");
         CouchbaseRepository.init(getApplication().getApplicationContext(), id, sessionId);
-        SharedPreference.init(getApplication().getApplicationContext());
-        SharedPreference.getSharedInstance().setEmployeeId(id);
-        SharedPreference.getSharedInstance().setEmployeePassword(password);
+
+        SharedPreference.getSharedInstance(getApplication().getApplicationContext());
+        SharedPreference.getSharedInstance(getApplication().getApplicationContext()).setEmployeeId(id);
+        SharedPreference.getSharedInstance(getApplication().getApplicationContext()).setEmployeePassword(password);
     }
 
 }

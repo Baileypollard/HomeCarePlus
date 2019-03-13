@@ -20,18 +20,13 @@ public class GPSTracker
     private Context context_;
     private LocationManager locationManager;
 
-    private GPSTracker(Activity activity)
+    private GPSTracker(Context context)
     {
-        this.context_ = activity.getApplicationContext();
+        this.context_ = context;
         this.locationManager = (LocationManager) context_.getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(context_, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-        {
-            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 12);
-        }
-        startLocationScanning();
     }
 
-    private void startLocationScanning()
+    public void startLocationScanning(Activity activity)
     {
         if (ActivityCompat.checkSelfPermission(context_, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
@@ -64,7 +59,7 @@ public class GPSTracker
         }
         else
         {
-            Log.e("TAG", "Failed to start");
+            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 12);
         }
     }
 
@@ -90,16 +85,12 @@ public class GPSTracker
         }
     }
 
-    public static void init(Activity activity)
+    public static GPSTracker getInstance(Context context)
     {
         if (instance == null)
         {
-            instance = new GPSTracker(activity);
+            instance = new GPSTracker(context);
         }
-    }
-
-    public static GPSTracker getInstance()
-    {
         return instance;
     }
 }

@@ -39,12 +39,13 @@ public class CustomSectionedAdapter extends SectionedRecyclerViewAdapter
         {
             AppointmentSection section = new AppointmentSection(sec.getDate(), sec.getAppointmentList(), onClickListener, mItemTouchHelperExtension);
             addSection(sec.getDate(), section);
+
         }
         else
         {
             AppointmentSection section = (AppointmentSection) getSection(sec.getDate());
             section.setAppointmentList(sec.getAppointmentList());
-            notifyDataSetChanged();
         }
+        notifyDataSetChanged();
     }
 }

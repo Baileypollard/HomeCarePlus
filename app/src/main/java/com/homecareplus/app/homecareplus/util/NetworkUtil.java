@@ -33,17 +33,19 @@ public class NetworkUtil
         }
     }
 
-    public static Response doPostRequest(OkHttpClient httpClient, String anyURL, RequestBody body) throws IOException
+    public static Response doPostRequest(OkHttpClient httpClient, String anyURL, RequestBody body)
     {
         Request request = new Request.Builder().url(anyURL).post(body).build();
 
-        Response response = httpClient.newCall(request).execute();
-        if (!response.isSuccessful())
+        try
         {
-            throw new IOException("Unexpected code " + response);
+            Response response = httpClient.newCall(request).execute();
+            return response;
         }
-
-        return response;
+        catch (IOException e)
+        {
+            return new Response.Builder().code(500).build();
+        }
     }
 
     public static OkHttpClient createAuthenticatedClient(final String username, final String password)

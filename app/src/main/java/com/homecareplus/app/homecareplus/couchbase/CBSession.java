@@ -18,32 +18,27 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class CBSession
 {
-    public static Observable<String> getSessionId(final String username, final String password, final Context context)
+    public static Observable<Response> getSessionId(final String username, final String password)
     {
-        return Observable.fromCallable(new Callable<String>()
+        return Observable.fromCallable(new Callable<Response>()
         {
             @Override
-            public String call() throws Exception
+            public Response call() throws Exception
             {
-                String sessionJSON = postForSessionId(username, password);
-                Log.d("TAG", "SESSION: " + sessionJSON);
-                JSONObject results = new JSONObject(sessionJSON);
-                String sessionId = results.getString("session_id");
-                CouchbaseRepository.init(context, username, sessionId);
-
-                return sessionId;
+                return postForSessionId(username, password);
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 
-    private static String postForSessionId(String id, String password) throws JSONException
+    private static Response postForSessionId(String id, String password) throws JSONException
     {
         OkHttpClient client = NetworkUtil.createAuthenticatedClient(id, password);
 
-        String url = "http://192.168.2.24:8080/rest/secured/login";
+        String url = "http://10.0.2.2:8080/rest/secured/login";
 
         final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
         JSONObject jo = new JSONObject();
@@ -52,14 +47,7 @@ public class CBSession
         jo.put("password", password);
 
         RequestBody body = RequestBody.create(JSON, jo.toString());
-        try
-        {
-            return NetworkUtil.doPostRequest(client, url, body).body().string();
-        }
-        catch (IOException e)
-        {
-            return "Cannot Receive Session ID";
-        }
-    }
 
+        return NetworkUtil.doPostRequest(client, url, body);
+    }
 }

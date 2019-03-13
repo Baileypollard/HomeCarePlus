@@ -23,6 +23,7 @@ public class MainActivityViewModel extends ViewModel
         {
             return;
         }
+
         listMutableLiveData = CouchbaseRepository.getInstance().getAppointmentSectionData();
         employeeNameData = CouchbaseRepository.getInstance().getEmployeeNameData();
         logoutData = new MutableLiveData<>();

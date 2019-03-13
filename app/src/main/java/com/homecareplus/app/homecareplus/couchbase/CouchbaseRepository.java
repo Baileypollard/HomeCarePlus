@@ -80,8 +80,6 @@ public class CouchbaseRepository implements CBRepository
         }
     }
 
-    //Methods here
-
     @Override
     public void fetchClientInformation(final Client client)
     {

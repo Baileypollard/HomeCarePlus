@@ -13,6 +13,7 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class AppointmentVerification
 {
@@ -27,19 +28,21 @@ public class AppointmentVerification
                 String password = SharedPreference.getSharedInstance().getEmployeePassword();
 
                 OkHttpClient client = NetworkUtil.createAuthenticatedClient(username, password);
-                String url = "http://192.168.2.24:8080/rest/secured/verify";
+                String url = "http://10.0.2.2:8080/rest/secured/verify";
                 MediaType JSON = MediaType.parse("application/json;charset=utf-8");
                 JSONObject jo = JsonDocCreator.createAppointmentJSON(appointment);
                 RequestBody body = RequestBody.create(JSON, jo.toString());
-                try
+
+                Response response = NetworkUtil.doPostRequest(client, url, body);
+                if (response.isSuccessful())
                 {
-                    NetworkUtil.doPostRequest(client, url, body);
                     return true;
                 }
-                catch (IOException e)
+                else
                 {
                     return false;
                 }
+
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }

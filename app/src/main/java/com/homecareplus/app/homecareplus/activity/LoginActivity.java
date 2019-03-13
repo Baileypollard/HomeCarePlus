@@ -1,20 +1,19 @@
 package com.homecareplus.app.homecareplus.activity;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
-import com.homecareplus.app.homecareplus.couchbase.CBSession;
-import com.homecareplus.app.homecareplus.util.SharedPreference;
+import com.homecareplus.app.homecareplus.viewmodel.LoginViewModel;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -22,6 +21,8 @@ public class LoginActivity extends AppCompatActivity
     private EditText employeeIdEditText;
     private EditText employeePasswordEditText;
     private TextView loginErrorTextView;
+    private LoginViewModel viewModel;
+    private Response response;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,6 +34,34 @@ public class LoginActivity extends AppCompatActivity
         employeeIdEditText = findViewById(R.id.employeeId_edit);
         employeePasswordEditText = findViewById(R.id.employeePassword_edit);
         loginErrorTextView = findViewById(R.id.login_error_text);
+
+        viewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
+        viewModel.init();
+
+        viewModel.getLoginData().observe(this, new Observer<Boolean>()
+        {
+            @Override
+            public void onChanged(Boolean login)
+            {
+                if (login)
+                {
+                    startMainActivity();
+                }
+                else
+                {
+                    configureErrorMessage(response.code());
+                }
+            }
+        });
+
+        viewModel.loginResponseData().observe(this, new Observer<Response>()
+        {
+            @Override
+            public void onChanged(Response loginResponse)
+            {
+                response = loginResponse;
+            }
+        });
     }
 
     private void startMainActivity()
@@ -46,41 +75,38 @@ public class LoginActivity extends AppCompatActivity
     {
         final String id = employeeIdEditText.getText().toString().trim();
         final String password = employeePasswordEditText.getText().toString().trim();
-        CBSession.getSessionId(id, password, getApplicationContext()).subscribe(new Observer<String>()
-        {
-            @Override
-            public void onSubscribe(Disposable d)
-            {
 
-            }
-
-            @Override
-            public void onNext(String sessionId)
-            {
-                SharedPreference.init(getApplicationContext());
-
-                SharedPreference.getSharedInstance().setEmployeeId(id);
-                SharedPreference.getSharedInstance().setEmployeePassword(password);
-
-                startMainActivity();
-            }
-
-            @Override
-            public void onError(Throwable e)
-            {
-                Log.d("TAG", "Error: " + e.getLocalizedMessage());
-                buttonSignIn.setEnabled(true);
-                loginErrorTextView.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onComplete()
-            {
-
-            }
-        });
-        //Set false to prevent multiple sign in async tasks from executing
+        viewModel.onClickLogin(id, password);
         buttonSignIn.setEnabled(false);
+    }
+
+    private void configureErrorMessage(int code)
+    {
+        String errorMessage;
+        switch (code)
+        {
+            case 400:
+                errorMessage = "Error logging in, Bad request";
+                break;
+            case 401:
+                errorMessage = "Invalid username or password";
+                break;
+            case 403:
+                errorMessage = "You do not have the necessary permissions";
+                break;
+            case 404:
+                errorMessage = "Request resource not found";
+                break;
+            case 408:
+                errorMessage = "Request timed out, please check your connection";
+                break;
+             default:
+                 errorMessage = "There has been an error with your login";
+                 break;
+        }
+        buttonSignIn.setEnabled(true);
+        loginErrorTextView.setText(errorMessage);
+        loginErrorTextView.setVisibility(View.VISIBLE);
     }
 }
 

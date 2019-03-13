@@ -12,6 +12,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
 import com.homecareplus.app.homecareplus.model.Client;
 import com.homecareplus.app.homecareplus.util.GPSTracker;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
+import com.homecareplus.app.homecareplus.viewmodel.LoginViewModel;
 import com.homecareplus.app.homecareplus.viewmodel.MainActivityViewModel;
 import com.loopeer.itemtouchhelperextension.ItemTouchHelperExtension;
 
@@ -98,7 +100,6 @@ public class MainActivity extends AppCompatActivity
 
         mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         mainActivityViewModel.init(employeeId);
-
 
         appointmentSectionObs = new Observer<List<AppointmentSectionModel>>()
         {

@@ -34,7 +34,7 @@ public class CBSession
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 
-    private static Response postForSessionId(String id, String password) throws JSONException
+    private static Response postForSessionId(String id, String password) throws JSONException , IOException
     {
         OkHttpClient client = NetworkUtil.createAuthenticatedClient(id, password);
 

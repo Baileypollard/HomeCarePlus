@@ -33,19 +33,12 @@ public class NetworkUtil
         }
     }
 
-    public static Response doPostRequest(OkHttpClient httpClient, String anyURL, RequestBody body)
+    public static Response doPostRequest(OkHttpClient httpClient, String anyURL, RequestBody body) throws IOException
     {
         Request request = new Request.Builder().url(anyURL).post(body).build();
 
-        try
-        {
-            Response response = httpClient.newCall(request).execute();
-            return response;
-        }
-        catch (IOException e)
-        {
-            return new Response.Builder().code(500).build();
-        }
+        Response response = httpClient.newCall(request).execute();
+        return response;
     }
 
     public static OkHttpClient createAuthenticatedClient(final String username, final String password)

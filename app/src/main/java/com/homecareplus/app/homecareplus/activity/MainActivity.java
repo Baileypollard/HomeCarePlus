@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity
         this.employeeNameTextView = findViewById(R.id.employeeNameTextView);
 
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
+        toolbar.findViewById(R.id.logout_imageView).setVisibility(View.VISIBLE);
+
         setSupportActionBar(toolbar);
 
         this.adapter = new CustomSectionedAdapter(new AppointmentRowOnClickListener()

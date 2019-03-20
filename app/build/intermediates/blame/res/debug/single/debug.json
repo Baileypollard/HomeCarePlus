@@ -100,10 +100,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\color\\design_error.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_map.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_map.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_logo.png.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\mipmap-hdpi\\ic_logo.png"
     },
@@ -148,6 +144,10 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_map.xml.flat",
+        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable-anydpi\\ic_map.xml"
+    },
+    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_light.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_item_background_holo_light.xml"
     },
@@ -172,12 +172,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\63946caedf5e6d5429a94d8a0adf9c37\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_client_appointment_row.xml.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\layout\\client_appointment_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\63946caedf5e6d5429a94d8a0adf9c37\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_abc_screen_toolbar.xml.flat",
@@ -222,10 +222,6 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_arrow_back_black_24dp.xml.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_arrow_back_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
@@ -364,10 +360,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mtrl_snackbar_background.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\drawable\\mtrl_snackbar_background.xml"
     },
@@ -392,10 +384,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_password_eye.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\drawable\\design_password_eye.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_user.png.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\mipmap-mdpi\\ic_user.png"
     },
@@ -408,28 +396,24 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\layout-v16\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_chip_state_list_anim.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\animator\\mtrl_chip_state_list_anim.xml"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_screen_content_include.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_screen_content_include.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\63946caedf5e6d5429a94d8a0adf9c37\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_dark.xml.flat",
@@ -540,10 +524,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_arrow_back_black_24dp.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_arrow_back_black_24dp.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_map.png.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable-xxhdpi\\ic_map.png"
     },
@@ -612,16 +592,8 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\interpolator_mtrl_linear_out_slow_in.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\interpolator\\mtrl_linear_out_slow_in.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_map.xml.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_map.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_header_item_layout.xml.flat",
@@ -656,12 +628,8 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\interpolator_mtrl_fast_out_slow_in.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\interpolator\\mtrl_fast_out_slow_in.xml"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_person.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_person.png"
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_back_black_24dp.xml.flat",
+        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable\\ic_arrow_back_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
@@ -732,10 +700,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
@@ -748,24 +712,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_arrow_back_black_24dp.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_arrow_back_black_24dp.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\layout\\notification_template_icon_group.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_logout.png.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\mipmap-mdpi\\ic_logout.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_borderless_text_material.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
@@ -832,12 +784,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_search_url_text.xml.flat",
@@ -896,24 +848,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_arrow_back_black_24dp.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_arrow_back_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
@@ -1012,10 +952,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_clock.xml.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_clock.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
@@ -1040,20 +976,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\layout\\notification_action.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\63946caedf5e6d5429a94d8a0adf9c37\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_fab_ripple_color.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\color\\mtrl_fab_ripple_color.xml"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_bottom_sheet_slide_in.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color-v21_abc_btn_colored_borderless_text_material.xml.flat",
@@ -1116,10 +1044,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_map.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_map.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
     },
@@ -1134,6 +1058,10 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_person.png.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable-xhdpi\\ic_person.png"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -1188,10 +1116,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_appointment_layout.xml.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\layout\\activity_appointment_layout.xml"
     },
@@ -1208,10 +1132,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_arrow_back_black_24dp.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_arrow_back_black_24dp.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_dialog_material_background.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-v21\\abc_dialog_material_background.xml"
     },
@@ -1222,10 +1142,6 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\interpolator_mtrl_fast_out_linear_in.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\interpolator\\mtrl_fast_out_linear_in.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_expanded_menu_layout.xml.flat",
@@ -1332,10 +1248,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_colored_material.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_password_eye.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\drawable-v21\\design_password_eye.xml"
     },
@@ -1386,6 +1298,10 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_logout.png.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_logout.png"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_person.xml.flat",
+        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable-anydpi\\ic_person.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
@@ -1528,12 +1444,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_client_previous_appointment_row.xml.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\layout\\client_previous_appointment_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
@@ -1652,10 +1568,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_person.xml.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_person.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -1668,16 +1580,8 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_clock.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_clock.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_arrow_back_black_24dp.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_arrow_back_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -1712,16 +1616,8 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\layout\\notification_action_tombstone.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\layout\\design_navigation_menu.xml"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_divider_material.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_list_divider_material.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -1832,10 +1728,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_bottom_sheet_slide_out.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\anim\\design_bottom_sheet_slide_out.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -1912,12 +1804,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_client_details.xml.flat",
         "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\layout\\activity_client_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1938,10 +1830,6 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_arrow_back_black_24dp.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_arrow_back_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1966,6 +1854,10 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi_ic_clock.xml.flat",
+        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\src\\main\\res\\drawable-anydpi\\ic_clock.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_linear_in.xml.flat",
@@ -2060,10 +1952,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\f28b862e7c463c7d1fea414ab1371d5d\\res\\layout\\notification_template_lines_media.xml"
     },
@@ -2076,12 +1964,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\63946caedf5e6d5429a94d8a0adf9c37\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item.xml.flat",
+        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -2094,14 +1982,6 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\layout\\abc_activity_chooser_view.xml"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_edit_text_material.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_spinner.xml.flat",
@@ -2136,10 +2016,6 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\layout\\mtrl_layout_snackbar.xml"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_clock.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_clock.png"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
@@ -2168,20 +2044,12 @@
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_dialog_material_background.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable\\abc_dialog_material_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4cb8b2bbcaf32a658cd076366fa35f4f\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_person.png.flat",
-        "source": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_person.png"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
@@ -2270,10 +2138,6 @@
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aee559fa26001a27d45118af1104106c\\res\\color-v23\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_bottom_navigation_item_background.xml.flat",
-        "source": "C:\\Users\\Bai\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\e2b0b70f864c32d119b3e631de75c420\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },
     {
         "merged": "C:\\Users\\Bai\\AndroidStudioProjects\\HomeCarePlus\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",

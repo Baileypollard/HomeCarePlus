@@ -30,6 +30,7 @@ public class AppointmentActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
+        toolbar.findViewById(R.id.logout_imageView).setVisibility(View.INVISIBLE);
         setSupportActionBar(toolbar);
 
         toolbar.findViewById(R.id.emptyBackButtonHolder).setVisibility(View.GONE);

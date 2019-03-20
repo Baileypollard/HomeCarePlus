@@ -50,21 +50,22 @@ public class LoginViewModel extends AndroidViewModel
             public void onNext(Response response)
             {
                 loginResponseData.postValue(response);
+
                 if (response.isSuccessful())
                 {
                     try
                     {
                         startDatabaseReplication(response, id, password);
-                        loginData.postValue(true);
+                        loginData.setValue(true);
                     }
                     catch (IOException | JSONException e)
                     {
-                        loginData.postValue(false);
+                        loginData.setValue(false);
                     }
                 }
                 else
                 {
-                    loginData.postValue(false);
+                    loginData.setValue(false);
                 }
 
             }
@@ -72,7 +73,7 @@ public class LoginViewModel extends AndroidViewModel
             @Override
             public void onError(Throwable e)
             {
-                loginData.postValue(false);
+                loginData.setValue(false);
             }
 
             @Override
@@ -96,6 +97,8 @@ public class LoginViewModel extends AndroidViewModel
     private void startDatabaseReplication(Response response, String id, String password) throws IOException, JSONException
     {
         JSONObject results = new JSONObject(response.body().string());
+        response.body().close();
+
         String sessionId = results.getString("session_id");
         CouchbaseRepository.init(getApplication().getApplicationContext(), id, sessionId);
 

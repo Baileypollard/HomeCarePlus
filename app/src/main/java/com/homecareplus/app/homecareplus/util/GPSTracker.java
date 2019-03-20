@@ -19,15 +19,20 @@ public class GPSTracker
     private static GPSTracker instance;
     private Context context_;
     private LocationManager locationManager;
+    private boolean isScanning;
 
     private GPSTracker(Context context)
     {
+        this.isScanning = false;
         this.context_ = context;
         this.locationManager = (LocationManager) context_.getSystemService(Context.LOCATION_SERVICE);
     }
 
     public void startLocationScanning(Activity activity)
     {
+        if (isScanning)
+            return;
+
         if (ActivityCompat.checkSelfPermission(context_, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 30, new LocationListener()
@@ -35,6 +40,7 @@ public class GPSTracker
                 @Override
                 public void onLocationChanged(Location location)
                 {
+                    isScanning = true;
                     Log.d("TAG", "CHANGED: " + location.getLatitude() + " : " + location.getLongitude());
                 }
 
@@ -53,7 +59,7 @@ public class GPSTracker
                 @Override
                 public void onProviderDisabled(String provider)
                 {
-
+                    isScanning = false;
                 }
             });
         }

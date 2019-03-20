@@ -11,16 +11,37 @@ public class Client implements Serializable
     private String gender;
     private String phoneNumber;
     private String additionalInfo;
+    private String emergencyContactName;
+    private String emergencyContactNumber;
+    private String healthCardNumber;
 
-    public Client(String id, String firstName, String lastName, String address, String gender, String phoneNumber, String additionalInfo)
+    public Client(String clientId, String firstName, String lastName, String address, String gender, String phoneNumber, String additionalInfo, String emergencyContactName, String emergencyContactNumber, String healthCardNumber)
     {
-        this.clientId = id;
+        this.clientId = clientId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
         this.additionalInfo = additionalInfo;
+        this.emergencyContactName = emergencyContactName;
+        this.emergencyContactNumber = emergencyContactNumber;
+        this.healthCardNumber = healthCardNumber;
+    }
+
+    public String getEmergencyContactName()
+    {
+        return emergencyContactName;
+    }
+
+    public String getEmergencyContactNumber()
+    {
+        return emergencyContactNumber;
+    }
+
+    public String getHealthCardNumber()
+    {
+        return healthCardNumber;
     }
 
     public String getAdditionalInfo()

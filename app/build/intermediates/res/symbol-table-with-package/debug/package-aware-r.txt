@@ -1172,7 +1172,10 @@ id checkbox
 id chronometer
 id clientAdditionalIInfoTextView
 id clientAddressTextView
+id clientEmergencyContactName
+id clientEmergencyContactNumber
 id clientGenderTextView
+id clientHealthCardTextView
 id clientNameTextView
 id clientPhoneNumberTextView
 id client_appointment_RecyclerView
@@ -1353,6 +1356,7 @@ id textView13
 id textView2
 id textView3
 id textView4
+id textView5
 id textView6
 id textView7
 id textView8

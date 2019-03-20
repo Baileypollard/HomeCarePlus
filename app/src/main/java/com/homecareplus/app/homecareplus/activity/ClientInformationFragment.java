@@ -23,6 +23,9 @@ public class ClientInformationFragment extends Fragment
     private TextView clientPhoneNumberTextView;
     private TextView clientGenderTextView;
     private TextView clientAdditionalInfoTextView;
+    private TextView clientEmergenceyContactTextView;
+    private TextView clientEmergenceyContactNumbTextView;
+    private TextView clientHealthCardTextView;
 
     private ClientInformationViewModel viewModel;
 
@@ -47,6 +50,9 @@ public class ClientInformationFragment extends Fragment
         clientPhoneNumberTextView = view.findViewById(R.id.clientPhoneNumberTextView);
         clientGenderTextView = view.findViewById(R.id.clientGenderTextView);
         clientAdditionalInfoTextView = view.findViewById(R.id.clientAdditionalIInfoTextView);
+        clientEmergenceyContactTextView = view.findViewById(R.id.clientEmergencyContactName);
+        clientEmergenceyContactNumbTextView = view.findViewById(R.id.clientEmergencyContactNumber);
+        clientHealthCardTextView = view.findViewById(R.id.clientHealthCardTextView);
 
         viewModel.getClientData().observe(this, new Observer<Client>()
         {
@@ -66,6 +72,9 @@ public class ClientInformationFragment extends Fragment
         clientPhoneNumberTextView.setText(client.getPhoneNumber());
         clientGenderTextView.setText(client.getGender());
         clientAdditionalInfoTextView.setText(client.getAdditionalInfo());
+        clientHealthCardTextView.setText(client.getHealthCardNumber());
+        clientEmergenceyContactTextView.setText(client.getEmergencyContactName());
+        clientEmergenceyContactNumbTextView.setText(client.getEmergencyContactNumber());
     }
 
 

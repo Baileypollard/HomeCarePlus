@@ -77,13 +77,62 @@
           android:gravity="center_vertical"
           android:paddingStart="15dp"
           android:paddingTop="7dp"
-          android:paddingBottom="10dp"
           android:textColor="@color/colorBlack"
           android:textSize="17sp"
           tools:text="{gender}" />
 
       <TextView
+          android:id="@+id/clientHealthCardTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="7dp"
+          android:paddingBottom="5dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{health card #}" />
+
+      <TextView
           android:id="@+id/textView6"
+          android:layout_width="match_parent"
+          android:layout_height="46dp"
+          android:background="@color/colorPrimary"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:text="Emergency Contact Information"
+          android:textColor="@color/colorWhite"
+          android:textSize="17sp" />
+
+      <TextView
+          android:id="@+id/clientEmergencyContactName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="7dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{Name}" />
+
+      <TextView
+          android:id="@+id/clientEmergencyContactNumber"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:autoLink="phone"
+          android:background="@color/colorWhite"
+          android:gravity="center_vertical"
+          android:paddingStart="15dp"
+          android:paddingTop="7dp"
+          android:paddingBottom="5dp"
+          android:textColor="@color/colorBlack"
+          android:textSize="17sp"
+          tools:text="{Phone Number}" />
+
+      <TextView
+          android:id="@+id/textView5"
           android:layout_width="match_parent"
           android:layout_height="46dp"
           android:background="@color/colorPrimary"

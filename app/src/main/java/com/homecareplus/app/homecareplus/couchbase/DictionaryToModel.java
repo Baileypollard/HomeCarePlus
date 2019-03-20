@@ -69,7 +69,13 @@ public class DictionaryToModel
         String clientPhoneNumber = dictionary.getString("phone_number");
         String clientId = dictionary.getString("client_id");
         String additionalInformation = dictionary.getString("additional_information");
-        return new Client(clientId, clientFirstName, clientLastName, clientAddress, clientGender, clientPhoneNumber, additionalInformation);
+        String healthCardNumber = dictionary.getString("health_card_number");
+        String emergencyContactName = dictionary.getString("emergency_contact_name");
+        String emergencyContactNumber = dictionary.getString("emergency_phone_number");
+
+        return new Client(clientId, clientFirstName, clientLastName, clientAddress,
+                clientGender, clientPhoneNumber, additionalInformation, emergencyContactName,
+                emergencyContactNumber, healthCardNumber);
     }
 
 }

@@ -1,7 +1,7 @@
 # HomeCarePlus
 
 This application was developed as a part of the Computer Science Program at Acadia University. The course COMP 4983 X2 PROJECT
-is a core course that requires the student to complete a sizable project using knowleged gained from the previous 3 years. We were given
+is a core course that requires the student to complete a sizable project using knowledge gained from the previous 3 years. We were given
 the freedom to come up with our own ideas and turn them into working applications. 
 
 The application that I designed and developed is called HomeCare+. The purpose of this application is to provide a user=friendly mobile 

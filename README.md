@@ -21,6 +21,8 @@ Each employee will be given unique login credentials. These credentials will be 
   * Clean UI
   * Scalability
   * Admin Web Panel
+  * MVVM architecture
+  * Oberservables (RxJava)
 
 
 # UI

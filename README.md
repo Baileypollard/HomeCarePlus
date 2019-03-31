@@ -12,7 +12,7 @@ more user-friendly UI, while still providing the key features of the application
 
 # How to works?
 
-Each employee will be given unique login credentials. These credentials will be used to access both the web panel and the mobile applications. Once the user logs in, they will be able to view their daily client schedules, in chronological order. The user will have the ability to punch in/out once the appointment has been started/completed. Appointments will be verified/declined based off the employees location when starting/completing each appointment. More key features include google maps display of the appointment location, access to client personal information, view previously completed appointments per client and many more!
+Each employee will be given unique login credentials. These credentials will be used to access both the web panel and the mobile applications. Once the user logs in, they will be able to view their daily client schedules, in chronological order. The user will have the ability to punch in/out once the appointment has been started/completed. Appointments will be verified/declined based off the employees location when starting/completing each appointment. More key features include google maps display of the appointment location, access to client personal information, view previously completed appointments per client, call clients directly from the application and many more!
 
 # Features
 

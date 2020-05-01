@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 
 import com.homecareplus.app.homecareplus.couchbase.CBSession;
 import com.homecareplus.app.homecareplus.couchbase.CouchbaseRepository;
+import com.homecareplus.app.homecareplus.enumerator.LoginStatus;
 import com.homecareplus.app.homecareplus.util.SharedPreference;
 
 import org.json.JSONException;
@@ -21,7 +22,7 @@ import okhttp3.Response;
 
 public class LoginViewModel extends AndroidViewModel
 {
-    private MutableLiveData<Boolean> loginData;
+    private MutableLiveData<LoginStatus> loginData;
     private MutableLiveData<Response> loginResponseData;
 
     public LoginViewModel(@NonNull Application application)
@@ -36,8 +37,15 @@ public class LoginViewModel extends AndroidViewModel
     }
 
 
+    /**
+     *
+     * @param id
+     * @param password
+     */
     public void onClickLogin(final String id, final String password)
     {
+        loginData.setValue(LoginStatus.LOGIN_LOADING);
+
         CBSession.getSessionId(id, password).subscribe(new Observer<Response>()
         {
             @Override
@@ -56,16 +64,16 @@ public class LoginViewModel extends AndroidViewModel
                     try
                     {
                         startDatabaseReplication(response, id, password);
-                        loginData.setValue(true);
+                        loginData.setValue(LoginStatus.LOGIN_SUCCESS);
                     }
                     catch (IOException | JSONException e)
                     {
-                        loginData.setValue(false);
+                        loginData.setValue(LoginStatus.LOGIN_FAILED);
                     }
                 }
                 else
                 {
-                    loginData.setValue(false);
+                    loginData.setValue(LoginStatus.LOGIN_FAILED);
                 }
 
             }
@@ -73,7 +81,7 @@ public class LoginViewModel extends AndroidViewModel
             @Override
             public void onError(Throwable e)
             {
-                loginData.setValue(false);
+                loginData.setValue(LoginStatus.LOGIN_FAILED);
             }
 
             @Override
@@ -84,7 +92,7 @@ public class LoginViewModel extends AndroidViewModel
         });
     }
 
-    public LiveData<Boolean> getLoginData()
+    public LiveData<LoginStatus> getLoginData()
     {
         return loginData;
     }

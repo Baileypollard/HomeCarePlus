@@ -9,9 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
+import com.homecareplus.app.homecareplus.enumerator.LoginStatus;
 import com.homecareplus.app.homecareplus.viewmodel.LoginViewModel;
 
 import okhttp3.Response;
@@ -24,6 +27,8 @@ public class LoginActivity extends AppCompatActivity
     private TextView loginErrorTextView;
     private LoginViewModel viewModel;
     private Response response;
+    private ProgressBar loginProgress;
+    private LinearLayout loginLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,6 +36,8 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        loginLayout = findViewById(R.id.loginLayout);
+        loginProgress = findViewById(R.id.loginProgressBar);
         buttonSignIn = findViewById(R.id.button_signin);
         employeeIdEditText = findViewById(R.id.employeeId_edit);
         employeePasswordEditText = findViewById(R.id.employeePassword_edit);
@@ -39,25 +46,32 @@ public class LoginActivity extends AppCompatActivity
         viewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
         viewModel.init();
 
-        viewModel.getLoginData().observe(this, new Observer<Boolean>()
+        viewModel.getLoginData().observe(this, new Observer<LoginStatus>()
         {
             @Override
-            public void onChanged(Boolean login)
+            public void onChanged(LoginStatus status)
             {
-                if (login)
-                {
-                    startMainActivity();
-                }
-                else
-                {
-                    if (response != null)
-                    {
-                        configureErrorMessage(response.code());
-                    }
-                    else
-                    {
-                        configureErrorMessage(500);
-                    }
+
+                switch (status) {
+                    case LOGIN_FAILED:
+                        loginProgress.setVisibility(View.INVISIBLE);
+                        loginLayout.setVisibility(View.VISIBLE);
+                        if (response != null)
+                        {
+                            configureErrorMessage(response.code());
+                        }
+                        else
+                        {
+                            configureErrorMessage(500);
+                        }
+                        break;
+                    case LOGIN_LOADING:
+                        loginLayout.setVisibility(View.INVISIBLE);
+                        loginProgress.setVisibility(View.VISIBLE);
+                        break;
+                    case LOGIN_SUCCESS:
+                        startMainActivity();
+                        break;
                 }
             }
         });

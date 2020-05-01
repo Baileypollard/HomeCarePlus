@@ -370,7 +370,7 @@ public class CouchbaseRepository implements CBRepository
         URI url = null;
         try
         {
-            url = new URI("ws://35.235.103.244:4984/homecareplus");
+            url = new URI("ws://35.194.82.177:4984/homecareplus");
         }
         catch (URISyntaxException e)
         {

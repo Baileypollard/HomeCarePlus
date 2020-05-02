@@ -9,9 +9,11 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.PreviousAppointmentAdapter;
@@ -27,6 +29,7 @@ public class ClientPreviousAppointmentsFragment extends Fragment
     private RecyclerView previousAppointmentsRecyclerView;
     private PreviousAppointmentAdapter appointmentAdapter;
     private PreviousAppointmentViewModel viewModel;
+    private TextView noPrevAppointmentTextView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -47,8 +50,16 @@ public class ClientPreviousAppointmentsFragment extends Fragment
         viewModel.getAppointmentData().observe(this, new Observer<List<Appointment>>()
         {
             @Override
-            public void onChanged(@Nullable List<Appointment> appointmentList)
+            public void onChanged(List<Appointment> appointmentList)
             {
+                if (!appointmentList.isEmpty()) {
+                    noPrevAppointmentTextView.setVisibility(View.GONE);
+                    previousAppointmentsRecyclerView.setVisibility(View.VISIBLE);
+                } else {
+                    noPrevAppointmentTextView.setVisibility(View.VISIBLE);
+                    previousAppointmentsRecyclerView.setVisibility(View.GONE);
+                }
+
                 appointmentAdapter.setAppointmentList(appointmentList);
             }
         });
@@ -60,6 +71,9 @@ public class ClientPreviousAppointmentsFragment extends Fragment
         DividerItemDecoration divider = new DividerItemDecoration(previousAppointmentsRecyclerView.getContext(), DividerItemDecoration.VERTICAL);
         divider.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.cell_divider));
         previousAppointmentsRecyclerView.addItemDecoration(divider);
+
+
+        noPrevAppointmentTextView = view.findViewById(R.id.noPrevAppointmentsTextView);
     }
 
     @Override

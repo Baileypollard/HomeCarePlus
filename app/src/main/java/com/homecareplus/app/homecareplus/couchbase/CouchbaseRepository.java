@@ -302,6 +302,7 @@ public class CouchbaseRepository implements CBRepository
 
                 if (rows == null)
                 {
+                    previousAppointmentData.postValue(appointments);
                     return;
                 }
                 List<Result> rowList = rows.allResults();

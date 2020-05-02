@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity
     private Observer<String> employeeNameObs;
     private Observer<List<AppointmentSectionModel>> appointmentSectionObs;
 
+    private TextView noAppointmentsTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity
         GPSTracker.getInstance(this).startLocationScanning(this);
 
         this.employeeNameTextView = findViewById(R.id.employeeNameTextView);
+        this.noAppointmentsTextView = findViewById(R.id.noAppointmentsTextView);
 
         Toolbar toolbar = findViewById(R.id.custom_toolbar);
         toolbar.findViewById(R.id.logout_imageView).setVisibility(View.VISIBLE);
@@ -108,6 +111,12 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onChanged(List<AppointmentSectionModel> appointmentSections)
             {
+                if (appointmentSections.isEmpty()) {
+                    noAppointmentsTextView.setVisibility(View.VISIBLE);
+                } else {
+                    noAppointmentsTextView.setVisibility(View.GONE);
+                }
+
                 for (AppointmentSectionModel a: appointmentSections)
                 {
                     adapter.displayAppointmentSection(a);

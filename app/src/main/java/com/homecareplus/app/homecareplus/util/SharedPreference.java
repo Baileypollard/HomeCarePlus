@@ -2,6 +2,7 @@ package com.homecareplus.app.homecareplus.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 public class SharedPreference
 {
@@ -14,6 +15,7 @@ public class SharedPreference
     private final String KEY_EMPLOYEE_PASSWORD = "KEY_EMPLOYEE_PASSWORD";
     public static final String KEY_APPOINTMENT = "KEY_APPOINTMENT";
     public static final String KEY_CLIENT = "KEY_CLIENT";
+    private static final String KEY_SESSION_ID = "KEY_SESSION_ID";
 
     private SharedPreference(Context context)
     {
@@ -40,9 +42,22 @@ public class SharedPreference
         editor.apply();
     }
 
+    public void setSessionId(String sessionId) {
+        SharedPreferences.Editor editor = sharedPreference.edit();
+        editor.putString(KEY_SESSION_ID, sessionId);
+        editor.apply();
+    }
+
+    public String getSessionId()
+    {
+        return sharedPreference.getString(KEY_SESSION_ID, "");
+    }
+
     public void clear()
     {
-        sharedPreference.getAll().clear();
+        SharedPreferences.Editor editor = sharedPreference.edit();
+        editor.clear();
+        editor.apply();
     }
 
     public String getEmployeeId()

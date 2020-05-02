@@ -37,6 +37,17 @@ public class LoginViewModel extends AndroidViewModel
     }
 
 
+    public void attemptLogin() {
+        String username = SharedPreference.getSharedInstance(getApplication().getApplicationContext()).getEmployeeId();
+        String password = SharedPreference.getSharedInstance(getApplication().getApplicationContext()).getEmployeePassword();
+
+        if (username.isEmpty() || password.isEmpty()) {
+            return;
+        }
+
+        onClickLogin(username, password);
+    }
+
     /**
      *
      * @param id
@@ -111,6 +122,8 @@ public class LoginViewModel extends AndroidViewModel
         CouchbaseRepository.init(getApplication().getApplicationContext(), id, sessionId);
 
         SharedPreference.getSharedInstance(getApplication().getApplicationContext());
+
+        SharedPreference.getSharedInstance(getApplication().getApplicationContext()).setSessionId(sessionId);
         SharedPreference.getSharedInstance(getApplication().getApplicationContext()).setEmployeeId(id);
         SharedPreference.getSharedInstance(getApplication().getApplicationContext()).setEmployeePassword(password);
     }

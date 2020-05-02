@@ -84,6 +84,9 @@ public class LoginActivity extends AppCompatActivity
                 response = loginResponse;
             }
         });
+
+        //Check if there a user/pass saved locally, and log in with it
+        viewModel.attemptLogin();
     }
 
     private void startMainActivity()

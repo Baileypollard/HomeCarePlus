@@ -30,7 +30,7 @@ public class AppointmentVerification
                 String password = SharedPreference.getSharedInstance(context).getEmployeePassword();
 
                 OkHttpClient client = NetworkUtil.createAuthenticatedClient(username, password);
-                String url = "https://homecare-plus.herokuapp.com/rest/appointment/verify";
+                String url = "http://130.211.238.195:8080/rest/appointment/verify";
                 MediaType JSON = MediaType.parse("application/json;charset=utf-8");
                 JSONObject jo = JsonDocCreator.createAppointmentJSON(appointment);
                 RequestBody body = RequestBody.create(JSON, jo.toString());

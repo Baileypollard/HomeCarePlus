@@ -32,6 +32,7 @@ public class DateUtil
         SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM dd yyyy", Locale.US);
         Date d = new Date(dateMs);
 
+
         if (DateUtils.isToday(dateMs))
         {
             return "TODAY - " + sdf.format(d);
@@ -89,7 +90,8 @@ public class DateUtil
 
     public static long getDateMilliseconds(String date)
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd", Locale.US);
+
         try
         {
             Date d = sdf.parse(date);

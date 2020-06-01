@@ -38,7 +38,7 @@ public class CBSession
     {
         OkHttpClient client = NetworkUtil.createAuthenticatedClient(id, password);
 
-        String url = "https://homecare-plus.herokuapp.com/rest/user/login";
+        String url = "http://130.211.238.195:8080/rest/user/login";
 
         final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
         JSONObject jo = new JSONObject();

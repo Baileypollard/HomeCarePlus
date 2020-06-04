@@ -1,4 +1,6 @@
 <resources>
   <string name="app_name">HomeCarePlus</string>
   <string name="google_api_key">AIzaSyD7mLhw0FvN3qGqZaysebXA73xcqN1KFp4</string>
+  <string name="couchbase_url_key">ws://35.243.158.121:4984/homecareplus</string>
+
 </resources>

@@ -13,6 +13,8 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            buildConfigField "String", "COUCHBASE_SERVER", '"ws://35.243.158.121:4984/homecareplus"'
+
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

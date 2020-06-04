@@ -12,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.homecareplus.app.homecareplus.BuildConfig;
 import com.homecareplus.app.homecareplus.callback.CoordinatesReceivedCallback;
 
 public class GPSTracker
@@ -20,7 +21,6 @@ public class GPSTracker
     private Context context_;
     private LocationManager locationManager;
     private boolean isScanning;
-
     private GPSTracker(Context context)
     {
         this.isScanning = false;

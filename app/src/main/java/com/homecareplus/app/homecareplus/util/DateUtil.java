@@ -90,7 +90,7 @@ public class DateUtil
 
     public static long getDateMilliseconds(String date)
     {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd", Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
         try
         {

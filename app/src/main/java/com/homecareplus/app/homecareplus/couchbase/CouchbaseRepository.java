@@ -31,6 +31,7 @@ import com.couchbase.lite.ResultSet;
 import com.couchbase.lite.SelectResult;
 import com.couchbase.lite.SessionAuthenticator;
 import com.couchbase.lite.URLEndpoint;
+import com.homecareplus.app.homecareplus.BuildConfig;
 import com.homecareplus.app.homecareplus.contract.CBRepository;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.model.AppointmentSectionModel;
@@ -80,6 +81,11 @@ public class CouchbaseRepository implements CBRepository
         }
     }
 
+    /**
+     * Fetches the clients information given the client object. Maybe? this should just take the client
+     * id as a parameter.
+     * @param client
+     */
     @Override
     public void fetchClientInformation(final Client client)
     {
@@ -112,6 +118,10 @@ public class CouchbaseRepository implements CBRepository
         tokens.put(query, token);
     }
 
+    /**
+     * Will save the given appointment in the corresponding appointment document in the couchbase db
+     * @param appointment
+     */
     @Override
     public void saveAppointment(Appointment appointment)
     {
@@ -167,6 +177,10 @@ public class CouchbaseRepository implements CBRepository
         }
     }
 
+    /**
+     * Fetches the employee name given the employee id from the couchbase db
+     * @param employeeId
+     */
     @Override
     public void fetchEmployeeName(String employeeId)
     {
@@ -200,6 +214,10 @@ public class CouchbaseRepository implements CBRepository
         tokens.put(query, token);
     }
 
+    /**
+     * Fetches all of the future appointments that belong to the given employee
+     * @param employeeId
+     */
     @Override
     public void fetchAppointments(String employeeId)
     {
@@ -268,6 +286,11 @@ public class CouchbaseRepository implements CBRepository
         tokens.put(query, token);
     }
 
+    /**
+     * Fetches all of the previous appointments that correspond with the given client. These appointments
+     * will have a date that is before the current day.
+     * @param client
+     */
     @Override
     public void fetchPreviousAppointmentsForClient(final Client client)
     {
@@ -366,6 +389,10 @@ public class CouchbaseRepository implements CBRepository
         return employeeNameData;
     }
 
+    /**
+     * Begins the database replication with the couchbase server
+     * @param sessionId
+     */
     private static void beginDatabaseReplication(String sessionId)
     {
         URI url = null;

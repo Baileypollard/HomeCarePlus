@@ -19,6 +19,14 @@ import okhttp3.Response;
 
 public class AppointmentVerification
 {
+    /**
+     * Sends a post request to the REST server containing the information for a given appointment.
+     * This fires off the server to do a verification on the punch in/out locations attached to the
+     * appointment
+     * @param appointment
+     * @param context
+     * @return Observable<Boolean>
+     */
     public static Observable<Boolean> verifyAppointment(final Appointment appointment, final Context context)
     {
         return Observable.fromCallable(new Callable<Boolean>()

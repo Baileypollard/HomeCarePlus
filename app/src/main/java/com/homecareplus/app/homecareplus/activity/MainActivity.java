@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.homecareplus.app.homecareplus.BuildConfig;
 import com.homecareplus.app.homecareplus.R;
 import com.homecareplus.app.homecareplus.adapter.AppointmentSection;
 import com.homecareplus.app.homecareplus.adapter.CustomSectionedAdapter;
@@ -162,6 +163,7 @@ public class MainActivity extends AppCompatActivity
 
     public void onClickLogout(View v)
     {
+
         mainActivityViewModel.getAppointmentSections().removeObserver(appointmentSectionObs);
         mainActivityViewModel.getEmployeeName().removeObserver(employeeNameObs);
         mainActivityViewModel.logout();

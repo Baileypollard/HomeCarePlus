@@ -136,5 +136,6 @@ public class LoginActivity extends AppCompatActivity
         loginErrorTextView.setText(errorMessage);
         loginErrorTextView.setVisibility(View.VISIBLE);
     }
+
 }
 

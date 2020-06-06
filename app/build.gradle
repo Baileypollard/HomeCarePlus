@@ -57,14 +57,13 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.2.0'
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation "org.mockito:mockito-core:2.28.2"
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
 
     testImplementation ("org.robolectric:robolectric:4.3.1"){
         exclude group: 'org.apache.maven'
     }
-    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation 'org.mockito:mockito-core:2.28.2'
 
     testImplementation "org.powermock:powermock-core:1.7.0RC2"
     testImplementation "org.powermock:powermock-module-junit4:1.7.0RC2"

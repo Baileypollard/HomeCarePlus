@@ -24,6 +24,10 @@ public class PreviousAppointmentViewHolder extends RecyclerView.ViewHolder
         appointmentDateTextView = view.findViewById(R.id.appointmentDateTextView);
     }
 
+    public View getAppointmentRow() {
+        return  appointmentRow;
+    }
+
     public void setAppointmentDate(String date)
     {
         appointmentDateTextView.setText(date);

@@ -131,7 +131,10 @@ public class Appointment implements Serializable
 
     public String getComment()
     {
-        return this.comment;
+        if (comment == null || comment.isEmpty())
+            return "No Comment";
+        else
+            return this.comment;
     }
 
     public void setStatus(AppointmentStatus status)

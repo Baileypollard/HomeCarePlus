@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.homecareplus.app.homecareplus.R;
+import com.homecareplus.app.homecareplus.contract.PrevAppointmentOnClickListener;
 import com.homecareplus.app.homecareplus.model.Appointment;
 import com.homecareplus.app.homecareplus.viewholder.PreviousAppointmentViewHolder;
 
@@ -18,11 +19,13 @@ public class PreviousAppointmentAdapter extends RecyclerView.Adapter<PreviousApp
 {
     private LayoutInflater mInflater;
     private List<Appointment> appointmentList;
+    private PrevAppointmentOnClickListener listener;
 
-    public PreviousAppointmentAdapter(Context context)
+    public PreviousAppointmentAdapter(Context context, PrevAppointmentOnClickListener listener)
     {
         this.mInflater = LayoutInflater.from(context);
-        appointmentList = new ArrayList<>();
+        this.appointmentList = new ArrayList<>();
+        this.listener = listener;
     }
 
     public void setAppointmentList(List<Appointment> appointmentList)
@@ -48,7 +51,12 @@ public class PreviousAppointmentAdapter extends RecyclerView.Adapter<PreviousApp
         viewHolder.setClientName(appointment.getClientName());
         viewHolder.setAppointmentEmployeeName(appointment.getEmployee().getFullName());
         viewHolder.setAppointmentTime(appointment.getAppointmentTime());
-
+        viewHolder.getAppointmentRow().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(viewHolder.getAppointmentRow(), appointment);
+            }
+        });
     }
 
     @Override

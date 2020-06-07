@@ -78,7 +78,7 @@ public class AppointmentInfoTabFragment extends Fragment
         clientAddressTextView.setText(appointment.getAddress());
         appointmentTimeTextView.setText(appointment.getAppointmentTime());
         appointmentInfoTextView.setText(appointment.getAppointmentInfo());
-        appointmentStatusTextView.setText(appointment.getStatus().getValue());
+        appointmentStatusTextView.setText(appointment.getStatus().getFriendlyName());
         clientGenderTextView.setText(appointment.getClientGender());
         clientPhoneNumberTextView.setText(appointment.getClientPhoneNumber());
 

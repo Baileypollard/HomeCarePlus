@@ -12,6 +12,7 @@ public class JsonDocCreator
         JSONObject appointmentJson = new JSONObject();
         try
         {
+            appointmentJson.put("employee_id", appointment.getEmployeeId());
             appointmentJson.put("appointment_id", appointment.getId());
             appointmentJson.put("address", appointment.getAddress());
             appointmentJson.put("comment", appointment.getComment());

@@ -65,7 +65,7 @@ public class AppointmentRowViewHolder extends RecyclerView.ViewHolder implements
 
     public void setAppointmentStatus(AppointmentStatus status)
     {
-        appointmentStatusTv.setText(status.getValue());
+        appointmentStatusTv.setText(status.getFriendlyName());
     }
 
     public void setAppointmentAbbrev(String abbrev)

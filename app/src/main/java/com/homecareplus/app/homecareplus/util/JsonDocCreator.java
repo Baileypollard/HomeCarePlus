@@ -14,6 +14,8 @@ public class JsonDocCreator
         {
             appointmentJson.put("employee_id", appointment.getEmployeeId());
             appointmentJson.put("appointment_id", appointment.getId());
+            appointmentJson.put("appointment_id", appointment.getId());
+            appointmentJson.put("client_id", appointment.getClient().getClientId());
             appointmentJson.put("address", appointment.getAddress());
             appointmentJson.put("comment", appointment.getComment());
             appointmentJson.put("end_time", appointment.getEndTime());
